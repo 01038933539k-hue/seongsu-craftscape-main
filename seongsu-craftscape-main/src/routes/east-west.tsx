@@ -84,18 +84,44 @@ function EastWest() {
       </section>
 
       <section className="container-prose pb-16">
-        <div className="eyebrow mb-3">변화의 원인</div>
+        <div className="eyebrow mb-3">건축 연도별 시각화 범례</div>
+        <h2 className="font-display text-2xl md:text-3xl mb-6">신축과 노후 건물의 극단적 대비</h2>
+        <div className="grid md:grid-cols-2 gap-4 text-sm mb-12">
+          <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-cobalt)" }}>
+            <div className="font-display text-base text-cobalt flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-cobalt inline-block"></span>
+              밝은 하늘색 (최신 신축 건물군)
+            </div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              2020년대 이후 지어진 신축 건물들을 나타냅니다. 무신사와 같은 대형 업체의 단일 용도 건물이나 복합 용도로 활용되는 작은 필지의 신축 건물이 이에 해당합니다. 주거 기능은 거의 없으며, 주로 카페, 사무실 등 상업화된 시설이 밀집해 있습니다.
+            </p>
+          </div>
+          <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-indigo)" }}>
+            <div className="font-display text-base text-indigo flex items-center gap-2">
+              <span className="w-3 h-3 rounded-full bg-indigo inline-block"></span>
+              진한 파랑색 (전통 노후 건물군)
+            </div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              1970년대 이전부터 자리를 지켜온 오래된 건물들을 나타냅니다. 작은 필지의 건물들은 상층부에 주거 기능이 거의 100% 혼재되어 있으며, 넓은 부지의 단층 건물들은 인쇄, 금속 등 하나의 제조업 용도로 길게 유지되어 온 특징을 보입니다.
+            </p>
+          </div>
+        </div>
+
+        <div className="eyebrow mb-3">동서 지역의 공간적 개발 격차</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">왜 동·서가 갈라졌나</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
-          {[
-            ["EAST · 합필 개발 압력", "뚝섬 개발 압력 + 2000년대 성수 IT산업단지 지정. 격자형 가로망과 단일 토지 소유 구조가 합필을 쉽게 만들었고, 그 결과 대형 지식산업센터로 신축되거나 단일 기업이 부지를 점유."],
-            ["WEST · 소필지 유지 구조", "좁은 골목망이 합필 자체를 어렵게 만든다. 1970년대부터 작은 필지로 세워진 건물이 그대로 남았고, 신축되더라도 필지는 그대로인 채 층수만 올라간다. 제조업보다 사무실·미용실·음식점이 주를 이룬다."],
-          ].map(([h, d]) => (
-            <div key={h} className="border border-rule rounded-lg bg-card p-5">
-              <div className="font-display text-base">{h}</div>
-              <p className="mt-2 text-ink-soft leading-relaxed">{d}</p>
-            </div>
-          ))}
+          <div className="border border-rule rounded-lg bg-card p-5">
+            <div className="font-display text-base">EAST · 동쪽 지역 (대형 필지 및 지식산업센터 중심)</div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              과거에는 넓은 부지의 공장과 소필지가 공존했으나, 2000년대 이후 뚝섬 개발 압력과 성수 IT산업단지 지정의 영향으로 여러 필지가 하나로 합쳐지는 합필 개발이 대대적으로 이루어졌습니다. 현재는 거대한 지식산업센터가 들어서거나 단일 대기업이 통째로 사용하는 대형 부지 중심으로 탈바꿈했습니다. 격자형 가로망 설계와 단일 토지 소유자 구조 덕분에 이 같은 대규모 개발이 수월했습니다.
+            </p>
+          </div>
+          <div className="border border-rule rounded-lg bg-card p-5">
+            <div className="font-display text-base">WEST · 서쪽 지역 (소필지 유지 및 골목길 상업화)</div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              1970년대부터 이어져 온 작은 필지 구조가 오늘날까지 그대로 유지되고 있습니다. 최근 새로 지어진 건물들도 기존의 작은 필지 틀을 깨지 않고 위로 층수만 높이는 방식으로 건축되었습니다. 이는 서쪽 특유의 좁은 골목망 구조가 필지를 합치는 개발(합필)을 어렵게 만들기 때문입니다. 이에 따라 제조업보다는 골목길의 보행 친화성을 무기로 삼은 사무실, 미용실, 음식점, 카페 등의 상업시설이 주를 이루게 되었습니다.
+            </p>
+          </div>
         </div>
       </section>
 

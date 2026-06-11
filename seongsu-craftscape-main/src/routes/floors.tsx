@@ -96,6 +96,37 @@ function Floors() {
       </section>
 
       <section className="container-prose pb-16">
+        <div className="eyebrow mb-3">건축물 층별 용도 및 수직적 혼재 특성</div>
+        <h2 className="font-display text-2xl md:text-3xl mb-6">데이터와 현장 사이의 이야기</h2>
+        <div className="grid md:grid-cols-2 gap-4 text-sm">
+          <div className="border border-rule rounded-lg bg-card p-5">
+            <div className="font-display text-base">수직적 용도 분리 패턴</div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              성수동 대다수 블록에서는 고층으로 갈수록 주거 및 기타 시설의 비율이 높아지고, 저층부에는 상업시설(음식점·판매)이 밀집하는 공통적인 수직 분리 패턴을 보여줍니다. 이는 건물주가 상층부에 직접 거주하면서 아래층만 상업시설로 임대 주거나, 기존 주거 임차인이 위층에 남아 있는 구조에서 기인합니다.
+            </p>
+          </div>
+          <div className="border border-rule rounded-lg bg-card p-5">
+            <div className="font-display text-base">행정 데이터와 현장의 온도 차 (기타 용도)</div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              건축물대장상 '기타' 용도로 남아 있는 공간 중 상당수는 실제 현장에서 팝업스토어, 단기 전시, 임시 팝업 매장 등으로 활발히 운영되고 있습니다. 젠트리피케이션으로 인한 높은 임차 회전율 때문에 일시적 공실이나 용도 전환이 발생해도 행정 데이터상에는 즉각 반영되지 않고 기존 용도로 잔존하는 한계가 존재합니다.
+            </p>
+          </div>
+          <div className="border border-rule rounded-lg bg-card p-5">
+            <div className="font-display text-base">60대 장기 거주층과 사각지대의 주거</div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              준공업지역은 주거 중심의 전면 재개발이 제한되어 있어, 역설적으로 오랜 시간 살아온 고령층 거주자들이 밀려나지 않고 동네에 남아 버틸 수 있는 터전이 되었습니다. 공장과 창고 사이에 끼어 있는 비공식 주거 공간들이 행정 사각지대 속에서 살아남아 공간과 생활이 긴밀히 연결된 독특한 주거 생태계를 유지하고 있습니다.
+            </p>
+          </div>
+          <div className="border border-rule rounded-lg bg-card p-5">
+            <div className="font-display text-base">한 지번에 여러 건물이 공존하는 이유</div>
+            <p className="mt-2 text-ink-soft leading-relaxed">
+              본래 필지가 크고 불규칙한 공장 및 창고 지대였던 특성상, 전면 철거 후 재개발 대신 기존 필지 내에서 필요에 따라 리모델링과 증축을 반복해 온 건물이 많기 때문입니다. 아울러 도로명 주소 정비 작업의 지연으로 지번 주소와 도로명 주소 간 매핑이 완벽히 일치하지 않는 행정적 요인도 작용합니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-prose pb-16">
         <div className="eyebrow mb-3">준공 시대별 업종 구성 변화</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">시대의 흐름에 따른 층별 변화</h2>
         <div className="bg-card border border-rule rounded-lg p-6 overflow-hidden flex flex-col items-center">
@@ -147,13 +178,13 @@ function Floors() {
 
       <section className="container-prose pb-24">
         <div className="eyebrow mb-3">왜 수직 혼합이 유지되는가</div>
-        <h2 className="font-display text-2xl md:text-3xl mb-6">네 가지 구조적 조건</h2>
+        <h2 className="font-display text-2xl md:text-3xl mb-6">노후 대로변 건물의 비의도적 공생 구조</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           {[
-            ["① 건물 노후도", "대로변이어도 엘리베이터·주차가 낙후되면 프리미엄 상업이 들어오지 못한다. 입지는 좋지만 건물 스펙이 젠트리피케이션을 막는다."],
-            ["② 비의도적 공생", "높은 유동인구는 빈티지샵·카페에 이익이고, 낮은 건물 스펙은 카센터·주거의 퇴출을 막는다. 서로 다른 업종이 같은 건물에 머무를 이유가 동시에 성립한다."],
-            ["③ 구분소유 · 분할 임대", "층·호별 소유자가 다르면 한꺼번에 용도를 통일하거나 재개발하기가 불가능하다. 각자 따로 임대하니 혼재가 유지된다."],
-            ["④ 준공업지역 규제", "주거 재개발이 제한되는 준공업지역 특성상 오래된 거주자가 ‘버틸 수 있는’ 공간으로 남아 비공식 주거가 행정 사각지대에서 지속된다."],
+            ["제조업의 물류 네트워크 입지", "카센터나 수제화 공방 같은 전통 제조업들이 성수동 대로변에 자리 잡은 것은 철저한 물류적 논리 때문입니다. 무거운 자재를 들여오고 완제품을 출고하려면 좁은 골목보다 차량 진입이 원활한 대로변이 훨씬 유리하며, 도매상 및 납품처와의 접근성을 확보해야 하기 때문입니다."],
+            ["노후화된 건물 스펙이 만든 상생 장벽", "입지 자체는 유동인구가 많은 대로변이라 훌륭하지만, 엘리베이터가 없거나 주차 공간이 협소한 등 건물의 물리적 스펙이 낙후되어 있으면 임대료를 무작정 올리더라도 세련된 프리미엄 상업시설이 쉽게 진입하지 못합니다."],
+            ["노후 건물의 비의도적 공생 생태계", "결과적으로 높은 유동인구의 이점은 감각적인 빈티지숍이나 트렌디한 카페가 활용하고, 낮은 건물 스펙 덕분에 임대료 폭등 피해를 면한 카센터와 기존 주거 임차인들은 쫓겨나지 않고 자리를 지킬 수 있게 됩니다. 서로 전혀 다른 성격과 이해관계를 가진 업종들이 한 지붕 아래 공존하는 독특한 상생 생태계가 형성된 비결입니다."],
+            ["구분 소유 구조로 인한 개발 제약", "건물 내 층별 혹은 호실별 소유주가 제각각 분산되어 있거나 필지가 잘게 쪼개져 있는 경우, 건물 전체의 용도를 하나로 통일하거나 통째로 재개발하는 것이 현실적으로 불가능합니다. 소유주마다 독립적으로 임대 결정을 내리기 때문에 다양한 업종의 혼재 상태가 오랫동안 지속됩니다."],
           ].map(([h, d]) => (
             <div key={h} className="border border-rule rounded-lg bg-card p-5">
               <div className="font-display text-base">{h}</div>

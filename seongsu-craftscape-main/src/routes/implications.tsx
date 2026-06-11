@@ -38,6 +38,24 @@ function Implications() {
           ))}
         </div>
 
+        <div className="mt-16">
+          <div className="eyebrow mb-3">성수동 준공업지역의 특성과 미래 가치</div>
+          <h2 className="font-display text-2xl md:text-3xl mb-6">도시 정책적 관점</h2>
+          <div className="grid md:grid-cols-2 gap-4 text-sm">
+            {[
+              ["준공업지역의 핵심 정의", "경공업을 비롯한 공업 기능을 기본적으로 수용하면서, 이를 뒷받침할 주거·상업·업무 기능의 보완과 융합이 복합적으로 허용되는 지역입니다."],
+              ["탁월한 지리적 입지 강점", "도심과 부도심을 긴밀하게 묶어주는 교통의 요충지입니다. 지하철 2호선 노선과 도시간선도로망이 촘촘히 엮여 있어 타 지역에 비해 제조업은 물론 최첨단 지식기반산업이 뿌리내리기에 최적의 입지적 메리트를 자랑합니다."],
+              ["도시 환경 개선 과제", "동쪽의 계획된 산업집적지를 제외하면 영세 공장과 주거 시설이 무질서하게 뒤섞여 있어 용도 간 마찰이 잦고 산업 집적 이익이 다소 떨어집니다. 전반적인 건물 노후화와 더불어 주차장, 공원, 문화시설 등 시민 생활 기반 시설이 부족하며, 지상 고가철로변을 따라 발생하는 소음 문제와 도시 미관 훼손 등의 과제를 안고 있습니다."],
+              ["미래 성장을 위한 기회 요소", "성수동 일대 대부분이 역세권 개발 가능 구역에 포함되어 있어 토지 활용 잠재력과 개발 파급 효과가 매우 높습니다. 현재 활발히 추진 중인 뚝섬역세권 개발계획 및 성수전략정비구역 등 대규모 정비 사업들과 정교하게 연계될 경우, 지역 가치를 한 단계 끌어올릴 강력한 발전 시너지 효과를 기대할 수 있습니다."],
+            ].map(([h, d]) => (
+              <div key={h} className="border border-rule rounded-lg bg-card p-5">
+                <div className="font-display text-base">{h}</div>
+                <p className="mt-2 text-ink-soft leading-relaxed">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-16 grid md:grid-cols-2 gap-6">
           <div className="rounded-lg border border-rule bg-card p-8">
             <div className="eyebrow">처음으로</div>
