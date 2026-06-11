@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Shell";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid, Legend } from "recharts";
 import floorsHistoryImg from "../assets/floors-history.png";
+import floorsSectionImg from "../assets/floors-section.png";
 
 export const Route = createFileRoute("/floors")({
   head: () => ({
@@ -112,6 +113,18 @@ function Floors() {
       <section className="container-prose pb-16">
         <div className="eyebrow mb-3">대표 수직 혼합 사례 — 6개 표본 블록</div>
         <h2 className="font-display text-2xl md:text-3xl mb-8">한 건물, 네 개의 일</h2>
+        
+        <div className="bg-card border border-rule rounded-lg p-6 overflow-hidden flex flex-col items-center mb-8">
+          <img 
+            src={floorsSectionImg} 
+            alt="성수동 성수2가 건물별 층수 및 용도 분포 (단면도)" 
+            className="w-full h-auto"
+          />
+          <p className="mt-6 text-sm text-ink-soft text-center max-w-2xl">
+            6개 표본 건물의 실제 층별 용도 분포 단면도입니다. 건물의 노후도와 위치(대로변, 이면도로 등)에 따라 제조업, 상업, 업무, 주거가 한 건물 내에서 어떻게 혼합되어 있는지 시각적으로 확인할 수 있습니다.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-4">
           {composites.map((c) => (
             <div key={c.name} className="border border-rule rounded-lg bg-card overflow-hidden">
