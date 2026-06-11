@@ -87,18 +87,18 @@ function EastWest() {
         <div className="eyebrow mb-3">건축 연도별 시각화 범례</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">신축과 노후 건물의 극단적 대비</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm mb-12">
-          <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-cobalt)" }}>
-            <div className="font-display text-base text-cobalt flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-cobalt inline-block"></span>
+          <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-recent)" }}>
+            <div className="font-display text-base flex items-center gap-2" style={{ color: "var(--color-recent)" }}>
+              <span className="w-3 h-3 rounded-full inline-block" style={{ backgroundColor: "var(--color-recent)" }}></span>
               밝은 하늘색 (최신 신축 건물군)
             </div>
             <p className="mt-2 text-ink-soft leading-relaxed">
               2020년대 이후 지어진 신축 건물들을 나타냅니다. 무신사와 같은 대형 업체의 단일 용도 건물이나 복합 용도로 활용되는 작은 필지의 신축 건물이 이에 해당합니다. 주거 기능은 거의 없으며, 주로 카페, 사무실 등 상업화된 시설이 밀집해 있습니다.
             </p>
           </div>
-          <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-indigo)" }}>
-            <div className="font-display text-base text-indigo flex items-center gap-2">
-              <span className="w-3 h-3 rounded-full bg-indigo inline-block"></span>
+          <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-historic)" }}>
+            <div className="font-display text-base flex items-center gap-2" style={{ color: "var(--color-historic)" }}>
+              <span className="w-3 h-3 rounded-full inline-block" style={{ backgroundColor: "var(--color-historic)" }}></span>
               진한 파랑색 (전통 노후 건물군)
             </div>
             <p className="mt-2 text-ink-soft leading-relaxed">

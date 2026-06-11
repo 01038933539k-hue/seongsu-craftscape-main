@@ -24,11 +24,11 @@ const stackByFloor = [
 ];
 
 const useColors: Record<string, string> = {
-  상업: "var(--color-ochre)",
-  제조: "var(--color-violet)",
-  업무: "var(--color-cobalt)",
-  주거: "var(--color-indigo)",
-  기타: "#9ca3af",
+  상업: "var(--color-use-commercial)",
+  제조: "var(--color-use-manufacturing)",
+  업무: "var(--color-use-office)",
+  주거: "var(--color-use-residential)",
+  기타: "var(--color-use-temporary)",
 };
 
 const composites = [
@@ -62,10 +62,10 @@ function Floors() {
       <section className="container-prose pb-16">
         <div className="grid md:grid-cols-4 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
           {[
-            ["저층부", "상업", "var(--color-ochre)", "1F 도로면 — 카페·매장·쇼룸"],
-            ["중층부", "제조", "var(--color-violet)", "2-3F — 작업장·생산"],
-            ["상층부 A", "업무", "var(--color-cobalt)", "4F+ — 스튜디오·사무실"],
-            ["상층부 B", "주거", "var(--color-indigo)", "4F+ — 다세대·임대"],
+            ["저층부", "상업", "var(--color-use-commercial)", "1F 도로면 — 카페·매장·쇼룸"],
+            ["중층부", "제조", "var(--color-use-manufacturing)", "2-3F — 작업장·생산"],
+            ["상층부 A", "업무", "var(--color-use-office)", "4F+ — 스튜디오·사무실"],
+            ["상층부 B", "주거", "var(--color-use-residential)", "4F+ — 다세대·임대"],
           ].map(([z, label, color, desc]) => (
             <div key={z} className="bg-card p-6">
               <div className="eyebrow">{z}</div>
@@ -92,6 +92,9 @@ function Floors() {
               ))}
             </BarChart>
           </ResponsiveContainer>
+        </div>
+        <div className="mt-2 text-[10px] text-ink-soft opacity-70 text-right">
+          정보출처: 국토교통부 건축물대장, 국토정보플랫폼
         </div>
       </section>
 

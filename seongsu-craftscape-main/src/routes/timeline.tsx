@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Shell";
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid, Cell } from "recharts";
 
 export const Route = createFileRoute("/timeline")({
   head: () => ({
@@ -104,12 +104,19 @@ function Timeline() {
               <XAxis dataKey="decade" stroke="var(--color-ink-soft)" fontSize={12} />
               <YAxis stroke="var(--color-ink-soft)" fontSize={12} />
               <Tooltip contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-rule)", borderRadius: 6 }} />
-              <Bar dataKey="count" fill="var(--color-violet)" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="count" radius={[4, 4, 0, 0]}>
+                {buildYears.map((entry, index) => (
+                  <Cell 
+                    key={`cell-${index}`} 
+                    fill={entry.decade === "2020s" ? "var(--color-recent)" : "var(--color-historic)"} 
+                  />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <div className="mt-4 text-xs text-ink-soft font-mono">
-          자료: 국토교통부 건축물대장 표제부 · 국토정보플랫폼 항공사진(1977, 2016, 2020, 2022)
+        <div className="mt-2 text-[10px] text-ink-soft opacity-70 text-right">
+          정보출처: 국토교통부 건축물대장, 국토정보플랫폼
         </div>
       </section>
     </>

@@ -50,6 +50,15 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
+  --color-recent: var(--recent);
+  --color-historic: var(--historic);
+  
+  --color-use-residential: var(--use-residential);
+  --color-use-manufacturing: var(--use-manufacturing);
+  --color-use-office: var(--use-office);
+  --color-use-fnb: var(--use-fnb);
+  --color-use-commercial: var(--use-commercial);
+  --color-use-temporary: var(--use-temporary);
 }
 
 :root {
@@ -57,14 +66,24 @@
 
   --paper: #F8F9FA;
   --paper-warm: #FFFFFF;
-  --ink: #212529;
-  --ink-soft: #495057;
-  --rule: #DEE2E6;
+  --ink: #1F2937;
+  --ink-soft: #4B5563;
+  --rule: #E5E7EB;
 
   --indigo: #1B263B; /* Deep Navy */
   --violet: #334155; /* Slate Charcoal */
   --cobalt: #0D3B66;
   --ochre: #F4A261;
+
+  --recent: #74C0FC;
+  --historic: #1E3A8A;
+  
+  --use-residential: #FFD200;
+  --use-manufacturing: #9333EA;
+  --use-office: #3B82F6;
+  --use-fnb: #F97316;
+  --use-commercial: #E52521;
+  --use-temporary: #9CA3AF;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -97,12 +116,22 @@
   --paper: #121212;
   --paper-warm: #1E1E1E;
   --ink: #E9ECEF;
-  --ink-soft: #ADB5BD;
+  --ink-soft: #9CA3AF;
   --rule: #343A40;
 
   --indigo: #3A506B;
   --violet: #64748B;
   
+  --recent: #74C0FC;
+  --historic: #1E3A8A;
+  
+  --use-residential: #FFD200;
+  --use-manufacturing: #A855F7;
+  --use-office: #60A5FA;
+  --use-fnb: #FB923C;
+  --use-commercial: #F87171;
+  --use-temporary: #9CA3AF;
+
   --background: var(--paper);
   --foreground: var(--ink);
   --card: #1E1E1E;
