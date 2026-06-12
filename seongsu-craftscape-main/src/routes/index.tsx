@@ -1,14 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/seongsu_street.png";
-import { ArrowRight, MapPin, BookOpen } from "lucide-react";
+import { ArrowRight, Factory, Layers, Building2, PlayCircle } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "성수동 도시제조업 현황과 시사점" },
-      { name: "description", content: "제조업의 분포, 공간구조, 그리고 도시 변화의 의미. 성수이로와 이면도로 일대를 조사한 캡스톤 연구." },
-      { property: "og:title", content: "성수동 도시제조업 디지털 아카이브" },
-      { property: "og:image", content: heroImg },
+      { title: "성수동 도시제조업 디지털 아카이브" },
+      { name: "description", content: "A new standard of urban manufacturing, Seongsu." },
     ],
   }),
   component: Home,
@@ -23,152 +20,212 @@ const questions = [
 
 function Home() {
   return (
-    <>
-      {/* HERO */}
-      <section className="relative">
-        <div className="relative h-[88vh] min-h-[640px] w-full overflow-hidden">
+    <main className="w-full relative overflow-hidden -mt-20">
+      
+      {/* 1. NEW PREMIUM HERO SECTION */}
+      <section className="relative w-full bg-black min-h-screen flex flex-col">
+        <div className="absolute inset-0 z-0">
           <img
-            src={heroImg}
-            alt="성수동 공장과 카페가 공존하는 거리"
-            className="absolute inset-0 h-full w-full object-cover"
-            width={1920}
-            height={1280}
+            src="/hero-bg.jpg"
+            alt="Seongsu cityscape at dusk"
+            className="w-full h-full object-cover object-center opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b1a40]/90 via-[#0b1a40]/60 to-transparent mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b1a40] via-transparent to-transparent opacity-90" />
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
 
-          <div className="relative h-full container-prose flex flex-col justify-end pb-20">
-            <div className="max-w-3xl">
-              <div className="flex flex-wrap items-center gap-3 mb-6">
-                <span className="chip">Capstone · 2026</span>
-                <span className="chip">도시계획학과</span>
-                <span className="chip">4조</span>
+        <div className="relative z-10 container-prose h-full min-h-screen flex flex-col justify-center pt-32 pb-20">
+          
+          <div className="max-w-4xl mt-auto mb-16">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="text-ochre uppercase tracking-[0.2em] font-mono text-xs md:text-sm font-semibold">
+                Connecting Industry, Creating Future
+              </span>
+            </div>
+
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-white font-medium tracking-tight mb-8">
+              A new standard <br className="hidden md:block" />
+              of urban manufacturing, <br />
+              <span className="text-ochre italic">Seongsu</span>
+            </h1>
+
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl font-light leading-relaxed mb-10">
+              성수동 도시제조업 아카이브. 우리는 성수이로 일대의 제조업 분포와 
+              <br className="hidden md:block" /> 공간구조를 기록하여 도시의 미래를 설계합니다.
+            </p>
+
+            <Link
+              to="/timeline"
+              className="inline-flex items-center gap-3 bg-ochre hover:bg-[#b08b61] text-[#0b1a40] px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              View Archive <ArrowRight size={18} />
+            </Link>
+          </div>
+
+          <div className="mt-auto border-t border-white/20 pt-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 mb-16">
+              <div>
+                <div className="text-3xl md:text-4xl font-serif text-white mb-2">40<span className="text-ochre">+</span></div>
+                <div className="text-xs md:text-sm text-white/70 font-mono uppercase tracking-wider">Years of<br/>History</div>
               </div>
-              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.98] text-ink">
-                성수동 도시제조업
-                <br />
-                <span className="text-violet italic">현황과 시사점</span>
-              </h1>
-              <p className="mt-6 text-lg md:text-xl text-ink-soft max-w-2xl leading-relaxed">
-                제조업의 분포, 공간구조, 그리고 도시 변화의 의미.
-                <br />
-                성수이로와 이면도로 일대를 걸으며 기록한 아카이브.
-              </p>
-              <div className="mt-4 font-mono text-xs md:text-sm text-ink-soft/80 tracking-wider">
-                <span className="text-violet mr-2">TEAM 04</span>
-                이기훈 · 박준경 · 이세연 · 김은채 · 김재은
+              <div>
+                <div className="text-3xl md:text-4xl font-serif text-white mb-2">240<span className="text-ochre">+</span></div>
+                <div className="text-xs md:text-sm text-white/70 font-mono uppercase tracking-wider">Surveyed<br/>Buildings</div>
               </div>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Link
-                  to="/timeline"
-                  className="group inline-flex items-center gap-2 rounded-md bg-indigo px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-violet transition-colors"
-                >
-                  <BookOpen size={16} /> 연구 보기
-                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  to="/map"
-                  className="inline-flex items-center gap-2 rounded-md border border-ink/20 bg-card px-5 py-3 text-sm font-medium hover:border-violet hover:text-violet transition-colors"
-                >
-                  <MapPin size={16} /> 지도 탐색
-                </Link>
+              <div>
+                <div className="text-3xl md:text-4xl font-serif text-white mb-2">15<span className="text-ochre">+</span></div>
+                <div className="text-xs md:text-sm text-white/70 font-mono uppercase tracking-wider">Industry<br/>Types</div>
+              </div>
+              <div>
+                <div className="text-3xl md:text-4xl font-serif text-white mb-2">1.2<span className="text-white text-2xl">km</span><span className="text-ochre">+</span></div>
+                <div className="text-xs md:text-sm text-white/70 font-mono uppercase tracking-wider">Target Street<br/>Length</div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-12 md:gap-16 items-start relative">
+              <div className="group">
+                <Factory className="text-ochre mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
+                <h3 className="text-white font-display text-xl mb-3">Urban Manufacturing</h3>
+                <p className="text-white/60 text-sm leading-relaxed font-light">
+                  Supporting Seongsu's manufacturing ecosystem and sustainable growth through spatial analysis.
+                </p>
+              </div>
+              <div className="group">
+                <Layers className="text-ochre mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
+                <h3 className="text-white font-display text-xl mb-3">Spatial Entropy</h3>
+                <p className="text-white/60 text-sm leading-relaxed font-light">
+                  Fostering innovation by tracking the mixed-use development and street-level vibrancy.
+                </p>
+              </div>
+              <div className="group">
+                <Building2 className="text-ochre mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
+                <h3 className="text-white font-display text-xl mb-3">Vertical Distribution</h3>
+                <p className="text-white/60 text-sm leading-relaxed font-light">
+                  Creating flexible perspectives by visualizing the 3D distribution of industries.
+                </p>
+              </div>
+              
+              <div className="hidden lg:flex absolute right-0 bottom-0 items-center gap-3 cursor-pointer group">
+                <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover:border-ochre group-hover:text-ochre transition-colors">
+                  <PlayCircle className="text-white group-hover:text-ochre transition-colors w-5 h-5" />
+                </div>
+                <span className="text-white text-sm font-medium tracking-wide">Watch Video</span>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* metadata strip */}
-        <div className="rule-top border-b border-rule bg-card">
-          <div className="container-prose grid grid-cols-2 md:grid-cols-4 divide-x divide-rule">
-            {[
-              ["대상지", "성수이로 일원"],
-              ["조사 건물", "240여 동"],
-              ["제조 업체", "15개 표본"],
-              ["분석 지표", "엔트로피 · 층별 용도"],
-            ].map(([k, v]) => (
-              <div key={k} className="px-4 py-5">
-                <div className="eyebrow">{k}</div>
-                <div className="mt-1 font-display text-lg md:text-xl">{v}</div>
-              </div>
-            ))}
+      {/* 2. PROJECT INTRO (Restored from original) */}
+      <section className="bg-background">
+        <div className="container-prose py-24 md:py-32 grid md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <div className="eyebrow mb-3 text-primary">프로젝트 소개</div>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight text-ink">
+              제조업이라는 렌즈로 본 성수동
+            </h2>
+          </div>
+          <div className="md:col-span-8 space-y-6 text-ink-soft leading-relaxed">
+            <p className="text-lg text-ink font-medium">
+              성수동은 카페와 팝업의 도시로 알려져 있지만, 골목 한 칸만 들어가면 여전히
+              인쇄기가 돌아가고 가죽이 마름질되는 도시이기도 하다.
+            </p>
+            <p>
+              이 아카이브는 도시계획학과 캡스톤 연구로, 성수이로와 그 이면도로를 보행
+              조사하며 수집한 제조업 분포 · 건축 연도 · 층별 용도 · 가로별 용도 혼합도를
+              기록한다. 결과는 단일 보고서가 아닌, 지도와 그래프, 사진과 텍스트가
+              얽힌 인터랙티브 전시로 구성된다.
+            </p>
+            <p>
+              대상지는 동측의 대형 필지(지식산업센터 군)와 서측의 소규모 필지 골목
+              구조가 만나는 접경지대이며, 이 비대칭이 성수의 제조업 잔존 방식을 결정한다.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* PROJECT INTRO */}
-      <section className="container-prose py-24 md:py-32 grid md:grid-cols-12 gap-10">
-        <div className="md:col-span-4">
-          <div className="eyebrow mb-3">프로젝트 소개</div>
-          <h2 className="font-display text-3xl md:text-4xl leading-tight">
-            제조업이라는 렌즈로 본 성수동
-          </h2>
-        </div>
-        <div className="md:col-span-8 space-y-6 text-ink-soft leading-relaxed">
-          <p className="text-lg text-ink">
-            성수동은 카페와 팝업의 도시로 알려져 있지만, 골목 한 칸만 들어가면 여전히
-            인쇄기가 돌아가고 가죽이 마름질되는 도시이기도 하다.
-          </p>
-          <p>
-            이 아카이브는 도시계획학과 캡스톤 연구로, 성수이로와 그 이면도로를 보행
-            조사하며 수집한 제조업 분포 · 건축 연도 · 층별 용도 · 가로별 용도 혼합도를
-            기록한다. 결과는 단일 보고서가 아닌, 지도와 그래프, 사진과 텍스트가
-            얽힌 인터랙티브 전시로 구성된다.
-          </p>
-          <p>
-            대상지는 동측의 대형 필지(지식산업센터 군)와 서측의 소규모 필지 골목
-            구조가 만나는 접경지대이며, 이 비대칭이 성수의 제조업 잔존 방식을 결정한다.
-          </p>
+      {/* 3. 3D VIEWER MAP (Restored from original) */}
+      <section className="bg-muted/30 border-y border-rule">
+        <div className="container-prose py-24 md:py-32">
+          <div className="eyebrow mb-3 text-primary">공간 탐색</div>
+          <h2 className="font-serif text-3xl md:text-4xl mb-12 text-ink">성수동 3D 뷰어</h2>
+          <div className="grid md:grid-cols-[1fr_280px] gap-6 items-start">
+            <div className="relative w-full h-[78vh] min-h-[560px] rounded-xl overflow-hidden border border-rule/50 bg-card shadow-sm">
+              <iframe
+                src="/seongsu-3d-viewer.html"
+                title="성수동 360도 뷰어"
+                className="absolute inset-0 w-full h-full"
+                loading="lazy"
+              />
+            </div>
+            <aside className="space-y-4">
+              <div className="bg-card border border-rule/50 rounded-xl p-6 text-sm text-ink-soft leading-relaxed shadow-sm">
+                <div className="eyebrow mb-2 text-primary">360도 탐색</div>
+                마우스를 드래그하여 시점을 이동하고, 스크롤을 통해 확대/축소할 수 있습니다.
+              </div>
+              <div className="bg-card border border-rule/50 rounded-xl p-6 text-sm text-ink-soft leading-relaxed shadow-sm">
+                <div className="eyebrow mb-2 text-primary">입체적 분석</div>
+                성수동 노후 건축물들의 입체적인 형태와 배치를 탐색하며, 도시제조업의 공간적 기반을 확인합니다.
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 
-      {/* QUESTIONS */}
-      <section className="rule-top">
+      {/* 4. QUESTIONS (Restored from original) */}
+      <section className="bg-primary text-white">
         <div className="container-prose py-24 md:py-32">
-          <div className="eyebrow mb-3">핵심 질문</div>
-          <h2 className="font-display text-3xl md:text-5xl max-w-3xl leading-tight">
+          <div className="eyebrow mb-3 text-ochre">핵심 질문</div>
+          <h2 className="font-serif text-3xl md:text-5xl max-w-3xl leading-tight">
             우리는 네 가지 질문을 들고 거리로 나갔다.
           </h2>
-          <div className="mt-14 grid md:grid-cols-2 gap-px bg-rule border border-rule">
+          <div className="mt-16 grid md:grid-cols-2 gap-4">
             {questions.map((q, i) => (
-              <div key={i} className="bg-card p-8 md:p-10 flex gap-6 items-start">
-                <div className="font-display text-3xl text-violet">0{i + 1}</div>
-                <div className="font-display text-xl md:text-2xl leading-snug">{q}</div>
+              <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-10 flex gap-6 items-start hover:bg-white/10 transition-colors">
+                <div className="font-serif text-4xl text-ochre opacity-80">0{i + 1}</div>
+                <div className="font-display text-xl md:text-2xl leading-snug font-medium pt-1">{q}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CHAPTER INDEX */}
-      <section className="container-prose py-24 md:py-32">
-        <div className="eyebrow mb-3">목차</div>
-        <h2 className="font-display text-3xl md:text-5xl">여덟 개의 장</h2>
-        <div className="mt-12 divide-y divide-rule border-y border-rule">
-          {[
-            ["01", "시계열 변화 분석", "성수동은 어떻게 변화했는가?", "/timeline"],
-            ["02", "제조업 분포 지도", "어디에, 무엇이 남아 있는가", "/map"],
-            ["03", "층별 용도 분석", "수직적으로 혼합되는 도시", "/floors"],
-            ["04", "엔트로피 분석", "얼마나 복합적인 공간인가", "/entropy"],
-            ["05", "동서 비교", "같은 성수동, 다른 도시 구조", "/east-west"],
-            ["06", "주요 제조업", "성수동은 무엇을 만드는가", "/industries"],
-            ["07", "시사점", "성수동 제조업의 미래", "/implications"],
-            ["08", "데이터베이스", "225개 업체의 실측 데이터 목록", "/database"],
-          ].map(([n, t, s, to]) => (
-            <Link
-              key={n}
-              to={to}
-              className="group grid grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-center py-6 md:py-8 hover:bg-muted/50 -mx-4 px-4 transition-colors"
-            >
-              <div className="font-mono text-sm text-ink-soft w-10">{n}</div>
-              <div>
-                <div className="font-display text-xl md:text-2xl group-hover:text-violet transition-colors">{t}</div>
-                <div className="text-sm text-ink-soft mt-1">{s}</div>
-              </div>
-              <ArrowRight className="text-ink-soft group-hover:text-violet group-hover:translate-x-1 transition-all" size={18} />
-            </Link>
-          ))}
+      {/* 5. CHAPTER INDEX (Restored from original) */}
+      <section className="bg-background">
+        <div className="container-prose py-24 md:py-32">
+          <div className="eyebrow mb-3 text-primary">목차</div>
+          <h2 className="font-serif text-3xl md:text-5xl text-ink">여덟 개의 장</h2>
+          <div className="mt-12 divide-y divide-rule border-y border-rule">
+            {[
+              ["01", "대상지 전체 시계열 분석", "성수동은 어떻게 변화했는가?", "/timeline"],
+              ["02", "동서 비교분석", "같은 성수동, 다른 도시 구조", "/east-west"],
+              ["03", "가로별 분석", "얼마나 복합적인 공간인가", "/entropy"],
+              ["04", "층별 건물별 분석", "수직적으로 혼합되는 도시", "/floors"],
+              ["05", "업종분석", "성수동은 무엇을 만드는가", "/industries"],
+              ["06", "지식산업센터", "지식산업센터와 공간 분포", "/map"],
+              ["07", "최종결론", "성수동 제조업의 미래", "/implications"],
+              ["08", "데이터베이스", "225개 업체의 실측 데이터 목록", "/database"],
+            ].map(([n, t, s, to]) => (
+              <Link
+                key={n}
+                to={to}
+                className="group grid grid-cols-[auto_1fr_auto] gap-6 md:gap-10 items-center py-6 md:py-8 hover:bg-muted/50 -mx-4 px-4 transition-colors rounded-lg"
+              >
+                <div className="font-mono text-sm text-ink-soft w-10 font-medium">{n}</div>
+                <div>
+                  <div className="font-display text-xl md:text-2xl text-ink group-hover:text-primary font-semibold transition-colors">{t}</div>
+                  <div className="text-sm text-ink-soft mt-1">{s}</div>
+                </div>
+                <div className="w-10 h-10 rounded-full border border-rule flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all">
+                  <ArrowRight className="text-ink-soft group-hover:text-white transition-colors" size={18} />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
-    </>
+
+    </main>
   );
 }

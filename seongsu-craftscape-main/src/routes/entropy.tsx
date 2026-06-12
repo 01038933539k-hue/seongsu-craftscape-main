@@ -24,7 +24,7 @@ import legendStreet from "@/assets/entropy/legend-street.png";
 export const Route = createFileRoute("/entropy")({
   head: () => ({
     meta: [
-      { title: "04 엔트로피 분석 · 성수동 아카이브" },
+      { title: "03 가로별 분석 · 성수동 아카이브" },
       { name: "description", content: "엔트로피 지수로 측정한 성수동 가로별 용도 혼합도와 상권 변화." },
     ],
   }),
@@ -57,15 +57,60 @@ const market = [
   { q: "26 1Q", 개업률: 2.6, 폐업률: 2.3 },
 ];
 
+const mapLegend: { color: string; label: string }[] = [
+  { color: "#7c3aed", label: "제조업" },
+  { color: "#0ea5e9", label: "상업·서비스" },
+  { color: "#d97706", label: "F&B·카페" },
+  { color: "#10b981", label: "지식산업센터" },
+  { color: "#64748b", label: "기타·주거" },
+];
+
 function Entropy() {
   return (
     <>
       <PageHeader
-        index="04"
-        eyebrow="Chapter 04 · Entropy"
+        index="03"
+        eyebrow="Chapter 03 · Entropy"
         title="얼마나 복합적인 공간인가"
         subtitle="가로별 용도 혼합도를 엔트로피 지수로 계량했다. 값이 클수록 다양한 용도가 균등하게 섞여 있다는 뜻이다."
       />
+
+      <section className="container-prose pb-16">
+        <h2 className="font-display text-2xl md:text-3xl mb-6">건축물 폴리곤 및 분포도</h2>
+        <div className="grid md:grid-cols-[1fr_280px] gap-6 items-start">
+          <div className="relative w-full h-[78vh] min-h-[560px] rounded-lg overflow-hidden border border-rule bg-card">
+            <iframe
+              src="/seongsu-map.html"
+              title="성수동 대화형 지도"
+              className="absolute inset-0 w-full h-full"
+              loading="lazy"
+            />
+          </div>
+          <aside className="space-y-4">
+            <div className="bg-card border border-rule rounded-lg p-5">
+              <div className="eyebrow mb-3">범례</div>
+              <ul className="space-y-2 text-sm">
+                {mapLegend.map((l) => (
+                  <li key={l.label} className="flex items-center gap-2.5">
+                    <span className="h-2.5 w-2.5 rounded-full" style={{ background: l.color }} />
+                    {l.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-card border border-rule rounded-lg p-5 text-sm text-ink-soft leading-relaxed">
+              <div className="eyebrow mb-2 text-ink">조사 표본</div>
+              225개 상점 · 약 60개 건물.
+              주소는 도로명 기준으로 표준화하여 동일 건물의 층별 업체를 묶어 팝업으로 표시한다.
+            </div>
+            <div className="bg-card border border-rule rounded-lg p-5 text-sm text-ink-soft leading-relaxed">
+              <div className="eyebrow mb-2 text-ink">발견</div>
+              제조업은 지식산업센터(성수이로 51 등)에 수직으로 집적되어 있고,
+              가로변 노후 건물에서는 1층 F&B · 상층부 사무 또는 주거의 수직 혼합이 일반적이다.
+            </div>
+          </aside>
+        </div>
+      </section>
 
       <section className="container-prose pb-16">
         <div className="bg-card border border-rule rounded-lg p-6 md:p-10">

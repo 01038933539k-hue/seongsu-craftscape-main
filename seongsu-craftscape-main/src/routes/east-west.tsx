@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/site/Shell";
 export const Route = createFileRoute("/east-west")({
   head: () => ({
     meta: [
-      { title: "05 동서 비교 · 성수동 아카이브" },
+      { title: "02 동서 비교분석 · 성수동 아카이브" },
       { name: "description", content: "같은 성수동, 다른 도시 구조 — 동측 대형 필지와 서측 골목길의 비대칭." },
     ],
   }),
@@ -23,7 +23,7 @@ const compare = [
 function EastWest() {
   return (
     <>
-      <PageHeader index="05" eyebrow="Chapter 05 · East / West" title="같은 성수동, 다른 도시 구조" subtitle="성수이로를 가운데 두고 동측과 서측은 전혀 다른 도시 조직을 가지고 있다. 필지 크기 하나가 건물 형태, 업종, 보행 경험까지 결정한다." />
+      <PageHeader index="02" eyebrow="Chapter 02 · East / West" title="같은 성수동, 다른 도시 구조" subtitle="성수이로를 가운데 두고 동측과 서측은 전혀 다른 도시 조직을 가지고 있다. 필지 크기 하나가 건물 형태, 업종, 보행 경험까지 결정한다." />
 
       <section className="container-prose pb-16">
         <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule rounded-lg overflow-hidden">

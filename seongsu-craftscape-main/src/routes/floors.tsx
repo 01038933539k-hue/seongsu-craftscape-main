@@ -7,7 +7,7 @@ import floorsSectionImg from "../assets/floors-section.png";
 export const Route = createFileRoute("/floors")({
   head: () => ({
     meta: [
-      { title: "03 층별 용도 분석 · 성수동 아카이브" },
+      { title: "04 층별 건물별 분석 · 성수동 아카이브" },
       { name: "description", content: "건물 내부에서 제조업, 상업, 업무, 주거가 층별로 공존하는 수직 혼합 구조 분석." },
     ],
   }),
@@ -57,7 +57,7 @@ const composites = [
 function Floors() {
   return (
     <>
-      <PageHeader index="03" eyebrow="Chapter 03 · Vertical Mix" title="수직적으로 혼합되는 도시" subtitle="성수동은 평면이 아니라 단면으로 읽어야 한다. 한 건물 안에서 제조 · 상업 · 업무 · 주거가 층을 나눠 동시에 진행된다." />
+      <PageHeader index="04" eyebrow="Chapter 04 · Vertical Mix" title="수직적으로 혼합되는 도시" subtitle="성수동은 평면이 아니라 단면으로 읽어야 한다. 한 건물 안에서 제조 · 상업 · 업무 · 주거가 층을 나눠 동시에 진행된다." />
 
       <section className="container-prose pb-16">
         <div className="grid md:grid-cols-4 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
@@ -148,6 +148,19 @@ function Floors() {
         <div className="eyebrow mb-3">대표 수직 혼합 사례 — 6개 표본 블록</div>
         <h2 className="font-display text-2xl md:text-3xl mb-8">한 건물, 네 개의 일</h2>
         
+        {/* ISOMETRIC ILLUSTRATION */}
+        <div className="bg-white border-2 border-rule rounded-2xl shadow-sm mb-12 overflow-hidden flex flex-col relative group">
+          <img 
+            src="/isometric-building.jpg" 
+            alt="성수동 2가 309-126 아이소메트릭 일러스트레이션" 
+            className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700 ease-in-out" 
+          />
+          <div className="absolute bottom-6 right-6 pointer-events-none bg-white/90 px-4 py-3 rounded-xl backdrop-blur-md border border-rule/50 shadow-lg flex flex-col items-end">
+            <h3 className="font-serif text-2xl text-ink">성수동 2가 309-126</h3>
+            <p className="text-sm text-ink-soft mt-1 font-mono tracking-wide">ISOMETRIC CROSS-SECTION</p>
+          </div>
+        </div>
+
         <div className="bg-card border border-rule rounded-lg p-6 overflow-hidden flex flex-col items-center mb-8">
           <img 
             src={floorsSectionImg} 

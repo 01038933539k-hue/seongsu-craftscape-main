@@ -1,0 +1,50 @@
+                // 층수 기준 오름차순 정렬
+                tenants.sort(function(a, b) {
+                    return parseInt(a.floor) - parseInt(b.floor);
+                });
+
+                // 팝업 내부 HTML 동적 렌더링
+                var popupHtml = `<div class="custom-popup" style="width:260px;">`;
+                popupHtml += `<div class="popup-building-title">건물 입점 현황</div>`;
+                popupHtml += `<p style="font-size:11px; color:#718096; margin-top:-4px; margin-bottom:8px;">${addr}</p>`;
+
+                if (tenants.length > 0) {
+                    tenants.forEach(function(t) {
+                        popupHtml += `
+                            <div class="tenant-item">
+                                <span class="floor-badge">${t.floor}F</span>
+                                <b>${t.name}</b>
+                                <span class="sector-badge">${t.sector}</span>
+                            </div>`;
+                    });
+                } else {
+                    popupHtml += `<p style="font-size:12px; color:#a0aec0; text-align:center;">입점 데이터가 없습니다.</p>`;
+                }
+                popupHtml += `</div>`;
+
+                layer.bindPopup(popupHtml, { closeButton: true });
+
+                // 마우스 오버 시 하이라이트 효과
+                layer.on({
+                    mouseover: function(e) {
+                        var l = e.target;
+                        l.setStyle({ fillOpacity: 0.8, weight: 2.5 });
+                    },
+                    mouseout: function(e) {
+                        var l = e.target;
+                        var rawAddr = l.feature.properties.주소;
+                        var addr = normalizeAddress(rawAddr);
+                        var hasData = buildingGroup[addr] && buildingGroup[addr].length > 0;
+                        l.setStyle({ 
+                            fillOpacity: 0.6, 
+                            weight: 1.5,
+                            fillColor: hasData ? "#2B6CB0" : "#CBD5E0"
+                        });
+                    }
+                });
+            }
+        }).addTo(map);
+
+    </script>
+</body>
+</html>

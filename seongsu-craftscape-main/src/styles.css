@@ -8,6 +8,7 @@
 @theme inline {
   --font-display: "Pretendard Variable", "Pretendard", "Inter", system-ui, sans-serif;
   --font-sans: "Pretendard Variable", "Pretendard", "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Noto Serif KR", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -64,19 +65,20 @@
 :root {
   --radius: 0.5rem;
 
-  --paper: #F8F9FA;
-  --paper-warm: #FFFFFF;
-  --ink: #1F2937;
-  --ink-soft: #4B5563;
-  --rule: #E5E7EB;
+  /* Color Palette: 群青に眠る (Sleeping in Ultramarine) */
+  --paper: #fcedd3; /* Light Cream */
+  --paper-warm: #fcf4e8;
+  --ink: #102a6b; /* Silent Navy */
+  --ink-soft: #015185; /* Blue Current */
+  --rule: #5990c0; /* Dusty Blue (lightened for borders) */
 
-  --indigo: #1B263B; /* Deep Navy */
-  --violet: #334155; /* Slate Charcoal */
-  --cobalt: #0D3B66;
-  --ochre: #F4A261;
+  --indigo: #102a6b; /* Silent Navy */
+  --violet: #015185; /* Blue Current */
+  --cobalt: #5990c0; /* Dusty Blue */
+  --ochre: #cea273; /* Sandy Amber */
 
-  --recent: #74C0FC;
-  --historic: #1E3A8A;
+  --recent: #5990c0;
+  --historic: #102a6b;
   
   --use-residential: #FFD200;
   --use-manufacturing: #9333EA;
@@ -87,43 +89,43 @@
 
   --background: var(--paper);
   --foreground: var(--ink);
-  --card: #FFFFFF;
+  --card: #fdf5e6;
   --card-foreground: var(--ink);
-  --popover: #FFFFFF;
+  --popover: #fdf5e6;
   --popover-foreground: var(--ink);
   --primary: var(--indigo);
-  --primary-foreground: #FFFFFF;
-  --secondary: #E9ECEF;
+  --primary-foreground: #fcedd3;
+  --secondary: #e6dac3;
   --secondary-foreground: var(--ink);
-  --muted: #F1F3F5;
+  --muted: #f2e2c4;
   --muted-foreground: var(--ink-soft);
-  --accent: var(--violet);
-  --accent-foreground: #FFFFFF;
+  --accent: var(--ochre);
+  --accent-foreground: #102a6b;
   --destructive: #E63946;
   --destructive-foreground: #FFFFFF;
-  --border: var(--rule);
-  --input: var(--rule);
+  --border: rgba(89, 144, 192, 0.3); /* Soft dusty blue border */
+  --input: rgba(89, 144, 192, 0.4);
   --ring: var(--indigo);
 
-  --chart-1: #1B263B;
-  --chart-2: #334155;
-  --chart-3: #0D3B66;
-  --chart-4: #F4A261;
+  --chart-1: #102a6b;
+  --chart-2: #015185;
+  --chart-3: #5990c0;
+  --chart-4: #cea273;
   --chart-5: #E76F51;
 }
 
 .dark {
-  --paper: #121212;
-  --paper-warm: #1E1E1E;
-  --ink: #E9ECEF;
-  --ink-soft: #9CA3AF;
-  --rule: #343A40;
+  --paper: #0b1a40; /* Darker than Silent Navy */
+  --paper-warm: #102a6b; /* Silent Navy */
+  --ink: #fcedd3; /* Light Cream */
+  --ink-soft: #5990c0; /* Dusty Blue */
+  --rule: #015185; /* Blue Current */
 
-  --indigo: #3A506B;
-  --violet: #64748B;
+  --indigo: #5990c0;
+  --violet: #015185;
   
-  --recent: #74C0FC;
-  --historic: #1E3A8A;
+  --recent: #5990c0;
+  --historic: #fcedd3;
   
   --use-residential: #FFD200;
   --use-manufacturing: #A855F7;
@@ -134,18 +136,18 @@
 
   --background: var(--paper);
   --foreground: var(--ink);
-  --card: #1E1E1E;
+  --card: #102a6b;
   --card-foreground: var(--ink);
-  --popover: #1E1E1E;
+  --popover: #102a6b;
   --popover-foreground: var(--ink);
-  --primary: var(--indigo);
-  --primary-foreground: #FFFFFF;
-  --secondary: #212529;
+  --primary: var(--ochre); /* Sandy Amber for high contrast */
+  --primary-foreground: #0b1a40;
+  --secondary: #015185;
   --secondary-foreground: var(--ink);
-  --muted: #212529;
+  --muted: #015185;
   --muted-foreground: var(--ink-soft);
-  --accent: var(--violet);
-  --accent-foreground: #FFFFFF;
+  --accent: var(--ochre);
+  --accent-foreground: #0b1a40;
   --border: var(--rule);
   --input: var(--rule);
 }

@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 export const Route = createFileRoute("/implications")({
   head: () => ({
     meta: [
-      { title: "07 시사점 · 성수동 아카이브" },
+      { title: "07 최종결론 · 성수동 아카이브" },
       { name: "description", content: "성수동 제조업의 미래에 대한 다섯 가지 정책적 · 도시계획적 시사점." },
     ],
   }),
@@ -23,7 +23,7 @@ const messages = [
 function Implications() {
   return (
     <>
-      <PageHeader index="07" eyebrow="Chapter 07 · Implications" title="성수동 제조업의 미래" subtitle="조사 결과를 다섯 개의 메시지로 정리한다. 도시는 사라진 것을 슬퍼하기 전에, 남아 있는 것을 먼저 헤아려야 한다." />
+      <PageHeader index="07" eyebrow="Chapter 07 · Conclusion" title="최종결론: 성수동 제조업의 미래" subtitle="조사 결과를 다섯 개의 메시지로 정리한다. 도시는 사라진 것을 슬퍼하기 전에, 남아 있는 것을 먼저 헤아려야 한다." />
 
       <section className="container-prose pb-24">
         <div className="space-y-px bg-rule border border-rule rounded-lg overflow-hidden">
