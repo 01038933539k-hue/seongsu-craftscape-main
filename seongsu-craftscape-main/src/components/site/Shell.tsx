@@ -53,7 +53,7 @@ export function SiteNav() {
               <Link
                 key={n.to}
                 to={n.to}
-                className={`px-3 py-1.5 text-[13px] font-medium rounded-lg transition-all duration-200 whitespace-nowrap ${
+                className={`px-3 py-2 text-[15px] font-bold rounded-lg transition-all duration-200 whitespace-nowrap ${
                   isActive 
                     ? (isTransparent ? 'text-indigo font-bold bg-white shadow-sm ring-1 ring-black/5' : 'text-indigo font-bold bg-background shadow-sm ring-1 ring-black/5')
                     : (isTransparent ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-ink-soft hover:text-ink hover:bg-background/60')
@@ -85,7 +85,7 @@ export function SiteNav() {
                   key={n.to}
                   to={n.to}
                   onClick={() => setOpen(false)}
-                  className={`px-4 py-4 rounded-lg text-lg font-medium transition-colors flex items-center ${isActive ? 'text-indigo font-bold bg-muted/80 border-l-4 border-indigo pl-3' : 'text-ink hover:bg-muted/50'}`}
+                  className={`px-4 py-4 rounded-lg text-[17px] font-bold transition-colors flex items-center ${isActive ? 'text-indigo font-black bg-muted/80 border-l-4 border-indigo pl-3' : 'text-ink hover:bg-muted/50'}`}
                 >
                   {n.label}
                 </Link>
@@ -157,7 +157,7 @@ export function PageHeader({
             {index}
           </div>
         )}
-        <div className="max-w-3xl">
+        <div className="w-full max-w-5xl">
           <div className="eyebrow mb-4 text-primary font-bold tracking-widest">{eyebrow}</div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-ink tracking-tight">
             {title}

@@ -1,26 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader } from "@/components/site/Shell";
+const fs = require('fs');
 
-export const Route = createFileRoute("/map")({
-  head: () => ({
-    meta: [
-      { title: "06 지식산업센터 · 성수동 아카이브" },
-      { name: "description", content: "성수동 225개 상점의 위치·층별 입주현황·건물 폴리곤을 인터랙티브 지도에서 탐색." },
-    ],
-  }),
-  component: MapPage,
-});
+let mapCode = fs.readFileSync('src/routes/map.tsx', 'utf8');
 
-function MapPage() {
-  return (
-    <>
-      <PageHeader
-        index="06"
-        eyebrow="Chapter 06 · Knowledge Industry Center"
-        title="복합 산업 플랫폼, 지식산업센터"
-        subtitle="성수동의 지식산업센터는 단순한 공장형 아파트가 아닙니다. 제조, 업무, 상업 기능이 유기적으로 결합된 창의·제조 융합 생태계의 핵심으로 진화하고 있습니다."
-      />
-
+const injection = `
       <section className="container-prose py-16">
         <div className="eyebrow mb-3 text-primary">핵심 건물 분석</div>
         <h2 className="font-serif text-3xl md:text-4xl mb-8 text-ink">서울숲 한라 시그마밸리</h2>
@@ -62,6 +44,12 @@ function MapPage() {
         </div>
       </section>
     </>
+`;
 
-  );
+if (mapCode.includes('서울숲 한라 시그마밸리')) {
+    console.log('Already updated map.tsx');
+} else {
+    mapCode = mapCode.replace('    </>', injection);
+    fs.writeFileSync('src/routes/map.tsx', mapCode, 'utf8');
+    console.log('Successfully injected Sigma Valley analysis into map.tsx');
 }

@@ -106,19 +106,14 @@ function Home() {
                 </p>
               </div>
               
-              <div className="hidden lg:flex absolute right-0 bottom-0 items-center gap-3 cursor-pointer group">
-                <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover:border-ochre group-hover:text-ochre transition-colors">
-                  <PlayCircle className="text-white group-hover:text-ochre transition-colors w-5 h-5" />
-                </div>
-                <span className="text-white text-sm font-medium tracking-wide">Watch Video</span>
-              </div>
+              
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. PROJECT INTRO (Restored from original) */}
-      <section className="bg-background">
+      <section className="bg-paper">
         <div className="container-prose py-24 md:py-32 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <div className="eyebrow mb-3 text-primary">프로젝트 소개</div>
@@ -141,6 +136,17 @@ function Home() {
               대상지는 동측의 대형 필지(지식산업센터 군)와 서측의 소규모 필지 골목
               구조가 만나는 접경지대이며, 이 비대칭이 성수의 제조업 잔존 방식을 결정한다.
             </p>
+                      <div className="bg-rule/30 p-6 rounded-xl border border-rule mt-8">
+              <h3 className="font-serif text-xl text-ink mb-4">대상지 및 선정 이유</h3>
+              <p className="mb-4">
+                <strong className="text-primary">대상지 범위:</strong> 서울특별시 성동구 성수 2가 1동 성수이로 및 성수이로 이면 도로 블록 (면적 약 73,690 제곱미터)
+              </p>
+              <ul className="space-y-3 list-disc list-inside">
+                <li><strong className="text-primary">젠트리피케이션:</strong> 카페거리를 기점으로 상업 자본의 침투 방향 추적 가능</li>
+                <li><strong className="text-primary">복합토지 이용:</strong> 공장, 주거지, 상업 시설의 혼재. 상업화와 기존 공업간의 충돌 지역이자 준공업 지역의 특징을 가장 잘 가지고 있는 핵심 구역</li>
+                <li><strong className="text-primary">제조업 생태계:</strong> 낙후된 소규모 공장부터 대규모, 그리고 새로운 형태의 제조업 업체들까지 다층적인 양상이 얽혀 존재</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -192,7 +198,7 @@ function Home() {
       </section>
 
       {/* 5. CHAPTER INDEX (Restored from original) */}
-      <section className="bg-background">
+      <section className="bg-paper">
         <div className="container-prose py-24 md:py-32">
           <div className="eyebrow mb-3 text-primary">목차</div>
           <h2 className="font-serif text-3xl md:text-5xl text-ink">여덟 개의 장</h2>

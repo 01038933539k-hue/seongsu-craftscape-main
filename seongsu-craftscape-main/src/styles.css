@@ -1,3 +1,19 @@
+/* 한국기계연구원 Light */
+@font-face {
+    font-family: 'KoreaInstituteOfMachineryAndMaterials';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+/* 한국기계연구원 Bold */
+@font-face {
+    font-family: 'KoreaInstituteOfMachineryAndMaterials';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -6,8 +22,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Pretendard Variable", "Pretendard", "Inter", system-ui, sans-serif;
-  --font-sans: "Pretendard Variable", "Pretendard", "Inter", system-ui, sans-serif;
+  --font-display: "KoreaInstituteOfMachineryAndMaterials", "Pretendard Variable", "Pretendard", "Inter", system-ui, sans-serif;
+  --font-sans: "KoreaInstituteOfMachineryAndMaterials", "Pretendard Variable", "Pretendard", "Inter", system-ui, sans-serif;
   --font-serif: "Playfair Display", "Noto Serif KR", serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -87,7 +103,7 @@
   --use-commercial: #E52521;
   --use-temporary: #9CA3AF;
 
-  --background: var(--paper);
+  --background: #f4f4f5;
   --foreground: var(--ink);
   --card: #fdf5e6;
   --card-foreground: var(--ink);
@@ -159,6 +175,8 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    word-break: keep-all;
+    overflow-wrap: break-word;
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     line-height: 1.7;

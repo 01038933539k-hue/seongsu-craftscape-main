@@ -23192,62 +23192,7 @@ f 4216/11342/1 4215/11343/1 4217/11344/1 4218/11345/1 4219/11346/1 4220/11347/1 
         obj.position.sub(center);
         scene.add(obj);
 
-        // --- 명시적인 지우개 UI 추가 ---
-        let isEraserMode = false;
-        const eraserBtn = document.createElement('button');
-        eraserBtn.innerHTML = '🧹 지우개 모드 켜기';
-        eraserBtn.style.cssText = 'position: absolute; top: 20px; right: 20px; z-index: 100; padding: 12px 20px; background: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); font-size: 15px; color: #333; transition: all 0.2s;';
-        document.body.appendChild(eraserBtn);
-
-        eraserBtn.addEventListener('click', () => {
-            isEraserMode = !isEraserMode;
-            if (isEraserMode) {
-                eraserBtn.innerHTML = '✨ 지우개 모드 끄기 (활성화됨)';
-                eraserBtn.style.background = '#ffebee';
-                eraserBtn.style.color = '#d32f2f';
-                document.getElementById('canvas-container').style.cursor = 'crosshair';
-            } else {
-                eraserBtn.innerHTML = '🧹 지우개 모드 켜기';
-                eraserBtn.style.background = 'white';
-                eraserBtn.style.color = '#333';
-                document.getElementById('canvas-container').style.cursor = 'grab';
-            }
-        });
-
-        // Raycaster를 이용한 건물 숨기기 기능
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-
-        // 캡처 페이즈(true)에서 이벤트를 가로채서 OrbitControls보다 먼저 실행
-        renderer.domElement.addEventListener('pointerdown', (event) => {
-            if (!isEraserMode) return;
-            
-            // 지우개 모드일 때는 화면 회전/패닝 방지
-            event.stopPropagation();
-
-            // 마우스 위치 정규화
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-            raycaster.setFromCamera(mouse, camera);
-
-            // 교차 검사
-            const intersects = raycaster.intersectObject(obj, true);
-            if (intersects.length > 0) {
-                const object = intersects[0].object;
-                
-                // 바닥(아스팔트) 제외 여부 검사
-                let mats = Array.isArray(object.material) ? object.material : [object.material];
-                if (mats[0] && mats[0] !== roadMaterial) {
-                    object.visible = false; // 메쉬 숨기기
-                    
-                    // 윤곽선 숨김
-                    object.children.forEach(c => {
-                        if (c.type === 'LineSegments') c.visible = false;
-                    });
-                }
-            }
-        }, true);
+        
 
         // 애니메이션
         function animate() {
