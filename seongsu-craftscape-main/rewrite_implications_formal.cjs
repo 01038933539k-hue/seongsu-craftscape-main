@@ -1,4 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+const fs = require('fs');
+
+const revisedCode = `import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Shell";
 import { ArrowRight } from "lucide-react";
 
@@ -76,3 +78,7 @@ function Implications() {
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/routes/implications.tsx', revisedCode, 'utf8');
+console.log('Successfully updated implications.tsx with formal report-style text.');

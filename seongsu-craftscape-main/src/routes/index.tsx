@@ -55,6 +55,18 @@ function Home() {
               <br className="hidden md:block" /> 공간구조를 기록하여 도시의 미래를 설계합니다.
             </p>
 
+            
+            <div className="bg-white/10 p-6 rounded-xl border border-white/20 mt-10 mb-8 backdrop-blur-md max-w-3xl">
+              <h3 className="font-serif text-xl text-ochre mb-4">대상지 및 선정 이유</h3>
+              <p className="mb-4 text-white/90">
+                <strong className="text-white">대상지 범위:</strong> 서울특별시 성동구 성수 2가 1동 성수이로 및 성수이로 이면 도로 블록 (면적 약 73,690 제곱미터)
+              </p>
+              <ul className="space-y-3 list-disc list-inside text-white/80">
+                <li><strong className="text-white">젠트리피케이션:</strong> 카페거리를 기점으로 상업 자본의 침투 방향 추적 가능</li>
+                <li><strong className="text-white">복합토지 이용:</strong> 공장, 주거지, 상업 시설의 혼재. 상업화와 기존 공업간의 충돌 지역이자 준공업 지역의 특징을 가장 잘 가지고 있는 핵심 구역</li>
+                <li><strong className="text-white">제조업 생태계:</strong> 낙후된 소규모 공장부터 대규모, 그리고 새로운 형태의 제조업 업체들까지 다층적인 양상이 얽혀 존재</li>
+              </ul>
+            </div>
             <Link
               to="/timeline"
               className="inline-flex items-center gap-3 bg-ochre hover:bg-[#b08b61] text-[#0b1a40] px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
@@ -136,18 +148,7 @@ function Home() {
               대상지는 동측의 대형 필지(지식산업센터 군)와 서측의 소규모 필지 골목
               구조가 만나는 접경지대이며, 이 비대칭이 성수의 제조업 잔존 방식을 결정한다.
             </p>
-                      <div className="bg-rule/30 p-6 rounded-xl border border-rule mt-8">
-              <h3 className="font-serif text-xl text-ink mb-4">대상지 및 선정 이유</h3>
-              <p className="mb-4">
-                <strong className="text-primary">대상지 범위:</strong> 서울특별시 성동구 성수 2가 1동 성수이로 및 성수이로 이면 도로 블록 (면적 약 73,690 제곱미터)
-              </p>
-              <ul className="space-y-3 list-disc list-inside">
-                <li><strong className="text-primary">젠트리피케이션:</strong> 카페거리를 기점으로 상업 자본의 침투 방향 추적 가능</li>
-                <li><strong className="text-primary">복합토지 이용:</strong> 공장, 주거지, 상업 시설의 혼재. 상업화와 기존 공업간의 충돌 지역이자 준공업 지역의 특징을 가장 잘 가지고 있는 핵심 구역</li>
-                <li><strong className="text-primary">제조업 생태계:</strong> 낙후된 소규모 공장부터 대규모, 그리고 새로운 형태의 제조업 업체들까지 다층적인 양상이 얽혀 존재</li>
-              </ul>
-            </div>
-          </div>
+                                </div>
         </div>
       </section>
 

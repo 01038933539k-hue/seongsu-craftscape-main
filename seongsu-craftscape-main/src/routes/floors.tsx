@@ -60,6 +60,22 @@ function Floors() {
       <PageHeader index="04" eyebrow="Chapter 04 · Vertical Mix" title="수직적으로 혼합되는 도시" subtitle="성수동은 평면이 아니라 단면으로 읽어야 한다. 한 건물 안에서 제조 · 상업 · 업무 · 주거가 층을 나눠 동시에 진행된다." />
 
       <section className="container-prose pb-16">
+        <div className="eyebrow mb-3 text-primary">층별 단면 비디오 뷰</div>
+        <h2 className="font-serif text-3xl md:text-4xl mb-8 text-ink">성수동의 단면을 생생하게 탐험하다</h2>
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-rule/50 shadow-lg bg-black mb-8">
+          <video 
+            src="/seongsu-video.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            controls
+            className="w-full h-full object-cover"
+          />
+        </div>
+      </section>
+
+      <section className="container-prose pb-16">
         <div className="grid md:grid-cols-4 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
           {[
             ["저층부", "상업", "var(--color-use-commercial)", "1F 도로면 — 카페·매장·쇼룸"],
