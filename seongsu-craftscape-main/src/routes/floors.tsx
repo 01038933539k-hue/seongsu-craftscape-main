@@ -244,6 +244,13 @@ function Floors() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 bg-white border border-rule/50 rounded-2xl p-8 shadow-sm flex flex-col items-center">
+          <img src="/graphs/symbiosis.jpg" alt="노후 대로변 건물의 수직적 공생" className="w-full h-auto max-w-3xl mx-auto" />
+          <p className="mt-6 text-sm text-ink-soft text-center">
+            노후 대로변 건물의 층별 다양한 용도 공존 예시 (지하 빈티지샵, 1층 자동차 정비소, 2층 수제화 샵, 3층 사무실, 4층 주거)
+          </p>
+        </div>
       </section>
 
       <section className="container-prose pb-24">
