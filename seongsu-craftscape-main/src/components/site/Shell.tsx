@@ -46,7 +46,7 @@ export function SiteNav() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className={`hidden lg:flex items-center gap-1 p-1.5 rounded-xl border shadow-inner transition-all ${isTransparent ? 'bg-black/20 border-white/10' : 'bg-muted/60 border-rule/50'}`}>
+        <nav className="hidden lg:flex items-center gap-2 p-1.5 rounded-xl transition-all">
           {nav.map((n) => {
             const isActive = location.pathname === n.to;
             return (
@@ -100,37 +100,10 @@ export function SiteNav() {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-rule bg-muted/30">
-      <div className="container-prose py-16 grid gap-12 md:grid-cols-3 text-sm">
-        <div>
-          <div className="eyebrow mb-3 text-primary">Capstone Project</div>
-          <p className="text-ink-soft leading-relaxed">
-            성수동 도시제조업 디지털 아카이브. 도시계획학과 캡스톤 연구
-            결과물로, 성수이로와 이면도로 일대의 제조업 현황을 기록하고
-            분석합니다.
-          </p>
-        </div>
-        <div>
-          <div className="eyebrow mb-3 text-primary">Research Question</div>
-          <p className="font-display text-[1.1rem] leading-snug text-ink">
-            성수는 소비공간으로만 변화하고 있는가, 아니면 여전히 만드는
-            도시로 기능하고 있는가?
-          </p>
-        </div>
-        <div>
-          <div className="eyebrow mb-3 text-primary">Colophon</div>
-          <ul className="text-ink-soft space-y-2">
-            <li className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-rule"></div>대상지 · 성수이로 일원</li>
-            <li className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-rule"></div>조사기간 · 2026년 전반기</li>
-            <li className="flex items-center gap-2"><div className="w-1 h-1 rounded-full bg-rule"></div>지도 데이터 · OpenStreetMap</li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-rule/50 bg-background/50">
-        <div className="container-prose py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] font-mono uppercase tracking-widest text-ink-soft/70">
-          <span>© 2026 URBAN PLANNING CAPSTONE</span>
-          <span>Seoul · Seongsu-dong</span>
-        </div>
+    <footer className="border-t border-rule/50 bg-background/50">
+      <div className="container-prose py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] font-mono uppercase tracking-widest text-ink-soft/70">
+        <span>© 2026 URBAN PLANNING CAPSTONE</span>
+        <span>Seoul · Seongsu-dong</span>
       </div>
     </footer>
   );
@@ -151,14 +124,14 @@ export function PageHeader({
     <header className="container-prose pt-32 pb-16 md:pt-40 md:pb-20 relative overflow-hidden">
       <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
       
-      <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-12 items-end relative z-10">
+      <div className="flex items-start gap-4 relative z-10 w-full max-w-5xl">
         {index && (
-          <div className="font-display text-7xl md:text-[7rem] text-primary/10 leading-[0.8] tracking-tighter">
+          <div className="font-display text-4xl md:text-5xl text-primary/80 leading-[1] mt-[2px] tracking-tighter">
             {index}
           </div>
         )}
-        <div className="w-full max-w-5xl">
-          <div className="eyebrow mb-4 text-primary font-bold tracking-widest">{eyebrow}</div>
+        <div className="flex-1">
+          <div className="eyebrow mb-4 text-primary font-bold tracking-widest leading-[1]">{eyebrow}</div>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-ink tracking-tight">
             {title}
           </h1>

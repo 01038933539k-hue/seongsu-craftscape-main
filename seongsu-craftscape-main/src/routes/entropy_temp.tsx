@@ -17,7 +17,7 @@ import entropy3dTop from "@/assets/entropy/entropy-3d-top.png";
 import entropy3dEast from "@/assets/entropy/entropy-3d-east.png";
 import legendStreet from "@/assets/entropy/legend-street.png";
 
-export const Route = createFileRoute("/entropy")({
+export const Route = createFileRoute("/entropy_temp")({
   head: () => ({
     meta: [
       { title: "03 가로별 분석 · 성수동 아카이브" },

@@ -9,24 +9,45 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as Timeline_tempRouteImport } from './routes/timeline_temp'
 import { Route as TimelineRouteImport } from './routes/timeline'
+import { Route as Map_tempRouteImport } from './routes/map_temp'
 import { Route as MapRouteImport } from './routes/map'
+import { Route as Industries_tempRouteImport } from './routes/industries_temp'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as ImplicationsRouteImport } from './routes/implications'
+import { Route as Floors_tempRouteImport } from './routes/floors_temp'
 import { Route as FloorsRouteImport } from './routes/floors'
+import { Route as Entropy_tempRouteImport } from './routes/entropy_temp'
 import { Route as EntropyRouteImport } from './routes/entropy'
+import { Route as EastWest_tempRouteImport } from './routes/east-west_temp'
 import { Route as EastWestRouteImport } from './routes/east-west'
 import { Route as DatabaseRouteImport } from './routes/database'
 import { Route as IndexRouteImport } from './routes/index'
 
+const Timeline_tempRoute = Timeline_tempRouteImport.update({
+  id: '/timeline_temp',
+  path: '/timeline_temp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TimelineRoute = TimelineRouteImport.update({
   id: '/timeline',
   path: '/timeline',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Map_tempRoute = Map_tempRouteImport.update({
+  id: '/map_temp',
+  path: '/map_temp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MapRoute = MapRouteImport.update({
   id: '/map',
   path: '/map',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Industries_tempRoute = Industries_tempRouteImport.update({
+  id: '/industries_temp',
+  path: '/industries_temp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -39,14 +60,29 @@ const ImplicationsRoute = ImplicationsRouteImport.update({
   path: '/implications',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Floors_tempRoute = Floors_tempRouteImport.update({
+  id: '/floors_temp',
+  path: '/floors_temp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FloorsRoute = FloorsRouteImport.update({
   id: '/floors',
   path: '/floors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Entropy_tempRoute = Entropy_tempRouteImport.update({
+  id: '/entropy_temp',
+  path: '/entropy_temp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EntropyRoute = EntropyRouteImport.update({
   id: '/entropy',
   path: '/entropy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EastWest_tempRoute = EastWest_tempRouteImport.update({
+  id: '/east-west_temp',
+  path: '/east-west_temp',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EastWestRoute = EastWestRouteImport.update({
@@ -69,35 +105,53 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/database': typeof DatabaseRoute
   '/east-west': typeof EastWestRoute
+  '/east-west_temp': typeof EastWest_tempRoute
   '/entropy': typeof EntropyRoute
+  '/entropy_temp': typeof Entropy_tempRoute
   '/floors': typeof FloorsRoute
+  '/floors_temp': typeof Floors_tempRoute
   '/implications': typeof ImplicationsRoute
   '/industries': typeof IndustriesRoute
+  '/industries_temp': typeof Industries_tempRoute
   '/map': typeof MapRoute
+  '/map_temp': typeof Map_tempRoute
   '/timeline': typeof TimelineRoute
+  '/timeline_temp': typeof Timeline_tempRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/database': typeof DatabaseRoute
   '/east-west': typeof EastWestRoute
+  '/east-west_temp': typeof EastWest_tempRoute
   '/entropy': typeof EntropyRoute
+  '/entropy_temp': typeof Entropy_tempRoute
   '/floors': typeof FloorsRoute
+  '/floors_temp': typeof Floors_tempRoute
   '/implications': typeof ImplicationsRoute
   '/industries': typeof IndustriesRoute
+  '/industries_temp': typeof Industries_tempRoute
   '/map': typeof MapRoute
+  '/map_temp': typeof Map_tempRoute
   '/timeline': typeof TimelineRoute
+  '/timeline_temp': typeof Timeline_tempRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/database': typeof DatabaseRoute
   '/east-west': typeof EastWestRoute
+  '/east-west_temp': typeof EastWest_tempRoute
   '/entropy': typeof EntropyRoute
+  '/entropy_temp': typeof Entropy_tempRoute
   '/floors': typeof FloorsRoute
+  '/floors_temp': typeof Floors_tempRoute
   '/implications': typeof ImplicationsRoute
   '/industries': typeof IndustriesRoute
+  '/industries_temp': typeof Industries_tempRoute
   '/map': typeof MapRoute
+  '/map_temp': typeof Map_tempRoute
   '/timeline': typeof TimelineRoute
+  '/timeline_temp': typeof Timeline_tempRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -105,50 +159,81 @@ export interface FileRouteTypes {
     | '/'
     | '/database'
     | '/east-west'
+    | '/east-west_temp'
     | '/entropy'
+    | '/entropy_temp'
     | '/floors'
+    | '/floors_temp'
     | '/implications'
     | '/industries'
+    | '/industries_temp'
     | '/map'
+    | '/map_temp'
     | '/timeline'
+    | '/timeline_temp'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/database'
     | '/east-west'
+    | '/east-west_temp'
     | '/entropy'
+    | '/entropy_temp'
     | '/floors'
+    | '/floors_temp'
     | '/implications'
     | '/industries'
+    | '/industries_temp'
     | '/map'
+    | '/map_temp'
     | '/timeline'
+    | '/timeline_temp'
   id:
     | '__root__'
     | '/'
     | '/database'
     | '/east-west'
+    | '/east-west_temp'
     | '/entropy'
+    | '/entropy_temp'
     | '/floors'
+    | '/floors_temp'
     | '/implications'
     | '/industries'
+    | '/industries_temp'
     | '/map'
+    | '/map_temp'
     | '/timeline'
+    | '/timeline_temp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DatabaseRoute: typeof DatabaseRoute
   EastWestRoute: typeof EastWestRoute
+  EastWest_tempRoute: typeof EastWest_tempRoute
   EntropyRoute: typeof EntropyRoute
+  Entropy_tempRoute: typeof Entropy_tempRoute
   FloorsRoute: typeof FloorsRoute
+  Floors_tempRoute: typeof Floors_tempRoute
   ImplicationsRoute: typeof ImplicationsRoute
   IndustriesRoute: typeof IndustriesRoute
+  Industries_tempRoute: typeof Industries_tempRoute
   MapRoute: typeof MapRoute
+  Map_tempRoute: typeof Map_tempRoute
   TimelineRoute: typeof TimelineRoute
+  Timeline_tempRoute: typeof Timeline_tempRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/timeline_temp': {
+      id: '/timeline_temp'
+      path: '/timeline_temp'
+      fullPath: '/timeline_temp'
+      preLoaderRoute: typeof Timeline_tempRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/timeline': {
       id: '/timeline'
       path: '/timeline'
@@ -156,11 +241,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TimelineRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/map_temp': {
+      id: '/map_temp'
+      path: '/map_temp'
+      fullPath: '/map_temp'
+      preLoaderRoute: typeof Map_tempRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/map': {
       id: '/map'
       path: '/map'
       fullPath: '/map'
       preLoaderRoute: typeof MapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries_temp': {
+      id: '/industries_temp'
+      path: '/industries_temp'
+      fullPath: '/industries_temp'
+      preLoaderRoute: typeof Industries_tempRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -177,6 +276,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImplicationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/floors_temp': {
+      id: '/floors_temp'
+      path: '/floors_temp'
+      fullPath: '/floors_temp'
+      preLoaderRoute: typeof Floors_tempRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/floors': {
       id: '/floors'
       path: '/floors'
@@ -184,11 +290,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FloorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/entropy_temp': {
+      id: '/entropy_temp'
+      path: '/entropy_temp'
+      fullPath: '/entropy_temp'
+      preLoaderRoute: typeof Entropy_tempRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/entropy': {
       id: '/entropy'
       path: '/entropy'
       fullPath: '/entropy'
       preLoaderRoute: typeof EntropyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/east-west_temp': {
+      id: '/east-west_temp'
+      path: '/east-west_temp'
+      fullPath: '/east-west_temp'
+      preLoaderRoute: typeof EastWest_tempRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/east-west': {
@@ -219,12 +339,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DatabaseRoute: DatabaseRoute,
   EastWestRoute: EastWestRoute,
+  EastWest_tempRoute: EastWest_tempRoute,
   EntropyRoute: EntropyRoute,
+  Entropy_tempRoute: Entropy_tempRoute,
   FloorsRoute: FloorsRoute,
+  Floors_tempRoute: Floors_tempRoute,
   ImplicationsRoute: ImplicationsRoute,
   IndustriesRoute: IndustriesRoute,
+  Industries_tempRoute: Industries_tempRoute,
   MapRoute: MapRoute,
+  Map_tempRoute: Map_tempRoute,
   TimelineRoute: TimelineRoute,
+  Timeline_tempRoute: Timeline_tempRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -18,9 +18,9 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <div className="eyebrow mb-4">404 · Not Found</div>
-        <h1 className="font-display text-5xl text-ink">길을 잃었습니다</h1>
+        <h1 className="font-display text-5xl text-ink">길을 잃었다</h1>
         <p className="mt-3 text-sm text-ink-soft">
-          요청하신 페이지는 아카이브에 존재하지 않습니다.
+          요청한 페이지는 아카이브에 존재하지 않는다.
         </p>
         <Link
           to="/"
@@ -44,7 +44,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <div className="eyebrow mb-4">Error</div>
-        <h1 className="font-display text-3xl text-ink">페이지를 불러오지 못했습니다</h1>
+        <h1 className="font-display text-3xl text-ink">페이지를 불러오지 못했다</h1>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => { router.invalidate(); reset(); }}
@@ -81,8 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Serif+KR:wght@200..900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Noto+Serif+KR:wght@200..900&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" },
     ],
   }),
   shellComponent: RootShell,

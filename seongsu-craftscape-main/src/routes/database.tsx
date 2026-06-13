@@ -35,7 +35,7 @@ function DatabasePage() {
         index="08"
         eyebrow="Chapter 08 · Data Archive"
         title="성수동 데이터베이스"
-        subtitle="조사된 225개 업체의 실측 데이터를 표 형태로 검색하고 탐색할 수 있습니다."
+        subtitle="조사된 225개 업체의 실측 데이터를 표 형태로 검색하고 탐색할 수 있다."
       />
 
       <section className="container-prose pb-24">
@@ -58,7 +58,7 @@ function DatabasePage() {
           </div>
           
           <div className="text-sm text-ink-soft mb-4">
-            총 {filteredData.length}개의 데이터가 검색되었습니다.
+            총 {filteredData.length}개의 데이터가 검색되었다.
           </div>
 
           <div className="overflow-x-auto">
@@ -82,7 +82,7 @@ function DatabasePage() {
                 ))}
                 {filteredData.length === 0 && (
                   <tr>
-                    <td colSpan={4} className="py-8 text-center text-ink-soft">검색 결과가 없습니다.</td>
+                    <td colSpan={4} className="py-8 text-center text-ink-soft">검색 결과가 없다.</td>
                   </tr>
                 )}
               </tbody>

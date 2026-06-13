@@ -8,7 +8,7 @@ import entropy3dWest from "@/assets/entropy/entropy-3d-west.png";
 import entropy3dTop from "@/assets/entropy/entropy-3d-top.png";
 import entropy3dEast from "@/assets/entropy/entropy-3d-east.png";
 
-export const Route = createFileRoute("/floors")({
+export const Route = createFileRoute("/floors_temp")({
   head: () => ({
     meta: [
       { title: "04 층별 건물별 분석 · 성수동 아카이브" },
@@ -110,6 +110,40 @@ function Floors() {
       <PageHeader index="04" eyebrow="Chapter 04 · Vertical Mix" title="수직적으로 혼합되는 도시" subtitle="성수동은 평면이 아니라 수직으로 읽어야 한다. 한 건물 안에서 제조 · 상업 · 업무 · 주거가 층을 나눠 동시에 진행된다." />
 
       <section className="container-prose pb-16">
+        <div className="eyebrow mb-3 text-primary">건물별 층수 및 용도 분포</div>
+        <h2 className="font-serif text-3xl md:text-4xl mb-8 text-ink">성수동의 단면을 생생하게 탐험하다</h2>
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-rule/50 shadow-lg bg-black mb-8 flex items-center justify-center">
+          {/* 에이레네 건물 현실감 있는 비디오/3D 그래픽 대체 영역 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
+          <img 
+            src="/eirene-realistic.jpg" 
+            alt="에이레네 건물 수직 단면도 현실적 그래픽" 
+            className="w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute bottom-6 left-6 z-20">
+            <h3 className="font-serif text-2xl text-white">에이레네 건물</h3>
+            <p className="text-white/80 text-sm mt-1">실제 수직 구성 현황 매칭</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
+          {[
+            ["4층", "주거", "var(--color-use-residential)", "4F — 주거"],
+            ["3층", "업무", "var(--color-use-office)", "3F — 사무실"],
+            ["2층", "제조", "var(--color-use-manufacturing)", "2F — 수제화 공방"],
+            ["1층", "상업", "var(--color-use-commercial)", "1F — 자동차 정비소"],
+            ["지하 1층", "상업", "var(--color-use-commercial)", "B1 — 빈티지숍 (Vintage shop)"],
+          ].map(([z, label, color, desc]) => (
+            <div key={z} className="bg-card p-6 flex flex-col items-center text-center">
+              <div className="eyebrow">{z}</div>
+              <div className="mt-2 font-display text-2xl" style={{ color: color as string }}>{label}</div>
+              <div className="mt-2 text-xs text-ink-soft">{desc}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-prose pb-16">
         <div className="eyebrow mb-3">층별 용도 구성비</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">용도가 분화된다</h2>
         <div className="h-96 bg-card border border-rule rounded-lg p-4">
@@ -204,43 +238,6 @@ function Floors() {
                   </div>
                 ))}
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="container-prose pb-16">
-        <div className="eyebrow mb-3 text-primary">건물별 층수 및 용도 분포</div>
-        <h2 className="font-serif text-3xl md:text-4xl mb-8 text-ink">성수동의 단면을 생생하게 탐험하다</h2>
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-rule/50 shadow-lg bg-black mb-8 flex items-center justify-center">
-          {/* 에이레네 건물 현실감 있는 비디오/3D 그래픽 대체 영역 */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <video 
-            src="/seongsu-video.mp4" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline 
-            className="w-full h-full object-cover opacity-80"
-          />
-          <div className="absolute bottom-6 left-6 z-20">
-            <h3 className="font-serif text-2xl text-white">성수이로 68</h3>
-            <p className="text-white/80 text-sm mt-1">실제 수직 구성 현황 매칭</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
-          {[
-            ["4층", "주거", "var(--color-use-residential)", "4F — 주거"],
-            ["3층", "업무", "var(--color-use-office)", "3F — 사무실"],
-            ["2층", "제조", "var(--color-use-manufacturing)", "2F — 수제화 공방"],
-            ["1층", "상업", "var(--color-use-commercial)", "1F — 자동차 정비소"],
-            ["지하 1층", "상업", "var(--color-use-commercial)", "B1 — 빈티지숍 (Vintage shop)"],
-          ].map(([z, label, color, desc]) => (
-            <div key={z} className="bg-card p-6 flex flex-col items-center text-center">
-              <div className="eyebrow">{z}</div>
-              <div className="mt-2 font-display text-2xl" style={{ color: color as string }}>{label}</div>
-              <div className="mt-2 text-xs text-ink-soft">{desc}</div>
             </div>
           ))}
         </div>

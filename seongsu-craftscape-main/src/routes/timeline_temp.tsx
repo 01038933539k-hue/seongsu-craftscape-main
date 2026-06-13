@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Shell";
 
-export const Route = createFileRoute("/timeline")({
+export const Route = createFileRoute("/timeline_temp")({
   head: () => ({
     meta: [
       { title: "01 대상지 전체 시계열 분석 · 성수동 아카이브" },
@@ -16,37 +16,31 @@ const eras = [
     era: "1970년대 이전",
     title: "자연발생적 산업화 초기",
     desc: "무허가 미등록 공업이 용도 등록 없이 자연적으로 형성된 시기이다. 당시 성수동은 서울 외곽의 저렴한 주거지 역할을 했기 때문에 공장 노동자들의 직주근접이 가능했다. 이는 주거 비율이 가장 높은 이유이다. 더 나아가 공업과 주거가 혼재한 산업화 초기 패턴을 보인다.",
-    image: "/graphs/aerial_1.png"
   },
   {
     era: "1980년대",
     title: "제조업 전성기와 주거 수요 유입",
-    desc: "제조업이 본격적으로 활황을 맞이하며 영등포, 청계천 등지에서 공장들이 이전해왔다. 늘어난 공장 노동자들을 수용하기 위해 단독주택과 다세대 주택이 대거 지어졌고, 공장과 거주지가 한 가로에 뒤섞여 들어선 혼합 구조가 뚜렷해졌다.",
-    image: "/graphs/aerial_1986.jpg"
+    desc: "성수동 제조업이 최고의 전성기를 누리던 시절로, 기존 공장 시설을 중단 없이 그대로 가동했기 때문에 신축 공장 준공은 오히려 적었다. 그러나 지하철 2호선이 개통되면서 강남 접근성이 개선되었고, 이에 따라 주거 투자 및 유입 수요가 늘어나며 주거 비율이 한층 더 증가했다.",
   },
   {
     era: "1990년대",
     title: "준공업지역 개편과 다세대 개발 붐",
     desc: "성수동 일대가 준공업지역으로 재편되면서 주거용 건물을 짓는 것이 법적으로 허용되었다. 강남 접근성을 겨냥한 다세대·다가구 주택 투자 붐이 일어났다. 기존 무등록 공장들이 아파트형 공장 정책을 통해 제도권으로 편입되며 공장 비율도 소폭 증가했다.",
-    image: "/graphs/aerial_1996.jpg"
   },
   {
     era: "2000년대",
     title: "지식산업센터의 등장과 주거 필지 흡수",
     desc: "산업집적활성화법 개정으로 입주 가능 업종이 제조업에서 지식산업 및 정보통신업까지 크게 확대되었다. 준공업지역 규제 완화(건폐율 용적률 인센티브) 혜택을 기반으로 지식산업센터 공급이 폭발적으로 늘어났으며, 거대한 건물들을 짓는 과정에서 기존의 다세대 주거 소필지들이 흡수되어 주거 비율이 급감하고 공장·사무 비율이 급등했다.",
-    image: "/graphs/aerial_2.png"
   },
   {
     era: "2010년대",
     title: "젠트리피케이션의 시작",
     desc: "성수동의 독특한 분위기를 찾아 음식점과 카페가 서서히 유입되며 상업화가 태동한 시기이다. 대외적으로는 핫플레이스로 주목받기 시작하며 상업시설의 비율이 높아 보였지만 기존 지식산업센터 구조상 용도변경이 까다로우므로 건축물대장 등 행정 수치상으로는 공장 용도 비율이 여전히 높게 유지되는 이중적인 양상을 보였다. (행정상 등록 방법을 현실에 맞게 개선할 필요가 있다.)",
-    image: "/graphs/aerial_3.png"
   },
   {
     era: "2020년대",
     title: "F&B 및 스타트업 오피스의 복합개발",
     desc: "초기 기획 단계부터 F&B(식음료) 시설을 목적으로 설계된 신축 건물이 급증하며 음식점 영역이 폭발적으로 팽창했다. MZ세대가 열광하는 지역이라는 브랜딩 덕분에 IT 및 스타트업 기업들이 대거 오피스를 마련하기 시작했다. 이 두 흐름이 맞물려 '저층부(1~2층) F&B + 상층부(3층 이상) 오피스' 형태의 복합개발 구조가 성수동의 새로운 건축 표준으로 자리 잡았다. (예시: 성수동2가 321-29번지 - 1층 카페, 3층 이상 공유오피스)",
-    image: "/graphs/aerial_4.png"
   },
 ];
 
@@ -118,6 +112,17 @@ function Timeline() {
       />
 
       <section className="container-prose pb-16">
+        <div className="eyebrow mb-3">누적 면적 그래프</div>
+        <h2 className="font-serif text-3xl md:text-4xl mb-4">용도별 건축물 누적 면적</h2>
+        <div className="text-sm text-ink-soft mb-8 bg-muted/50 inline-block px-4 py-2 rounded-lg border border-rule/50">
+          (기준: 준공연도 기준, 국토교통부_건축물대장 층별개요, 국토교통부_건축물대장 표제부)
+        </div>
+        
+        {/* Placeholder for cumulative area graph */}
+        <div className="w-full h-96 bg-card border-2 border-dashed border-rule/50 rounded-2xl flex items-center justify-center text-ink-soft font-mono mb-16">
+          [ 누적 면적 데이터 시각화 차트 영역 ]
+        </div>
+
         <h3 className="font-serif text-2xl md:text-3xl mb-12">시대별 도시 구조의 진화</h3>
         <div className="space-y-16">
           {eras.map((e) => (
@@ -128,13 +133,10 @@ function Timeline() {
                 <p className="text-ink-soft leading-relaxed">{e.desc}</p>
               </div>
               <div className="w-full aspect-square bg-muted/50 rounded-xl border border-rule/30 flex items-center justify-center text-ink-soft/50 text-sm overflow-hidden">
-                {e.image ? (
-                  <img src={e.image} alt={`${e.era} 항공 사진`} className="w-full h-full object-cover" />
-                ) : (
-                  <div className="text-center px-4">
-                    [ {e.era} 항공 사진 ]
-                  </div>
-                )}
+                {/* Placeholder for aerial photo */}
+                <div className="text-center px-4">
+                  [ {e.era} 항공 사진 ]
+                </div>
               </div>
             </div>
           ))}
@@ -149,20 +151,12 @@ function Timeline() {
           거시적인 건축물 준공 시기뿐만 아니라, 특정 필지들의 물리적 형태와 용도가 1978년부터 2026년까지 어떻게 분화되어 왔는지 9개의 대표 사례를 통해 미시적으로 추적한다.
         </p>
 
-        <div className="flex flex-col gap-8 mb-16">
-          <div className="bg-white border border-rule/50 rounded-2xl p-4 shadow-sm">
-            <div className="text-sm text-ink-soft font-mono mb-4 text-center">시대별 필지변화 대상 위치 (1~9번)</div>
-            <img src="/graphs/parcel_map.png" alt="시대별 필지변화 대상 위치" className="w-full h-auto max-w-3xl mx-auto" />
-          </div>
-          <div className="bg-white border border-rule/50 rounded-2xl p-4 shadow-sm">
-            <div className="text-sm text-ink-soft font-mono mb-4 text-center">시대별 필지변화 구체화 (1978~2026)</div>
-            <img src="/graphs/parcel_grid.png" alt="시대별 필지변화 구체화" className="w-full h-auto max-w-5xl mx-auto" />
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {parcels.map((p) => (
             <div key={p.id} className="bg-card border border-rule/50 rounded-2xl p-6 shadow-sm flex flex-col">
+              <div className="w-full h-40 bg-muted/30 rounded-lg border border-rule/20 flex items-center justify-center text-ink-soft/40 text-sm mb-6 overflow-hidden">
+                [ 필지 {p.id} 고화질 사진 ]
+              </div>
               <h3 className="font-serif text-lg text-ink mb-4 flex items-start gap-3">
                 <span className="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-white text-xs font-bold shrink-0 mt-0.5">
                   {p.id}
@@ -185,22 +179,6 @@ function Timeline() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* CUMULATIVE AREA GRAPH MOVED HERE */}
-      <section className="container-prose py-16 md:py-24 rule-top">
-        <div className="eyebrow mb-3">거시적 흐름 종합</div>
-        <h2 className="font-serif text-3xl md:text-4xl mb-4">용도별 건축물 누적 면적 분석</h2>
-        <p className="text-ink-soft max-w-2xl text-lg leading-relaxed mb-12">
-          시계열 분석의 결과를 한눈에 확인할 수 있는 시대별 업종 구성 변화 누적 면적 그래프이다. 산업의 전환이 공간에서 어떤 규모로 일어났는지 시각화한다.
-        </p>
-        
-        <div className="w-full bg-white border border-rule/50 rounded-2xl mb-8 overflow-hidden shadow-sm">
-          <img src="/graphs/timeline_area.png" alt="시대별 업종 구성 변화 (누적 영역)" className="w-full h-auto" />
-        </div>
-        <div className="text-sm text-ink-soft bg-muted/50 inline-block px-4 py-2 rounded-lg border border-rule/50 text-right w-full">
-          (기준: 준공연도 기준, 국토교통부_건축물대장 층별개요, 국토교통부_건축물대장 표제부)
         </div>
       </section>
     </>

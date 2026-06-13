@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Shell";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from "recharts";
 
-export const Route = createFileRoute("/map")({
+export const Route = createFileRoute("/map_temp")({
   head: () => ({
     meta: [
       { title: "06 지식산업센터 · 성수동 아카이브" },
@@ -64,7 +64,7 @@ function MapPage() {
         <div className="eyebrow mb-3 text-primary mt-16">핵심 건물 분석</div>
         <h2 className="font-serif text-3xl md:text-4xl mb-8 text-ink">서울숲 한라 시그마밸리</h2>
         
-        <div className="space-y-6 text-ink-soft leading-relaxed text-lg mb-8">
+        <div className="space-y-6 text-ink-soft leading-relaxed text-lg">
           <p>
             지식산업 센터(<strong className="text-primary font-medium">서울숲 한라 시그마밸리</strong>)는 가장 오른쪽·가장 위쪽·가장 큰 원으로 나타나서, 주변 건물보다 업종도 다양하고 규모도 크고 층수도 높은 핵심 건물이라는 것을 알 수 있다.
           </p>
@@ -73,20 +73,7 @@ function MapPage() {
           </p>
         </div>
 
-        <div className="w-full bg-white border border-rule/50 shadow-sm rounded-2xl overflow-hidden mb-12 flex justify-center p-6">
-          <img src="/graphs/4d_bubble_map.png" alt="성수 지식산업센터 4차원 분석" className="w-full max-w-3xl h-auto" />
-        </div>
-
-        <div className="mt-12 grid md:grid-cols-2 gap-6">
-          <div className="bg-white border border-rule/50 rounded-2xl p-6 shadow-sm flex flex-col items-center justify-center">
-            <img src="/graphs/seongsu_mfg_bar.png" alt="성수 제조업 분류" className="w-full h-auto" />
-          </div>
-          <div className="bg-white border border-rule/50 rounded-2xl p-6 shadow-sm flex flex-col items-center justify-center">
-            <img src="/graphs/gasan_mfg_bar.png" alt="가산디지털단지 제조업 분류" className="w-full h-auto" />
-          </div>
-        </div>
-
-        <div className="mt-8 bg-white border border-rule/50 rounded-2xl p-8 shadow-sm">
+        <div className="mt-12 bg-white border border-rule/50 rounded-2xl p-8 shadow-sm">
           <h3 className="font-display text-xl text-ink mb-6 flex items-center gap-3">
             <span className="w-8 h-px bg-ochre inline-block"></span>
             주요 시사점

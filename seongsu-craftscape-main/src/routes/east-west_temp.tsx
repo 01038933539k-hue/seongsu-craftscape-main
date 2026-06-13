@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Shell";
 
-export const Route = createFileRoute("/east-west")({
+export const Route = createFileRoute("/east-west_temp")({
   head: () => ({
     meta: [
       { title: "02 동서 비교분석 · 성수동 아카이브" },
@@ -26,6 +26,11 @@ function EastWest() {
       <PageHeader index="02" eyebrow="Chapter 02 · East / West" title="같은 성수동, 다른 도시 구조" subtitle="성수이로를 가운데 두고 동측과 서측은 전혀 다른 도시 조직을 가지고 있다. 필지 크기 하나가 건물 형태, 업종까지 결정한다." />
 
       <section className="container-prose pb-16">
+        <div className="w-full h-[500px] bg-card border-2 border-dashed border-rule/50 rounded-2xl flex flex-col items-center justify-center text-ink-soft font-mono mb-16 relative">
+          <span className="mb-2">[ 동서 비교 지도 영역 ]</span>
+          <span className="text-sm opacity-70">※ 범례(Legend) 및 방위표(Compass) 포함 필수</span>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
           <div className="bg-card p-8 md:p-12">
             <div className="flex items-center gap-3 mb-4">
@@ -43,8 +48,8 @@ function EastWest() {
               <li>· 업무 중심 + 입주 제조</li>
               <li>· 빠른 재개발 사이클</li>
             </ul>
-            <div className="mt-8 aspect-video bg-muted/50 rounded-xl border border-rule/30 flex items-center justify-center text-ink-soft/50 text-sm overflow-hidden">
-              <img src="/graphs/east_street.jpg" alt="동측 가로경관" className="w-full h-full object-cover" />
+            <div className="mt-8 aspect-video bg-muted/50 rounded-xl border border-rule/30 flex items-center justify-center text-ink-soft/50 text-sm">
+              [ 동측 시대별 변화 사진 ]
             </div>
           </div>
           <div className="bg-card p-8 md:p-12">
@@ -63,8 +68,8 @@ function EastWest() {
               <li>· 제조업과 상업 공존</li>
               <li>· 점진적 리모델링</li>
             </ul>
-            <div className="mt-8 aspect-video bg-muted/50 rounded-xl border border-rule/30 flex items-center justify-center text-ink-soft/50 text-sm overflow-hidden">
-              <img src="/graphs/west_street.jpg" alt="서측 가로경관" className="w-full h-full object-cover" />
+            <div className="mt-8 aspect-video bg-muted/50 rounded-xl border border-rule/30 flex items-center justify-center text-ink-soft/50 text-sm">
+              [ 서측 시대별 변화 사진 ]
             </div>
           </div>
         </div>
@@ -140,18 +145,6 @@ function EastWest() {
           한 줄 요약 — 성수동의 토지 이동 이력은 자본의 유입 규모에 따라 공간이 합병·분할되며
           전통 제조업 생태계가 수직화되거나 외곽으로 밀려나는 <em>공간 잔존과 퇴출의 변천사</em>를 보여준다.
         </p>
-      </section>
-
-      {/* 차트 섹션 (Moved here) */}
-      <section className="container-prose pb-24">
-        <div className="space-y-6">
-          <div className="w-full bg-white border border-rule/50 shadow-sm rounded-2xl overflow-hidden p-4 flex justify-center">
-            <img src="/graphs/tornado_chart.png" alt="업태별 제조업 분포 비교 (Tornado Chart)" className="w-full max-w-4xl h-auto" />
-          </div>
-          <div className="w-full bg-white border border-rule/50 shadow-sm rounded-2xl overflow-hidden p-4 flex justify-center">
-            <img src="/graphs/east_west_floor_bar.png" alt="동 vs 서 층별 업체 수 비교" className="w-full max-w-4xl h-auto" />
-          </div>
-        </div>
       </section>
 
       {/* 한 줄로 보는 차이 (Moved to bottom) */}

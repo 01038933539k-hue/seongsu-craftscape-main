@@ -88,10 +88,11 @@
 <script>
         
         // 1. 지도 초기화 (기존 유지)
-        var map = L.map('map').setView([37.54069, 127.055675], 17);
+        var map = L.map('map').setView([37.5410, 127.0558], 20);
         
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
+            maxZoom: 22,
+            maxNativeZoom: 19,
             attribution: '&copy; OpenStreetMap'
         }).addTo(map);
 
