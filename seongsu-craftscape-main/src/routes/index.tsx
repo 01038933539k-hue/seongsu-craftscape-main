@@ -54,19 +54,6 @@ function Home() {
               성수동 도시제조업 아카이브. 우리는 성수이로 일대의 제조업 분포와 
               <br className="hidden md:block" /> 공간구조를 기록하여 도시의 미래를 설계한다.
             </p>
-
-            
-            <div className="bg-white/10 p-6 rounded-xl mt-10 mb-8 backdrop-blur-md max-w-3xl">
-              <h3 className="font-serif text-xl text-ochre mb-4">대상지 및 선정 이유</h3>
-              <p className="mb-4 text-white/90">
-                <strong className="text-white">대상지 범위:</strong> 서울특별시 성동구 성수 2가 1동 성수이로 및 성수이로 이면 도로 블록 (면적 약 73,690 제곱미터)
-              </p>
-              <ul className="space-y-3 list-disc list-inside text-white/80">
-                <li><strong className="text-white">젠트리피케이션:</strong> 문화·예술 및 상업 자본의 유입으로 인한 젠트리피케이션 현상과 기존 산업의 변화 추적 가능</li>
-                <li><strong className="text-white">복합토지 이용:</strong> 공장, 주거지, 상업 시설의 혼재. 상업화와 기존 공업간의 충돌 지역이자 준공업 지역의 특징을 가장 잘 가지고 있는 핵심 구역</li>
-                <li><strong className="text-white">제조업 생태계:</strong> 낙후된 소규모 공장부터 대규모, 그리고 새로운 형태의 제조업 업체들까지 다층적인 양상이 얽혀 존재</li>
-              </ul>
-            </div>
           </div>
 
           <div className="mt-auto border-t border-white/20 pt-10">
@@ -93,6 +80,34 @@ function Home() {
                 <p className="text-white/60 text-sm leading-relaxed font-light">
                   산업의 3차원적 분포를 시각화하여 유연한 공간 분석 관점을 제시한다.
                 </p>
+              </div>
+            </div>
+
+            <div className="mt-16 grid lg:grid-cols-[1fr_2fr] gap-8">
+              <div className="bg-white/10 p-6 rounded-xl backdrop-blur-md">
+                <h3 className="font-serif text-xl text-ochre mb-5">대상지</h3>
+                <ul className="space-y-4 text-white/90">
+                  <li className="flex flex-col border-l-2 border-ochre/50 pl-3">
+                    <span className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">행정구역</span>
+                    <span className="font-medium">서울특별시 성동구 성수2가1동</span>
+                  </li>
+                  <li className="flex flex-col border-l-2 border-ochre/50 pl-3">
+                    <span className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">핵심가로</span>
+                    <span className="font-medium">성수이로 및 주변 이면도로 블록</span>
+                  </li>
+                  <li className="flex flex-col border-l-2 border-ochre/50 pl-3">
+                    <span className="text-white/50 text-xs font-mono uppercase tracking-wider mb-1">조사면적</span>
+                    <span className="font-medium">약 73,690 m²</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-white/10 p-6 rounded-xl backdrop-blur-md">
+                <h3 className="font-serif text-xl text-ochre mb-4">대상지 선정 이유</h3>
+                <ul className="space-y-3 list-disc list-inside text-white/80">
+                  <li><strong className="text-white">젠트리피케이션:</strong> 문화·예술 및 상업 자본의 유입으로 인한 젠트리피케이션 현상과 기존 산업의 변화 추적 가능</li>
+                  <li><strong className="text-white">복합토지 이용:</strong> 공장, 주거지, 상업 시설의 혼재. 상업화와 기존 공업간의 충돌 지역이자 준공업 지역의 특징을 가장 잘 가지고 있는 핵심 구역</li>
+                  <li><strong className="text-white">제조업 생태계:</strong> 낙후된 소규모 공장부터 대규모, 그리고 새로운 형태의 제조업 업체들까지 다층적인 양상이 얽혀 존재</li>
+                </ul>
               </div>
             </div>
 
