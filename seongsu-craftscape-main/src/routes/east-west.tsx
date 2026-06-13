@@ -72,7 +72,7 @@ function EastWest() {
 
       <section className="container-prose pb-16">
         <div className="eyebrow mb-3">건축 연도별 시각화 범례</div>
-        <h2 className="font-display text-2xl md:text-3xl mb-6">신축과 노후 건물의 극단적 대비</h2>
+        <h2 className="font-display text-2xl md:text-3xl mb-6">신축과 노후 건물의 대비</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm mb-12">
           <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-recent)" }}>
             <div className="font-display text-base flex items-center gap-2" style={{ color: "var(--color-recent)" }}>
@@ -120,7 +120,7 @@ function EastWest() {
 
       <section className="container-prose pb-24">
         <div className="eyebrow mb-3">필지 유형 분류 (제안 분석 프레임)</div>
-        <h2 className="font-display text-2xl md:text-3xl mb-6">A · B · C 세 가지 진화 경로</h2>
+        <h2 className="font-display text-2xl md:text-3xl mb-6">A · B · C 세 가지 변화 경로</h2>
         <div className="grid md:grid-cols-3 gap-6 text-sm">
           {[
             ["A 전통 고수형", "2010년에도 수제화·인쇄 공장, 2026년 현재도 합병·분할 없이 그대로 공장으로 등록된 필지. 제조업이 생존할 수 있는 마지막 공간적 한계선."],

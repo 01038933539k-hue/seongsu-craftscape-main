@@ -117,7 +117,23 @@ function Timeline() {
         subtitle="국토교통부 건축물대장 표제부와 항공사진을 교차 분석해 6개 시기로 정리했다."
       />
 
-      <section className="container-prose pb-16">
+      {/* CUMULATIVE AREA GRAPH */}
+      <section className="container-prose py-16 md:py-24">
+        <div className="eyebrow mb-3">거시적 흐름 종합</div>
+        <h2 className="font-serif text-3xl md:text-4xl mb-4">용도별 건축물 누적 면적 분석</h2>
+        <p className="text-ink-soft max-w-2xl text-lg leading-relaxed mb-12">
+          시계열 분석의 결과를 한눈에 확인할 수 있는 시대별 업종 구성 변화 누적 면적 그래프이다. 산업의 전환이 공간에서 어떤 규모로 일어났는지 시각화한다.
+        </p>
+        
+        <div className="w-full bg-white border border-rule/50 rounded-2xl mb-8 overflow-hidden shadow-sm">
+          <img src="/graphs/timeline_area.png" alt="시대별 업종 구성 변화 (누적 영역)" className="w-full h-auto" />
+        </div>
+        <div className="text-sm text-ink-soft bg-muted/50 inline-block px-4 py-2 rounded-lg border border-rule/50 text-right w-full mb-8">
+          (기준: 준공연도 기준, 국토교통부_건축물대장 층별개요, 국토교통부_건축물대장 표제부)
+        </div>
+      </section>
+
+      <section className="container-prose pb-16 rule-top pt-16">
         <h3 className="font-serif text-2xl md:text-3xl mb-12">시대별 도시 구조의 진화</h3>
         <div className="space-y-16">
           {eras.map((e) => (
@@ -188,21 +204,6 @@ function Timeline() {
         </div>
       </section>
 
-      {/* CUMULATIVE AREA GRAPH MOVED HERE */}
-      <section className="container-prose py-16 md:py-24 rule-top">
-        <div className="eyebrow mb-3">거시적 흐름 종합</div>
-        <h2 className="font-serif text-3xl md:text-4xl mb-4">용도별 건축물 누적 면적 분석</h2>
-        <p className="text-ink-soft max-w-2xl text-lg leading-relaxed mb-12">
-          시계열 분석의 결과를 한눈에 확인할 수 있는 시대별 업종 구성 변화 누적 면적 그래프이다. 산업의 전환이 공간에서 어떤 규모로 일어났는지 시각화한다.
-        </p>
-        
-        <div className="w-full bg-white border border-rule/50 rounded-2xl mb-8 overflow-hidden shadow-sm">
-          <img src="/graphs/timeline_area.png" alt="시대별 업종 구성 변화 (누적 영역)" className="w-full h-auto" />
-        </div>
-        <div className="text-sm text-ink-soft bg-muted/50 inline-block px-4 py-2 rounded-lg border border-rule/50 text-right w-full">
-          (기준: 준공연도 기준, 국토교통부_건축물대장 층별개요, 국토교통부_건축물대장 표제부)
-        </div>
-      </section>
     </>
   );
 }
