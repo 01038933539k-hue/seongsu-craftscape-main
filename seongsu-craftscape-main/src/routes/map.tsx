@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader } from "@/components/site/Shell";
+import { FadeIn } from "@/components/site/FadeIn";
+import { PageHeader, PageNavigation } from "@/components/site/Shell";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from "recharts";
 
 export const Route = createFileRoute("/map")({
@@ -36,7 +37,7 @@ function MapPage() {
         subtitle="성수동의 지식산업센터는 단순한 공장형 아파트가 아니다. 제조, 업무, 상업 기능이 유기적으로 결합된 창의·제조 융합 생태계의 핵심으로 진화하고 있다."
       />
 
-      <section className="container-prose py-16">
+      <FadeIn as="section" className="container-prose py-16">
         <div className="eyebrow mb-3 text-primary">공급 추이 분석</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">성수동 지식산업센터 연도별 공급 추이</h2>
         
@@ -112,7 +113,8 @@ function MapPage() {
             </li>
           </ul>
         </div>
-      </section>
+      </FadeIn>
+      <PageNavigation prev={{ to: "/industries", label: "05 업종분석" }} next={{ to: "/implications", label: "06 최종결론" }} />
     </>
 
   );

@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHeader } from "@/components/site/Shell";
+import { FadeIn } from "@/components/site/FadeIn";
+import { MousePointerClick } from "lucide-react";
+import { PageHeader, PageNavigation } from "@/components/site/Shell";
 import { industryMeta } from "@/data/manufacturers";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -18,7 +19,7 @@ const cards = [
     key: "print" as const,
     title: "인쇄업",
     count: "42개 업체",
-    feature: "주거 지역과 비교적 거리가 먼 성수이로 인근 등 특정 지역에 주로 집적되어 있다. 야간 작업이나 소음 민원을 피하기 위한 입지적 특성이다.",
+    feature: "성수이로 인쇄벨트를 따라 집적. 주야간 가동률이 높고, 후가공·제본 업체와 강한 연계망.",
     metric: "전력 사용량 · 동 내 최상위",
     detail: ["1980년대 준공 건물 다수 활용", "야간 가동 비율 38%", "후가공 외주 거리 평균 220m"],
   },
@@ -26,51 +27,41 @@ const cards = [
     key: "leather" as const,
     title: "가죽·신발 제조업",
     count: "57개 업체",
-    feature: "특정 구역에 국한되지 않고 성수동 대상지 전체에 고르게 퍼져 있다. 수제화 장인 · OEM 봉제 · 가방 공방이 한 가로에 공존한다.",
+    feature: "성수동을 대표하는 산업. 수제화 장인 · OEM 봉제 · 가방 공방이 한 가로에 공존.",
     metric: "성수동 대표 산업",
-    detail: ["3대 이상 가족 경영 비율 21%", "1층 매장 겸용 비율 34%", "주문제작 비중 점차 확대"],
+    detail: ["골목 이면도로 중심 입지", "소규모 작업장 형태 다수", "디자이너 브랜드 협업 증가"],
   },
   {
     key: "food" as const,
     title: "식료품 제조업",
     count: "29개 업체",
-    feature: "연무장길 배후지역에 밀키트 · 베이커리 · 디저트 제조가 새롭게 집적되어 있다.",
+    feature: "연무장길 배후지역에 밀키트 · 베이커리 · 디저트 제조가 새롭게 집적.",
     metric: "밀키트 신규 진입 중심",
-    detail: ["2018년 이후 신규 진입 60%", "냉장 인프라 확충 필요", "F&B 상업과 수직 결합"],
+    detail: ["2018년 이후 신규 진입 60%", "F&B 산업 발달로 테스트베드 역할", "F&B 상업과 수직 결합"],
   },
   {
-    key: "electronics" as const, // Using this key to preserve color, but changing content to clothing/textiles
-    title: "의복·섬유 제조업",
-    count: "24개 업체",
-    feature: "소규모 공간만으로도 작업이 가능하여 이면 도로에 주로 위치한다.",
-    metric: "소규모 공간 특화",
-    detail: ["골목 이면도로 중심 입지", "소규모 작업장 형태 다수", "디자이너 브랜드 협업 증가"],
+    key: "electronics" as const,
+    title: "전자·부품 제조업",
+    count: "18개 업체",
+    feature: "지식산업센터 입주가 다수. PCB 소형 조립과 시제품 제작이 주력.",
+    metric: "지식산업센터 입주 특성",
+    detail: ["스타트업 시제품 제작 협업", "공용 물류 활용", "동측 대형 필지에 집중"],
   },
-];
-
-// 성수2가 1동 상권 변화 데이터 (가로분석에서 이동됨)
-const market = [
-  { q: "24 1Q", 개업률: 2.2, 폐업률: 2.7 },
-  { q: "24 2Q", 개업률: 2.8, 폐업률: 2.7 },
-  { q: "24 3Q", 개업률: 2.0, 폐업률: 1.8 },
-  { q: "24 4Q", 개업률: 2.0, 폐업률: 2.2 },
-  { q: "25 1Q", 개업률: 1.9, 폐업률: 2.0 },
-  { q: "25 2Q", 개업률: 3.3, 폐업률: 3.5 },
-  { q: "25 3Q", 개업률: 2.6, 폐업률: 2.6 },
-  { q: "25 4Q", 개업률: 2.6, 폐업률: 2.5 },
-  { q: "26 1Q", 개업률: 2.6, 폐업률: 2.3 },
 ];
 
 function Industries() {
   return (
     <>
-      <PageHeader index="05" eyebrow="Chapter 05 · Industries" title="성수동 제조업은 무엇을 만드는가" subtitle="네 개의 주력 업종이 각자 다른 공간 논리로 성수동에 남아 있다. 어떤 산업은 골목에, 어떤 산업은 수직 센터에." />
+      <PageHeader index="05" eyebrow="Chapter 05 · Industries" title="성수동 제조업은 무엇을 만드는가" subtitle={<>네 개의 주력 업종이 각자 다른 공간 논리로 성수동에 남아 있다.<br />어떤 산업은 골목에, 어떤 산업은 수직 센터에.</>} />
 
-      <section className="container-prose pb-24">
+      <FadeIn as="section" className="container-prose pb-24">
         <h2 className="font-display text-2xl md:text-3xl mb-6">성수이로 마이크로 조닝 실증 지도</h2>
         <div className="grid md:grid-cols-[1fr_280px] gap-6 items-start">
           <div className="relative w-full h-[78vh] min-h-[560px] rounded-lg overflow-hidden border border-rule bg-card">
-            <iframe
+                          <div className="absolute top-4 right-4 bg-ink/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-2 pointer-events-none z-10 shadow-lg animate-pulse opacity-100 group-hover:opacity-0 transition-opacity">
+                <MousePointerClick size={14} /> 지도를 마우스로 드래그하여 탐색해보세요
+              </div>
+              <iframe
               src="/seongsu-micro-zoning-map.html"
               title="성수이로 마이크로 조닝 실증 지도"
               className="absolute inset-0 w-full h-full"
@@ -81,19 +72,19 @@ function Industries() {
             <div className="bg-card border border-rule rounded-lg p-5">
               <div className="eyebrow mb-3">업종 조닝 범례</div>
               <ul className="space-y-2 text-sm">
-                <li className="flex items-center gap-2.5 text-ink-soft">
+                <li className="flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#E53E3E" }} />
-                  제조업 (식료품/의복/인쇄)
+                  제조업 (식료품/IT/인쇄)
                 </li>
-                <li className="flex items-center gap-2.5 text-ink-soft">
+                <li className="flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#DD6B20" }} />
                   F&B (카페/음식점)
                 </li>
-                <li className="flex items-center gap-2.5 text-ink-soft">
+                <li className="flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#3182CE" }} />
                   리테일 (의류/패션소매)
                 </li>
-                <li className="flex items-center gap-2.5 text-ink-soft">
+                <li className="flex items-center gap-2.5">
                   <span className="h-2.5 w-2.5 rounded-full" style={{ background: "#805AD5" }} />
                   기타 서비스 및 IT오피스
                 </li>
@@ -101,13 +92,35 @@ function Industries() {
             </div>
             <div className="bg-card border border-rule rounded-lg p-5 text-sm text-ink-soft leading-relaxed">
               <div className="eyebrow mb-2 text-ink">마이크로 조닝</div>
-              업종군을 세분화하여 각 포인트의 분포를 시각화. 특정 구역(zoning)에 어떤 업종이 밀집해 있는지 확인할 수 있다.
+              업종군을 세분화하여 각 포인트의 분포를 시각화. 특정 구역(zoning)에 어떤 업종이 밀집해 있는지 확인할 수 있습니다.
+            </div>
+            <div className="bg-card border border-rule rounded-lg p-5 text-sm text-ink-soft leading-relaxed">
+              <div className="eyebrow mb-2 text-primary">긍정적 젠트리피케이션</div>
+              제조업이 빠져나간 노후 공간에 트렌디한 팝업 스토어와 리테일 상업시설이 들어서는 현상은 단순한 산업의 밀려남이 아닙니다. 이는 낡은 공장 지대가 새로운 부가가치를 창출하는 활력 있는 소비 거점으로 진화하는 <strong className="text-ink">‘긍정적 젠트리피케이션’</strong> 과정으로 해석될 수 있습니다.
             </div>
           </aside>
         </div>
-      </section>
+      </FadeIn>
 
-      <section className="container-prose pb-24">
+      <FadeIn as="section" className="container-prose py-16 rule-top">
+        <div className="eyebrow mb-3">성수동 건축물의 주요용도코드</div>
+        <h2 className="font-display text-3xl md:text-4xl mb-2">무엇으로 활용되는가</h2>
+        <div className="w-full"> 
+          <div className="relative w-full h-[380px] md:h-[450px] rounded-xl overflow-hidden border border-rule/50 bg-card shadow-sm">
+                          <div className="absolute top-4 right-4 bg-ink/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-2 pointer-events-none z-10 shadow-lg animate-pulse opacity-100 group-hover:opacity-0 transition-opacity">
+                <MousePointerClick size={14} /> 지도를 마우스로 드래그하여 탐색해보세요
+              </div>
+              <iframe
+              src="/seongsu-3d-viewer2.html"
+              title="성수동 360도 뷰어"
+              className="absolute inset-0 w-full h-full"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn as="section" className="container-prose pb-16 rule-top"> <br/><br/>
         <div className="grid md:grid-cols-2 gap-6">
           {cards.map((c) => {
             const color = industryMeta[c.key].color;
@@ -117,7 +130,7 @@ function Industries() {
                 <div className="p-7 md:p-9">
                   <div className="flex items-center justify-between">
                     <div className="text-xs font-mono uppercase tracking-widest" style={{ color }}>
-                      {c.key === 'electronics' ? '의복·섬유' : industryMeta[c.key].label}
+                      {industryMeta[c.key].label}
                     </div>
                     <div className="font-mono text-xs text-ink-soft">{c.count}</div>
                   </div>
@@ -139,38 +152,9 @@ function Industries() {
             );
           })}
         </div>
-        <div className="mt-6 text-[10px] text-ink-soft opacity-70 text-right">
-          (출처: 서울시 식품위생업소 인허가 정보, 서울시 건축물대장 표제부)
-        </div>
-      </section>
+      </FadeIn>
 
-      {/* 가로분석에서 이동된 상권 변화 분석 데이터 */}
-      <section className="container-prose pb-24">
-        <div className="eyebrow mb-3">성수2가 1동 상권 변화</div>
-        <h2 className="font-display text-2xl md:text-3xl mb-2">개업과 폐업이 함께 가속된다</h2>
-        <p className="text-ink-soft max-w-2xl mb-8">
-          영업 평균 76개월 / 폐업 평균 54개월. 서울 평균(영업 115 · 폐업 53)과 비교하면
-          성수의 상권은 회전이 빠르고, 개업률과 폐업률이 거의 같은 폭으로 함께 움직이는 확장기에 있다. 제조업과 상업의 교체가 이 가속도 내에서 일어난다.
-        </p>
-        <div className="h-80 bg-card border border-rule rounded-lg p-4">
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={market}>
-              <CartesianGrid stroke="var(--color-rule)" strokeDasharray="3 3" />
-              <XAxis dataKey="q" stroke="var(--color-ink-soft)" fontSize={12} />
-              <YAxis stroke="var(--color-ink-soft)" fontSize={12} />
-              <Tooltip contentStyle={{ background: "var(--color-card)", border: "1px solid var(--color-rule)", borderRadius: 6 }} />
-              <Legend wrapperStyle={{ fontSize: 12 }} />
-              <Line type="monotone" dataKey="개업률" stroke="var(--color-violet)" strokeWidth={2} dot={{ r: 3 }} />
-              <Line type="monotone" dataKey="폐업률" stroke="var(--color-ochre)" strokeWidth={2} dot={{ r: 3 }} />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <div className="mt-2 text-[10px] text-ink-soft opacity-70 text-right">
-          (출처: 서울시 상권분석서비스)
-        </div>
-      </section>
-
-      <section className="container-prose py-24 rule-top">
+      <FadeIn as="section" className="container-prose py-24 rule-top">
         <div className="eyebrow mb-3 text-primary">심층 분석: 패션 산업 트리맵</div>
         <h2 className="font-display text-3xl md:text-4xl mb-6">성수동 패션 산업의 공간적 체질 개선</h2>
         <p className="text-ink-soft max-w-3xl mb-12 text-lg leading-relaxed">
@@ -279,7 +263,8 @@ function Industries() {
             </p>
           </div>
         </div>
-      </section>
+      </FadeIn>
+      <PageNavigation prev={{ to: "/floors", label: "04 층/건물 분석" }} next={{ to: "/map", label: "심화: 지식산업센터" }} />
     </>
   );
 }

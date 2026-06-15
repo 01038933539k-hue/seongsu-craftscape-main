@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>성수동 3D 뷰어</title>
+  <style>
+    body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; font-family: sans-serif; }
+    model-viewer { width: 100%; height: 100%; background-color: ochre; position: relative; }
+
+.legend-container {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #c8c8c8;
+      border-radius: 6px;
+      padding: 12px 14px;
+      z-index: 999;
+    }
+    .legend-title {
+      font-size: 12px;
+      font-weight: bold;
+      color: #015185;
+      margin-bottom: 8px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      font-size: 11px;
+      color: #555;
+    }
+
+    .legend-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .color-box {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+</head>
+<body>
+  <model-viewer 
+    src="/seongsu2.glb"
+    alt="성수동 3D 모델"
+    camera-controls
+    camera-orbit="10deg 60deg 5m">
+
+    <div class="legend-container">
+      <div class="legend-title">건축물 용도 분류</div>
+            
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #ffff7f;"></div>
+        <span>: 단독주택</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #FEE27D;"></div>
+        <span>: 다가구주택</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #fbc02d;"></div>
+        <span>: 공동주택</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #f48fb1;"></div>
+        <span>: 제1종근린생활시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #f06292;"></div>
+        <span>: 제2종근린생활시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #9fa8da;"></div>
+        <span>: 문화 및 집회시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #e91e63;"></div>
+        <span>: 판매시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #4fc3f7;"></div>
+        <span>: 의료시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #00bcd4;"></div>
+        <span>: 교육연구시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #0288d1;"></div>
+        <span>: 업무시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #4caf50;"></div>
+        <span>: 공장</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #8bc34a;"></div>
+        <span>: 창고시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #757575;"></div>
+        <span>: 자동차관련시설</span>
+      </div>
+
+      <div class="legend-item">
+        <div class="color-box" style="background-color: #cccccc;"></div>
+        <span>: 기타</span>
+      </div>
+
+
+    </div>
+
+    
+
+  </model-viewer>
+
+</body>
+</html>
