@@ -400,6 +400,7 @@ function Floors() {
             </div>
           ))}
         </div>
+        </div>
       </FadeIn>
       <PageNavigation prev={{ to: "/entropy", label: "03 가로분석" }} next={{ to: "/industries", label: "05 업종분석" }} />
     </>

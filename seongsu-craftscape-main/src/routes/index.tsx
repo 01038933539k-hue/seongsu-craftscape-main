@@ -128,8 +128,8 @@ function Home() {
           <div className="grid md:grid-cols-[1fr_280px] gap-6 items-start">
             <div className="relative w-full h-[78vh] min-h-[560px] rounded-xl overflow-hidden border border-rule/50 bg-card shadow-sm">
               <iframe
-                src="/seongsu-3d-viewer.html"
-                title="성수동 360도 뷰어"
+                src="/seongsu-3d-glass.html"
+                title="성수동 3D 뷰어 (유리 외벽)"
                 className="absolute inset-0 w-full h-full"
                 loading="lazy"
               />
