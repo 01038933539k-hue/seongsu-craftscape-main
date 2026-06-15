@@ -282,7 +282,7 @@ function Floors() {
         {/* ISOMETRIC ILLUSTRATION */}
         <div className="bg-card border border-rule rounded-2xl shadow-sm mb-12 overflow-hidden flex flex-col relative group">
           <img 
-            src="/isometric-building.jpg" 
+            src="/isometric-building-v2.jpg" 
             alt="성수동 2가 309-126 아이소메트릭 일러스트레이션" 
             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" 
           />
