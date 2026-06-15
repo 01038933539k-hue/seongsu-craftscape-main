@@ -130,16 +130,20 @@ function EastWest() {
         <h2 className="font-display text-2xl md:text-3xl mb-6">왜 동·서가 갈라졌나</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           <div className="border border-rule rounded-lg bg-card p-5">
-            <div className="font-display text-base">EAST · 동쪽 지역 (대형 필지 및 지식산업센터 중심)</div>
-            <p className="mt-2 text-ink-soft leading-relaxed">
-              과거에는 넓은 부지의 공장과 소필지가 공존했으나, 2000년대 이후 뚝섬 개발 압력과 성수 IT산업단지 지정의 영향으로 여러 필지가 하나로 합쳐지는 합필 개발이 대대적으로 이루어졌다. 현재는 거대한 지식산업센터가 들어서거나 단일 대기업이 통째로 사용하는 대형 부지 중심으로 탈바꿈했다. 격자형 가로망 설계와 단일 토지 소유자 구조 덕분에 이 같은 대규모 개발이 수월했다.
-            </p>
+            <div className="font-display text-base">EAST · 동쪽 지역 (지식산업센터 중심)</div>
+            <ul className="mt-3 space-y-2 text-ink-soft leading-relaxed break-keep list-disc pl-4 marker:text-ochre">
+              <li>격자형 가로망과 단일 소유주 구조 덕분에 <strong>대형 합필(합병) 개발</strong>이 수월함.</li>
+              <li>2000년대 이후 뚝섬 개발 및 IT산업단지 지정으로 거대한 지산과 대기업 부지로 탈바꿈.</li>
+              <li>높아진 임대료 장벽으로 기존 영세 제조업이 버티지 못하고 외곽으로 밀려남.</li>
+            </ul>
           </div>
           <div className="border border-rule rounded-lg bg-card p-5">
-            <div className="font-display text-base">WEST · 서쪽 지역 (소필지 유지 및 골목길 상업화)</div>
-            <p className="mt-2 text-ink-soft leading-relaxed">
-              1970년대부터 이어져 온 작은 필지 구조가 오늘날까지 그대로 유지되고 있다. 최근 새로 지어진 건물들도 기존의 작은 필지 틀을 깨지 않고 위로 층수만 높이는 방식으로 건축되었다. 이는 서쪽 특유의 좁은 골목망 구조가 필지를 합치는 개발(합필)을 어렵게 만들기 때문이다. 이에 따라 제조업보다는 골목길의 보행 친화성을 무기로 삼은 사무실, 미용실, 음식점, 카페 등의 상업시설이 주를 이루게 되었다.
-            </p>
+            <div className="font-display text-base">WEST · 서쪽 지역 (골목상권 중심)</div>
+            <ul className="mt-3 space-y-2 text-ink-soft leading-relaxed break-keep list-disc pl-4 marker:text-violet">
+              <li>1970년대의 좁은 골목망과 분산된 소유주 구조 탓에 토지를 합치는 대규모 개발이 어려움.</li>
+              <li>작은 필지 틀을 유지한 채 <strong>점진적으로 층수만 높이는 방식</strong>으로 고도화됨.</li>
+              <li>보행 친화적인 골목길을 무기로 세련된 카페, 미용실, 식당 등 상업시설이 집중됨.</li>
+            </ul>
           </div>
         </div>
       </FadeIn>
@@ -151,19 +155,19 @@ function EastWest() {
           {[
             {
               title: "A 전통 고수형",
-              desc: "2010년에도 수제화·인쇄 공장, 2026년 현재도 합병·분할 없이 그대로 공장으로 등록된 필지. 제조업이 생존할 수 있는 마지막 공간적 한계선.",
+              desc: "2010년부터 현재까지 합병·분할 없이 형태를 유지한 노후 공장. 영세 제조업이 버틸 수 있는 마지막 공간적 한계선이다.",
               imgSrc: "/path_a_leather.jpg",
               imgAlt: "가죽공방"
             },
             {
               title: "B 밀려난 합병형",
-              desc: "합병되어 지식산업센터 등 큰 건물로 발전한 경우. 작은 건물들을 합병하여 올린 대형 건물을 다시 더 작은 평수로 쪼개어 섹션 오피스나 상가로 분양·임대함으로써 평당 임대료가 가파르게 상승한다.",
+              desc: "소필지가 합쳐져 대형 지식산업센터로 개발된 경우. 덩치를 키운 뒤 다시 작은 호실로 쪼개어 분양하면서 평당 임대료가 가파르게 상승한다.",
               imgSrc: "/path_b_jisan.jpg",
               imgAlt: "지식산업센터"
             },
             {
               title: "C 쪼개진 분할형",
-              desc: "과거보다 더 작게 분할된 경우. 높은 임대료를 감당할 수 있는 자본력을 가진 F&B 프랜차이즈, 세련된 카페, 디자인 팝업스토어, IT 스타트업 등 트렌디한 업종이 집중되며, 이 과정에서 영세 제조업이 외곽으로 밀려납니다.",
+              desc: "건물이 층별/호실별로 더 잘게 쪼개진 분할 형태. 높은 임대료를 감당할 수 있는 F&B 팝업스토어, 카페 등이 집중되며 영세 업체를 밀어낸다.",
               imgSrc: "/path_c_cafe.jpg",
               imgAlt: "성수동 카페"
             },
@@ -187,16 +191,16 @@ function EastWest() {
           
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-card rounded-lg p-6 border border-rule">
-              <div className="font-display text-lg text-ink mb-3">1. 산업 구조의 다변화와 활력</div>
+              <div className="font-display text-lg text-ink mb-3">1. 산업 생태계의 활력 (네트워크 효과)</div>
               <p className="text-[14px] text-ink-soft leading-relaxed break-keep">
-                잘게 쪼개진 공간에 서로 다른 분야의 수많은 소규모 업체들이 밀집하면서, 서로 아이디어를 공유하고 협업하는 '네트워크 효과'와 '지식 전파'가 일어나 지역 산업의 자생력이 강화된다.
+                작은 공간에 다종다양한 소규모 업체들이 밀집하며, 아이디어를 공유하고 협업하는 자생적 네트워크 시너지가 발생한다.
               </p>
             </div>
             
             <div className="bg-card rounded-lg p-6 border border-rule">
-              <div className="font-display text-lg text-ink mb-3">2. 상권 활성화와 지역 경제적 가치 상승</div>
+              <div className="font-display text-lg text-ink mb-3">2. 부동산 가치 상승과 재투자</div>
               <p className="text-[14px] text-ink-soft leading-relaxed break-keep">
-                가치가 낮았던 부동산이 고도화되고 상권이 살아나면서 지역의 자산 가치가 상승한다. 이렇게 확보된 공공 재원은 과거 성수동의 정체성이었던 '성수 수제화 거리'의 환경 개선, 전통 가죽·인쇄 산업의 지원, 특화 사업 체험공간 구축에 집중 재투자될 수 있다.
+                상권 고도화로 창출된 경제적 부가가치와 공공 재원을 활용해, 수제화 거리 환경 개선 및 영세 공방 지원에 긍정적으로 재투자할 수 있다.
               </p>
             </div>
           </div>

@@ -404,14 +404,46 @@ function Floors() {
         <h2 className="font-display text-2xl md:text-3xl mb-6">노후 대로변 건물의 비의도적 공생 구조</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           {[
-            ["제조업의 물류 네트워크 입지", "카센터나 수제화 공방 같은 전통 제조업들이 성수동 대로변에 자리 잡은 것은 철저한 물류적 논리 때문이다. 무거운 자재를 들여오고 완제품을 출고하려면 좁은 골목보다 차량 진입이 원활한 대로변이 훨씬 유리하며, 도매상 및 납품처와의 접근성을 확보해야 하기 때문이다."],
-            ["노후화된 건물 스펙이 만든 상생 장벽", "입지 자체는 유동인구가 많은 대로변이라 훌륭하지만, 엘리베이터가 없거나 주차 공간이 협소한 등 건물의 물리적 스펙이 낙후되어 있으면 임대료를 무작정 올리더라도 세련된 프리미엄 상업시설이 쉽게 진입하지 못한다."],
-            ["노후 건물의 비의도적 공생 생태계", "결과적으로 높은 유동인구의 이점은 감각적인 빈티지숍이나 트렌디한 카페가 활용하고, 낮은 건물 스펙 덕분에 임대료 폭등 피해를 면한 카센터와 기존 주거 임차인들은 쫓겨나지 않고 자리를 지킬 수 있게 된다. 서로 전혀 다른 성격과 이해관계를 가진 업종들이 한 지붕 아래 공존하는 독특한 상생 생태계가 형성된 비결이다."],
-            ["구분 소유 구조로 인한 개발 제약", "건물 내 층별 혹은 호실별 소유주가 제각각 분산되어 있거나 필지가 잘게 쪼개져 있는 경우, 건물 전체의 용도를 하나로 통일하거나 통째로 재개발하는 것이 현실적으로 불가능하다. 소유주마다 독립적으로 임대 결정을 내리기 때문에 다양한 업종의 혼재 상태가 오랫동안 지속된다."],
-          ].map(([h, d]) => (
-            <div key={h} className="border border-rule rounded-lg bg-card p-5">
-              <div className="font-display text-base">{h}</div>
-              <p className="mt-2 text-ink-soft leading-relaxed">{d}</p>
+            {
+              title: "1. 물류 네트워크 중심 입지",
+              content: (
+                <ul className="list-disc pl-4 space-y-1 marker:text-ochre">
+                  <li>카센터, 공방 등은 원활한 물류 이동을 위해 골목보다 <strong>대로변 진입</strong>이 필수적임.</li>
+                  <li>도매상 및 납품처와의 접근성을 확보하기 위한 생존 논리로 대로변에 자리 잡음.</li>
+                </ul>
+              )
+            },
+            {
+              title: "2. 노후 스펙이 만든 상생 장벽",
+              content: (
+                <ul className="list-disc pl-4 space-y-1 marker:text-ochre">
+                  <li>엘리베이터나 주차 공간 부족 등 <strong>건물의 낙후된 스펙</strong>이 프리미엄 상권의 진입 장벽으로 작용함.</li>
+                  <li>임대료가 무작정 오르지 않아 기존 세입자들이 버틸 수 있는 환경 제공.</li>
+                </ul>
+              )
+            },
+            {
+              title: "3. 비의도적 공생 생태계",
+              content: (
+                <ul className="list-disc pl-4 space-y-1 marker:text-ochre">
+                  <li>낮은 층은 감각적 카페와 빈티지 숍이 <strong>높은 유동인구 이점</strong>을 적극 활용함.</li>
+                  <li>반면 다른 층은 낙후된 스펙 덕분에 기존 영세업체와 주거 임차인이 쫓겨나지 않고 자리를 유지함.</li>
+                </ul>
+              )
+            },
+            {
+              title: "4. 분산 소유 구조의 개발 제약",
+              content: (
+                <ul className="list-disc pl-4 space-y-1 marker:text-ochre">
+                  <li>건물 내 층별/호실별 소유주가 제각각 나뉘어 있거나 필지가 작게 쪼개져 있음.</li>
+                  <li>통째로 재개발하거나 <strong>건물 전체 용도를 통일하기가 현실적으로 불가능</strong>해 업종 혼재가 지속됨.</li>
+                </ul>
+              )
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="border border-rule rounded-lg bg-card p-5">
+              <div className="font-display text-base mb-3">{item.title}</div>
+              <div className="text-[14px] text-ink-soft leading-relaxed break-keep">{item.content}</div>
             </div>
           ))}
         </div>

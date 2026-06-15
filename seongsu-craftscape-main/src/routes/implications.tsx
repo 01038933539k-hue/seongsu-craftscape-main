@@ -166,14 +166,26 @@ function Implications() {
           <h2 className="font-display text-2xl md:text-3xl mb-8">우리 조의 도시계획적 제언</h2>
           <div className="grid md:grid-cols-2 gap-6 text-sm">
             {[
-              ["1. 수직적 용도혼합(Vertical Zoning) 가이드라인 마련", "성수동은 한 건물 안에서도 저층부 상업, 상층부 제조 및 주거로 나뉘는 자생적 혼합이 일어난다. 기존의 평면적 규제에서 벗어나, 건물 층별 입주 용도에 따라 용적률 인센티브를 차등 지급하는 '수직 조닝 가이드라인' 도입을 제안한다."],
-              ["2. 점진적 재생을 위한 '소필지 가로망' 보존", "성수동 특유의 촘촘한 붉은 벽돌 골목길과 작은 필지들은 동네의 매력이자 영세 제조업이 버틸 수 있는 기반이다. 전면 철거형 대규모 재개발을 지양하고, 기존 가로망을 살려 고쳐 쓰는 점진적 도시재생 전략이 필수적이다."],
-              ["3. 젠트리피케이션 방지와 상생을 위한 앵커 공간", "임대료 폭등으로 기존 수제화·인쇄 공방들이 외곽으로 밀려나는 것을 막아야 한다. 신규 상업 자본이 진입할 때 건물 내 일정 면적을 저렴한 임대료의 '제조업 앵커 공간'으로 할당하도록 유도하는 제도적 안전망이 필요하다."],
-              ["4. 도심형 하이브리드 생태계 지원 (비욘드 조닝)", "성수동은 이미 제조, 기획, 전시, 판매가 하나로 융합된 복합 공간이다. 도시계획을 배우는 학생의 시각에서 볼 때, 전통적인 '용도지역제'의 틀을 깨고 주거·상업·공업이 유연하게 섞일 수 있는 '화이트존(White Zone)' 지정이 적극 도입되어야 한다고 생각한다."],
-            ].map(([h, d]) => (
-              <div key={h} className="border border-rule rounded-xl bg-card p-6 shadow-sm hover:border-violet transition-colors">
-                <div className="font-display text-lg text-ink font-bold mb-3">{h}</div>
-                <p className="text-ink-soft leading-relaxed break-keep">{d}</p>
+              {
+                h: "1. 수직적 용도혼합(Vertical Zoning) 가이드라인 마련", 
+                d: <>성수동은 한 건물 안에서도 저층부 상업, 상층부 제조 및 주거로 나뉘는 <strong>자생적 혼합</strong>이 일어난다. 기존의 평면적 규제에서 벗어나, 건물 층별 입주 용도에 따라 용적률 인센티브를 차등 지급하는 <strong>'수직 조닝 가이드라인'</strong> 도입을 제안한다.</>
+              },
+              {
+                h: "2. 점진적 재생을 위한 '소필지 가로망' 보존", 
+                d: <>성수동 특유의 촘촘한 붉은 벽돌 골목길과 작은 필지들은 동네의 매력이자 <strong>영세 제조업이 버틸 수 있는 기반</strong>이다. 전면 철거형 대규모 재개발을 지양하고, 기존 가로망을 살려 고쳐 쓰는 <strong>점진적 도시재생 전략</strong>이 필수적이다.</>
+              },
+              {
+                h: "3. 젠트리피케이션 방지와 상생을 위한 앵커 공간", 
+                d: <>임대료 폭등으로 기존 수제화·인쇄 공방들이 외곽으로 밀려나는 것을 막아야 한다. 신규 상업 자본이 진입할 때 건물 내 일정 면적을 <strong>저렴한 임대료의 '제조업 앵커 공간'</strong>으로 할당하도록 유도하는 제도적 안전망이 필요하다.</>
+              },
+              {
+                h: "4. 도심형 하이브리드 생태계 지원 (비욘드 조닝)", 
+                d: <>성수동은 이미 제조, 기획, 전시, 판매가 하나로 융합된 복합 공간이다. 도시계획을 배우는 학생의 시각에서 볼 때, 전통적인 '용도지역제'의 틀을 깨고 주거·상업·공업이 유연하게 섞일 수 있는 <strong>'화이트존(White Zone)' 지정</strong>이 적극 도입되어야 한다고 생각한다.</>
+              },
+            ].map((item, i) => (
+              <div key={i} className="border border-rule rounded-xl bg-card p-6 shadow-sm hover:border-violet transition-colors">
+                <div className="font-display text-lg text-ink font-bold mb-3">{item.h}</div>
+                <p className="text-ink-soft leading-relaxed break-keep">{item.d}</p>
               </div>
             ))}
           </div>
