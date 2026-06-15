@@ -129,7 +129,7 @@ function MapPage() {
         </h2>
 
         <p className="text-lg text-ink-soft leading-relaxed mb-12">
-          서울숲 한라 시그마밸리를 비롯한 성수동의 대형 지식산업센터(지산) 내부를 채운 제조업체들은 원래 성수동에 있던 '전통 수제화/인쇄' 업체가 아닙니다. 공간의 크기만 고도화된 것이 아니라, 외부 자본과 ICT 인프라가 유입되면서 <strong className="text-ink">내부 산업 생태계가 완전히 세대교체(Industrial Displacement)</strong>되었습니다.
+          서울숲 한라 시그마밸리를 비롯한 성수동의 대형 지식산업센터(지산) 내부를 채운 제조업체들은 원래 성수동에 있던 '전통 수제화/인쇄' 업체가 아니다. 공간의 크기만 고도화된 것이 아니라, 외부 자본과 ICT 인프라가 유입되면서 <strong className="text-ink">내부 산업 생태계가 완전히 세대교체(Industrial Displacement)</strong>되었다.
         </p>
 
         {/* 시각 자료 1: 동서 축 단면 스케치 다이어그램 (Pure SVG Line-Art) */}
@@ -197,7 +197,7 @@ function MapPage() {
             <div className="w-10 h-10 rounded-full bg-indigo/10 flex items-center justify-center text-indigo font-bold mb-4 group-hover:scale-110 transition-transform">01</div>
             <h3 className="font-display text-lg text-ink mb-3">공간적 분리와 현장 생산의 배제</h3>
             <p className="text-sm text-ink-soft leading-relaxed break-keep">
-              높은 분양가와 임대료는 영세 공방이 감당할 수 없는 수준입니다. 소음과 진동을 수반하는 물리적 가공 공정은 오피스형 환경과 상충되므로, '현장 노동 중심'의 기존 영세 수제화·인쇄 공장들은 지산으로 흡수되지 못하고 외곽으로 밀려났다.
+              높은 분양가와 임대료는 영세 공방이 감당할 수 없는 수준이다. 소음과 진동을 수반하는 물리적 가공 공정은 오피스형 환경과 상충되므로, '현장 노동 중심'의 기존 영세 수제화·인쇄 공장들은 지산으로 흡수되지 못하고 외곽으로 밀려났다.
             </p>
           </div>
           <div className="bg-card border border-rule rounded-xl p-6 shadow-sm hover:shadow-md hover:border-violet/50 transition-all group">
@@ -255,7 +255,7 @@ function MapPage() {
 
         <div className="bg-gradient-to-r from-rule/20 to-transparent border-l-4 border-primary p-6 rounded-r-2xl mb-16 shadow-sm">
           <p className="text-ink text-base leading-relaxed break-keep font-medium">
-            결국 성수동 동측의 대형 지산 필지들은 전통 제조업을 보호하거나 흡수하는 그릇이 아니라, 성수동의 토지 이용 고도화를 이끈 <strong className="text-primary">'산업 교체(Industrial Displacement)'</strong>의 선봉장 역할을 하고 있다. 서측의 소필지 생태계와 대조를 이루는 가장 결정적인 공간 구조적 비대칭성입니다.
+            결국 성수동 동측의 대형 지산 필지들은 전통 제조업을 보호하거나 흡수하는 그릇이 아니라, 성수동의 토지 이용 고도화를 이끈 <strong className="text-primary">'산업 교체(Industrial Displacement)'</strong>의 선봉장 역할을 하고 있다. 서측의 소필지 생태계와 대조를 이루는 가장 결정적인 공간 구조적 비대칭성이다.
           </p>
         </div>
 

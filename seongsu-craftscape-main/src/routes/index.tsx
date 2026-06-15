@@ -53,9 +53,8 @@ function Home() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/80 max-w-2xl font-light leading-relaxed mb-10">
-              성수동 도시제조업 아카이브. 우리는 성수이로 일대의 제조업 분포와 
-              <br className="hidden md:block" /> 공간구조를 기록하여 도시의 미래를 설계합니다.
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl font-light leading-relaxed mb-12">
+              우리는 성수동의 과거와 현재, 그리고 파편화된<br className="hidden md:block" /> 공간구조를 기록하여 도시의 미래를 설계한다.
             </p>
 
             
@@ -70,23 +69,23 @@ function Home() {
               <div className="group">
                 <Factory className="text-ochre mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
                 <h3 className="text-white font-display text-xl mb-3">도시 제조업</h3>
-                <p className="text-white/60 text-sm leading-relaxed font-light">
-                  공간 분석을 통해 성수동의 제조업 생태계를 지원하고 지속 가능한 성장을 도모합니다.
-                </p>
+                <p className="text-white/60 text-sm leading-relaxed mt-auto">
+                  공간 분석을 통해 성수동의 제조업 생태계를 지원하고 지속 가능한 성장을 도모한다.
+              </p>
               </div>
               <div className="group">
                 <Layers className="text-ochre mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
                 <h3 className="text-white font-display text-xl mb-3">공간 엔트로피</h3>
-                <p className="text-white/60 text-sm leading-relaxed font-light">
-                  복합 용도 개발의 현황과 가로 활성도를 추적하여 도시 혁신을 촉진합니다.
-                </p>
+                <p className="text-white/60 text-sm leading-relaxed mt-auto">
+                  복합 용도 개발의 현황과 가로 활성도를 추적하여 도시 혁신을 촉진한다.
+              </p>
               </div>
               <div className="group">
                 <Building2 className="text-ochre mb-6 w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity" strokeWidth={1.5} />
                 <h3 className="text-white font-display text-xl mb-3">수직적 분포</h3>
-                <p className="text-white/60 text-sm leading-relaxed font-light">
-                  산업의 3차원적 분포를 시각화하여 유연하고 다각적인 관점을 제시합니다.
-                </p>
+                <p className="text-white/60 text-sm leading-relaxed mt-auto">
+                  산업의 3차원적 분포를 시각화하여 유연하고 다각적인 관점을 제시한다.
+              </p>
               </div>
               
               

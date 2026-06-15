@@ -121,7 +121,7 @@ function EastWest() {
               진한 파랑색 (전통 노후 건물군)
             </div>
             <p className="mt-2 text-ink-soft leading-relaxed">
-              1970년대 이전부터 자리를 지켜온 오래된 건물들을 나타냅니다. 작은 필지의 건물들은 상층부에 주거 기능이 거의 100% 혼재되어 있으며, 넓은 부지의 단층 건물들은 인쇄, 금속 등 하나의 제조업 용도로 길게 유지되어 온 특징을 보입니다.
+              1970년대 이전부터 자리를 지켜온 오래된 건물들을 나타낸다. 작은 필지의 건물들은 상층부에 주거 기능이 거의 100% 혼재되어 있으며, 넓은 부지의 단층 건물들은 인쇄, 금속 등 하나의 제조업 용도로 길게 유지되어 온 특징을 보인다.
             </p>
           </div>
         </div>
@@ -157,7 +157,7 @@ function EastWest() {
             },
             {
               title: "B 밀려난 합병형",
-              desc: "합병되어 지식산업센터 등 큰 건물로 발전한 경우. 작은 건물들을 합병하여 올린 대형 건물을 다시 더 작은 평수로 쪼개어 섹션 오피스나 상가로 분양·임대함으로써 평당 임대료가 가파르게 상승합니다.",
+              desc: "합병되어 지식산업센터 등 큰 건물로 발전한 경우. 작은 건물들을 합병하여 올린 대형 건물을 다시 더 작은 평수로 쪼개어 섹션 오피스나 상가로 분양·임대함으로써 평당 임대료가 가파르게 상승한다.",
               imgSrc: "/path_b_jisan.jpg",
               imgAlt: "지식산업센터"
             },
@@ -189,14 +189,14 @@ function EastWest() {
             <div className="bg-card rounded-lg p-6 border border-rule">
               <div className="font-display text-lg text-ink mb-3">1. 산업 구조의 다변화와 활력</div>
               <p className="text-[14px] text-ink-soft leading-relaxed break-keep">
-                잘게 쪼개진 공간에 서로 다른 분야의 수많은 소규모 업체들이 밀집하면서, 서로 아이디어를 공유하고 협업하는 '네트워크 효과'와 '지식 전파'가 일어나 지역 산업의 자생력이 강화됩니다.
+                잘게 쪼개진 공간에 서로 다른 분야의 수많은 소규모 업체들이 밀집하면서, 서로 아이디어를 공유하고 협업하는 '네트워크 효과'와 '지식 전파'가 일어나 지역 산업의 자생력이 강화된다.
               </p>
             </div>
             
             <div className="bg-card rounded-lg p-6 border border-rule">
               <div className="font-display text-lg text-ink mb-3">2. 상권 활성화와 지역 경제적 가치 상승</div>
               <p className="text-[14px] text-ink-soft leading-relaxed break-keep">
-                가치가 낮았던 부동산이 고도화되고 상권이 살아나면서 지역의 자산 가치가 상승합니다. 이렇게 확보된 공공 재원은 과거 성수동의 정체성이었던 '성수 수제화 거리'의 환경 개선, 전통 가죽·인쇄 산업의 지원, 특화 사업 체험공간 구축에 집중 재투자 될 수 있다.
+                가치가 낮았던 부동산이 고도화되고 상권이 살아나면서 지역의 자산 가치가 상승한다. 이렇게 확보된 공공 재원은 과거 성수동의 정체성이었던 '성수 수제화 거리'의 환경 개선, 전통 가죽·인쇄 산업의 지원, 특화 사업 체험공간 구축에 집중 재투자될 수 있다.
               </p>
             </div>
           </div>
@@ -222,7 +222,7 @@ function EastWest() {
               시사점
             </div>
             <p className="text-sm text-ink-soft leading-relaxed break-keep">
-              대상지 내 제조업은 식료품 제조업이 압도적인 비중을 차지하며, 식료품을 제외한 나머지 업종(금속, 섬유, 음료, 기계 등)은 구역별로 1개씩만 존재하는 영세하고 다각화된 형태를 보입니다.
+              대상지 내 제조업은 식료품 제조업이 압도적인 비중을 차지하며, 식료품을 제외한 나머지 업종(금속, 섬유, 음료, 기계 등)은 구역별로 1개씩만 존재하는 영세하고 다각화된 형태를 보인다.
             </p>
           </div>
         </div>
@@ -242,7 +242,7 @@ function EastWest() {
               시사점
             </div>
             <p className="text-sm text-ink-soft leading-relaxed break-keep">
-              성수동은 지식산업센터가 위치한 서쪽에, 또한 유동인구의 접근성과 가시성이 극대화되는 1층 공간에 핵심 업체 및 근린생활시설이 집중 분포하는 경향을 보입니다.
+              성수동은 지식산업센터가 위치한 서쪽에, 또한 유동인구의 접근성과 가시성이 극대화되는 1층 공간에 핵심 업체 및 근린생활시설이 집중 분포하는 경향을 보인다.
             </p>
           </div>
         </div>
@@ -304,7 +304,7 @@ function EastWest() {
                       <span className="shrink-0 text-ochre/70 font-bold mt-0.5">·</span>
                       <div>
                         <strong className="text-ink block mb-1">불법 용도변경 묵인</strong>
-                        상업용 시설로 정식 용도 변경 시 주차장 확보 등 규제가 까다로워,<br className="hidden xl:block" /> 대장상 용도를 방치한 채 임시 운영하는 편법이 만연합니다.
+                        상업용 시설로 정식 용도 변경 시 주차장 확보 등 규제가 까다로워,<br className="hidden xl:block" /> 대장상 용도를 방치한 채 임시 운영하는 편법이 만연하다.
                       </div>
                     </li>
                   </ul>
@@ -357,7 +357,7 @@ function EastWest() {
                       <span className="shrink-0 text-ochre/70 font-bold mt-0.5">·</span>
                       <div>
                         <strong className="text-ink block mb-1">인프라 편취 (공간의 사유화)</strong>
-                        화물 엘리베이터 등 공공이 제조 지원을 위해 설계한 인프라가<br className="hidden xl:block" /> 강남 벤처 자본의 유통·물류 보급 기지로 전락하는 현상입니다.
+                        화물 엘리베이터 등 공공이 제조 지원을 위해 설계한 인프라가<br className="hidden xl:block" /> 강남 벤처 자본의 유통·물류 보급 기지로 전락하는 현상이다.
                       </div>
                     </li>
                   </ul>
