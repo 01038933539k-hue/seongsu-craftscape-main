@@ -160,7 +160,7 @@ function Floors() {
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <div className="mt-2 text-[10px] text-ink-soft opacity-70 text-right">
+        <div className="mt-2 text-[12px] text-ink-soft opacity-70 text-right">
           정보출처: 국토교통부 건축물대장, 국토정보플랫폼
         </div>
       </section>

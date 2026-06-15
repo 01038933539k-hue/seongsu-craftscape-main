@@ -28,7 +28,7 @@ function Home() {
       <FadeIn as="section" className="relative w-full bg-black min-h-screen flex flex-col">
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-bg.jpg"
+            src="/seongsu.png"
             alt="Seongsu cityscape at dusk"
             className="w-full h-full object-cover object-center opacity-80"
           />
@@ -45,9 +45,12 @@ function Home() {
               </span>
             </div>
 
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-white font-medium tracking-tight mb-8">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-white font-medium tracking-tight mb-8">
               여전히 <br className="hidden md:block" />만드는 도시<br />
-              <span className="text-ochre font-bold">SEONGSU</span>
+              <span className="text-ochre font-serif flex items-end gap-3 mt-4">
+                <span className="text-[1.2em] leading-none">SEONGSU</span>
+                <span className="text-[0.45em] leading-none pb-2 opacity-80 font-sans tracking-normal">(성수)</span>
+              </span>
             </h1>
 
             <p className="text-lg md:text-xl text-white/80 max-w-2xl font-light leading-relaxed mb-10">
@@ -97,7 +100,7 @@ function Home() {
         <div className="container-prose py-24 md:py-32 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <div className="eyebrow mb-3 text-primary">프로젝트 소개</div>
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight text-ink">
+            <h2 className="font-display text-3xl md:text-4xl leading-tight text-ink">
               제조업이라는 렌즈로 본 성수동
             </h2>
           </div>
@@ -124,7 +127,7 @@ function Home() {
       <FadeIn as="section" className="bg-muted/30 border-y border-rule">
         <div className="container-prose py-24 md:py-32">
           <div className="eyebrow mb-3 text-primary">공간 탐색</div>
-          <h2 className="font-serif text-3xl md:text-4xl mb-12 text-ink">성수동 3D 뷰어</h2>
+          <h2 className="font-display text-3xl md:text-4xl mb-12 text-ink">성수동 3D 뷰어</h2>
           <div className="grid md:grid-cols-[1fr_280px] gap-6 items-start">
             <div className="relative w-full h-[78vh] min-h-[560px] rounded-xl overflow-hidden border border-rule/50 bg-card shadow-sm">
               <iframe
@@ -153,14 +156,17 @@ function Home() {
         <div className="container-prose py-24 md:py-32 grid md:grid-cols-12 gap-10">
           <div className="md:col-span-4">
             <div className="eyebrow mb-3 text-primary">대상지</div>
-            <h2 className="font-serif text-3xl md:text-4xl leading-tight text-ink">
+            <h2 className="font-display text-3xl md:text-4xl leading-tight text-ink">
               선정 이유 및 현황
             </h2>
           </div>
           <div className="md:col-span-8 space-y-6 text-ink-soft leading-relaxed">
+            <div className="w-full rounded-xl overflow-hidden border border-rule/30 shadow-sm mb-6">
+              <img src="/seongsu_target.jpg" alt="성수동 대상지 전경" className="w-full h-auto object-cover" />
+            </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <div className="bg-card p-6 rounded-xl border border-rule/30 shadow-sm">
-                <h3 className="font-serif text-lg text-primary mb-4">대상지 범위</h3>
+                <h3 className="font-display text-lg text-primary mb-4">대상지 범위</h3>
                 <ul className="space-y-3">
                   <li className="flex flex-col border-l-2 border-primary/50 pl-3">
                     <span className="text-ink-soft/70 text-xs font-mono uppercase tracking-wider mb-0.5">행정구역</span>
@@ -168,7 +174,7 @@ function Home() {
                   </li>
                   <li className="flex flex-col border-l-2 border-primary/50 pl-3">
                     <span className="text-ink-soft/70 text-xs font-mono uppercase tracking-wider mb-0.5">핵심가로</span>
-                    <span className="font-medium text-sm text-ink">성수이로 및 주변 이면도로 블록</span>
+                    <span className="font-medium text-sm text-ink">성수이로 및 주변 연결가로</span>
                   </li>
                   <li className="flex flex-col border-l-2 border-primary/50 pl-3">
                     <span className="text-ink-soft/70 text-xs font-mono uppercase tracking-wider mb-0.5">조사면적</span>
@@ -177,15 +183,15 @@ function Home() {
                 </ul>
               </div>
               <div className="bg-card p-6 rounded-xl border border-rule/30 shadow-sm">
-                <h3 className="font-serif text-lg text-primary mb-2">젠트리피케이션</h3>
+                <h3 className="font-display text-lg text-primary mb-2">젠트리피케이션</h3>
                 <p className="text-sm text-ink-soft leading-relaxed">기존 유명 상업 가로의 사례처럼, 성수동 카페거리를 중심으로 상업 자본이 유입되며 젠트리피케이션이 실질적으로 어떻게 진행 중인지 조사를 통해 파악</p>
               </div>
               <div className="bg-card p-6 rounded-xl border border-rule/30 shadow-sm">
-                <h3 className="font-serif text-lg text-primary mb-2">복합토지 이용</h3>
+                <h3 className="font-display text-lg text-primary mb-2">복합토지 이용</h3>
                 <p className="text-sm">공장, 주거지, 상업 시설의 혼재. 상업화와 기존 공업간의 충돌 지역이자 준공업 지역의 특징을 가장 잘 가지고 있는 핵심 구역</p>
               </div>
               <div className="bg-card p-6 rounded-xl border border-rule/30 shadow-sm">
-                <h3 className="font-serif text-lg text-primary mb-2">제조업 생태계</h3>
+                <h3 className="font-display text-lg text-primary mb-2">제조업 생태계</h3>
                 <p className="text-sm">낙후된 소규모 공장부터 대규모, 그리고 새로운 형태의 제조업 업체들까지 다층적인 양상이 얽혀 존재</p>
               </div>
             </div>
@@ -197,13 +203,13 @@ function Home() {
       <FadeIn as="section" className="bg-primary text-white">
         <div className="container-prose py-24 md:py-32">
           <div className="eyebrow mb-3 text-ochre">핵심 질문</div>
-          <h2 className="font-serif text-3xl md:text-5xl max-w-3xl leading-tight">
+          <h2 className="font-display text-3xl md:text-5xl max-w-3xl leading-tight">
             우리는 네 가지 질문을 들고 거리로 나갔다.
           </h2>
           <div className="mt-16 grid md:grid-cols-2 gap-4">
             {questions.map((q, i) => (
               <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-8 md:p-10 flex gap-6 items-start hover:bg-white/10 transition-colors">
-                <div className="font-serif text-4xl text-ochre opacity-80">0{i + 1}</div>
+                <div className="font-display text-4xl text-ochre opacity-80">0{i + 1}</div>
                 <div className="font-display text-xl md:text-2xl leading-snug font-medium pt-1">{q}</div>
               </div>
             ))}
@@ -215,7 +221,7 @@ function Home() {
       <FadeIn as="section" className="bg-paper">
         <div className="container-prose py-24 md:py-32">
           <div className="eyebrow mb-3 text-primary">여덟 개의 장</div>
-          <h2 className="font-serif text-3xl md:text-5xl text-ink">목차</h2>
+          <h2 className="font-display text-3xl md:text-5xl text-ink">목차</h2>
           <div className="mt-12 divide-y divide-rule border-y border-rule">
             {[
               ["01", "대상지 전체 시계열 분석", "성수동은 어떻게 변화했는가?", "/timeline"],

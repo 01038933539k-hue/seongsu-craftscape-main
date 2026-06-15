@@ -139,8 +139,8 @@ function Industries() {
             );
           })}
         </div>
-        <div className="mt-6 text-[10px] text-ink-soft opacity-70 text-right">
-          (출처: 서울시 식품위생업소 인허가 정보, 서울시 건축물대장 표제부)
+        <div className="mt-2 text-[12px] text-ink-soft opacity-70 text-right">
+          자료출처: 서울시 식품위생업소 인허가 정보, 서울시 건축물대장 표제부
         </div>
       </section>
 
@@ -165,8 +165,8 @@ function Industries() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="mt-2 text-[10px] text-ink-soft opacity-70 text-right">
-          (출처: 서울시 상권분석서비스)
+        <div className="mt-2 text-[12px] text-ink-soft opacity-70 text-right">
+          자료출처: 서울시 상권분석서비스
         </div>
       </section>
     </>

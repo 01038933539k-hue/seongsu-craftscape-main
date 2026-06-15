@@ -144,7 +144,7 @@ function Timeline() {
       </section>
 
       {/* LAND USE DIFFERENTIATION SECTION */}
-      <section className="container-prose py-16 md:py-24 rule-top">
+      <section className="container-prose py-16 md:py-24">
         <div className="eyebrow mb-3 text-primary">미시적 접근</div>
         <h2 className="font-serif text-3xl md:text-5xl mb-6 text-ink">토지이용 분화: 9개 필지의 시계열적 변화</h2>
         <p className="text-ink-soft max-w-2xl text-lg leading-relaxed mb-12">

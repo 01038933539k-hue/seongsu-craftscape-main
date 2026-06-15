@@ -14,17 +14,33 @@
     font-display: swap;
 }
 
+@font-face {
+  font-family: 'Noto Serif KR';
+  src: url('https://gstatic.com') format('woff2');
+  font-weight: 400; /* Regular 두께 */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Serif KR';
+  src: url('https://gstatic.com') format('woff2');
+  font-weight: 700; /* Bold 두께 */
+  font-style: normal;
+  font-display: swap;
+}
+
+
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 @import "leaflet/dist/leaflet.css";
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --font-display: "KoreaInstituteOfMachineryAndMaterials", sans-serif;
   --font-sans: "Noto Sans KR", sans-serif;
-  --font-serif: "KoreaInstituteOfMachineryAndMaterials", serif;
+  --font-serif: "Noto Serif KR", serif;
   --font-mono: "KoreaInstituteOfMachineryAndMaterials", monospace;
 
   --radius-sm: calc(var(--radius) - 4px);

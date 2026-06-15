@@ -315,8 +315,8 @@ function Entropy() {
           </div>
           
           <div className="mt-6 text-right">
-            <p className="text-[11px] text-ink-soft/60 font-mono tracking-tight break-keep">
-              출처: 서울 열린데이터광장 성수동 가로별 생활인구 통계(2025), 대한국토·도시계획학회 가로 활성도 연구 데이터 기반 재구성
+            <p className="text-[12px] text-ink-soft/60 font-mono tracking-tight break-keep">
+              자료출처: 서울 열린데이터광장 성수동 가로별 생활인구 통계(2025), 대한국토·도시계획학회 가로 활성도 연구 데이터 기반 재구성
             </p>
           </div>
         </div>
@@ -346,7 +346,7 @@ function Entropy() {
 
       <FadeIn as="section" className="container-prose py-16 md:py-24 border-t border-rule/50">
         <div className="eyebrow mb-3 text-primary">밀도 분석</div>
-        <h2 className="font-serif text-3xl md:text-4xl mb-12 text-ink">가로 밀집도와 제조업 분포</h2>
+        <h2 className="font-sans text-3xl md:text-4xl mb-12 text-ink">가로 밀집도와 제조업 분포</h2>
         
         <p className="text-xl text-ink font-medium mb-12">
           대상지 중 가로에 밀집한 건물을 위주로 한정하여 업체를 조사하였다.

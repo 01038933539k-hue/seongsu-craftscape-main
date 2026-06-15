@@ -27,7 +27,7 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isTransparent = isHome && !scrolled;
+   const isTransparent = isHome && !scrolled;
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isTransparent ? 'bg-transparent border-transparent' : 'bg-background/90 backdrop-blur-md border-b border-rule shadow-sm'}`}>
@@ -47,17 +47,17 @@ export function SiteNav() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-2 p-1.5 rounded-xl transition-all">
+        <nav className="hidden lg:flex items-center gap-2 transition-all">
           {nav.map((n) => {
             const isActive = location.pathname === n.to;
             return (
               <Link
                 key={n.to}
                 to={n.to}
-                className={`px-3 py-2 text-[15px] font-bold rounded-lg transition-all duration-200 whitespace-nowrap ${
+                className={`px-3 py-2 text-[15px] font-bold transition-all duration-200 whitespace-nowrap ${
                   isActive 
-                    ? (isTransparent ? 'text-indigo font-bold bg-white shadow-sm ring-1 ring-black/5' : 'text-indigo font-bold bg-background shadow-sm ring-1 ring-black/5')
-                    : (isTransparent ? 'text-white/80 hover:text-white hover:bg-white/10' : 'text-ink-soft hover:text-ink hover:bg-background/60')
+                    ? (isTransparent ? 'text-ochre font-black border-b-2 border-ochre' : 'text-indigo font-black border-b-2 border-indigo')
+                    : (isTransparent ? 'text-white/80 hover:text-white' : 'text-ink-soft hover:text-ink')
                 }`}
               >
                 {n.label}
@@ -154,7 +154,7 @@ export function PageHeader({
             {eyebrow}
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-ink tracking-tight">
+          <motion.h1 variants={itemVariants} className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-ink tracking-tight">
             {title}
           </motion.h1>
         </div>
@@ -199,7 +199,7 @@ export function PageNavigation({ prev, next }: { prev?: { to: string, label: str
             <span className="text-[11px] uppercase tracking-[0.25em] font-mono text-indigo font-semibold mb-1 transition-colors duration-300 flex items-center gap-2">
               Next Chapter
             </span>
-            <span className="font-serif text-2xl text-ink group-hover:text-indigo transition-colors duration-300">
+            <span className="font-display text-2xl text-ink group-hover:text-indigo transition-colors duration-300">
               {next.label}
             </span>
           </div>

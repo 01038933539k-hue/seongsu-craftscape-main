@@ -162,14 +162,14 @@ function Implications() {
 
         {/* POLICY SUGGESTIONS */}
         <FadeIn className="mt-20 pt-16 border-t border-rule">
-          <div className="eyebrow mb-3">성수동 준공업지역의 특성과 미래 가치</div>
-          <h2 className="font-display text-2xl md:text-3xl mb-8">도시 정책적 제언</h2>
+          <div className="eyebrow mb-3">도시계획학과 프로젝트 최종 결론</div>
+          <h2 className="font-display text-2xl md:text-3xl mb-8">우리 조의 도시계획적 제언</h2>
           <div className="grid md:grid-cols-2 gap-6 text-sm">
             {[
-              ["입체적 용도계획 (수직 조닝)", "평면적 용도 지정을 넘어, 건물 층별로 허용 용도와 건폐율/용적률 혜택을 차등 부여하는 입체적 계획이 요구된다. 상업시설과 소규모 공장이 마찰 없이 수직적으로 공존하도록 제도적 안전망을 구축해야 한다."],
-              ["물리적 불편함을 역이용한 속도 조절", "주차 난, 승강기 부재 등 노후 건물의 물리적 한계가 대형 자본의 전면 침투를 막는 방어막으로 기능했다. 이러한 자생적 '불편함'을 보존하여 젠트리피케이션의 속도를 제어하는 정책적 역발상이 필요하다."],
-              ["미세 격자망(골목길) 보존 기반 점진적 재생", "성수동 특유의 촘촘한 격자형 골목길은 동네 활력을 끌어올리는 핵심 동력이다. 전면 철거 방식의 대규모 재개발을 지양하고, 기존 필지와 가로망을 보존하며 고쳐 쓰는 점진적 재생(Micro-Regeneration)을 고수해야 한다."],
-              ["화이트존(비욘드 조닝) 적극 도입", "주거·상업·공업이 융합된 장소성을 극대화하기 위해, 단일 필지 내 건축물 용도 규제를 대폭 완화하는 '화이트존(입지규제최소구역)' 제도를 선도적으로 도입하여 자발적인 하이브리드 혁신을 유도해야 한다."],
+              ["1. 수직적 용도혼합(Vertical Zoning) 가이드라인 마련", "성수동은 한 건물 안에서도 저층부 상업, 상층부 제조 및 주거로 나뉘는 자생적 혼합이 일어납니다. 기존의 평면적 규제에서 벗어나, 건물 층별 입주 용도에 따라 용적률 인센티브를 차등 지급하는 '수직 조닝 가이드라인' 도입을 제안합니다."],
+              ["2. 점진적 재생을 위한 '소필지 가로망' 보존", "성수동 특유의 촘촘한 붉은 벽돌 골목길과 작은 필지들은 동네의 매력이자 영세 제조업이 버틸 수 있는 기반입니다. 전면 철거형 대규모 재개발을 지양하고, 기존 가로망을 살려 고쳐 쓰는 점진적 도시재생 전략이 필수적입니다."],
+              ["3. 젠트리피케이션 방지와 상생을 위한 앵커 공간", "임대료 폭등으로 기존 수제화·인쇄 공방들이 외곽으로 밀려나는 것을 막아야 합니다. 신규 상업 자본이 진입할 때 건물 내 일정 면적을 저렴한 임대료의 '제조업 앵커 공간'으로 할당하도록 유도하는 제도적 안전망이 필요합니다."],
+              ["4. 도심형 하이브리드 생태계 지원 (비욘드 조닝)", "성수동은 이미 제조, 기획, 전시, 판매가 하나로 융합된 복합 공간입니다. 도시계획을 배우는 학생의 시각에서 볼 때, 전통적인 '용도지역제'의 틀을 깨고 주거·상업·공업이 유연하게 섞일 수 있는 '화이트존(White Zone)' 지정이 적극 도입되어야 한다고 생각합니다."],
             ].map(([h, d]) => (
               <div key={h} className="border border-rule rounded-xl bg-card p-6 shadow-sm hover:border-violet transition-colors">
                 <div className="font-display text-lg text-ink font-bold mb-3">{h}</div>
@@ -189,7 +189,7 @@ function Implications() {
           <div className="rounded-xl border border-rule bg-card p-8 hover:border-violet transition-colors">
             <div className="eyebrow text-primary font-bold">처음으로</div>
             <h3 className="font-display text-2xl mt-2 text-ink">데이터 탐색하기</h3>
-            <p className="text-ink-soft mt-3 text-sm break-keep">지도와 시각화 데이터베이스를 통해 공간 분석 결과를 입체적으로 확인하실 수 있습니다.</p>
+            <p className="text-ink-soft mt-3 text-sm break-keep">지도와 시각화 데이터베이스를 통해 공간 분석 결과를 입체적으로 확인할 수 있다.</p>
             <div className="mt-6 flex flex-wrap gap-6">
               <Link to="/" className="inline-flex items-center gap-2 text-sm font-bold text-violet hover:gap-3 transition-all">
                 분석으로 이동 <ArrowRight size={16} />

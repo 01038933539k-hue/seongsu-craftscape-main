@@ -114,8 +114,8 @@ function Entropy() {
                   <span>표준화 기준</span><span className="text-ink">도로명 주소</span>
                 </li>
               </ul>
-              <div className="mt-3 text-[10px] text-ink-soft/70 opacity-80 text-right">
-                출처: 2026년 상반기 현장 조사
+              <div className="mt-3 text-[12px] text-ink-soft/70 opacity-80 text-right">
+                자료출처: 2026년 상반기 현장 조사
               </div>
             </div>
             <div className="bg-card border border-rule rounded-lg p-5 text-sm text-ink-soft leading-relaxed flex-1 overflow-y-auto">
@@ -131,7 +131,7 @@ function Entropy() {
       <section className="container-prose pb-16">
         <div className="eyebrow mb-3">3D Visualization · Street Entropy</div>
         <h2 className="font-display text-2xl md:text-3xl mb-2">거리별 엔트로피 3D 지도</h2>
-        <p className="text-ink-soft max-w-2xl mb-8">
+        <p className="text-ink-soft max-w-full mb-8">
           거리의 엔트로피 값을 색상으로 시각화했다. 빨강(성수이로, 2.69–3.83)이 가장 높은 혼합도를 나타내며,
           주황(성수이로7가길, 2.37–2.69)과 노랑(성수이로14길, 2.37)으로 갈수록 혼합도가 낮아진다. 지리적 위치 표식을 통해 가로별 혼합도의 차이를 명확히 구분할 수 있다.
         </p>
@@ -198,9 +198,9 @@ function Entropy() {
         </div>
       </section>
 
-      <section className="container-prose py-16 md:py-24 border-t border-rule/50">
+      <section className="container-prose py-16">
         <div className="eyebrow mb-3 text-primary">밀도 분석</div>
-        <h2 className="font-serif text-3xl md:text-4xl mb-12 text-ink">가로 밀집도와 제조업 분포</h2>
+        <h2 className="font-sans text-3xl md:text-4xl mb-12 text-ink">가로 밀집도와 제조업 분포</h2>
         
         <p className="text-xl text-ink font-medium mb-12">
           대상지 중 가로에 밀집한 건물을 위주로 한정하여 업체를 조사하였다.

@@ -187,25 +187,70 @@ function Industries() {
             </div>
             <div className="bg-card border border-rule rounded-lg p-5 text-sm text-ink-soft leading-relaxed">
               <div className="eyebrow mb-2 text-ink">마이크로 조닝</div>
-              업종군을 세분화하여 각 포인트의 분포를 시각화. 특정 구역(zoning)에 어떤 업종이 밀집해 있는지 확인할 수 있습니다.
+              업종군을 세분화하여 각 포인트의 분포를 시각화. 특정 구역(zoning)에 어떤 업종이 밀집해 있는지 확인할 수 있다.
             </div>
             <div className="bg-card border border-rule rounded-lg p-5 text-sm text-ink-soft leading-relaxed">
               <div className="eyebrow mb-2 text-primary">긍정적 젠트리피케이션</div>
-              제조업이 빠져나간 노후 공간에 트렌디한 팝업 스토어와 리테일 상업시설이 들어서는 현상은 단순한 산업의 밀려남이 아닙니다. 이는 낡은 공장 지대가 새로운 부가가치를 창출하는 활력 있는 소비 거점으로 진화하는 <strong className="text-ink">‘긍정적 젠트리피케이션’</strong> 과정으로 해석될 수 있습니다.
+              제조업이 빠져나간 노후 공간에 트렌디한 팝업 스토어와 리테일 상업시설이 들어서는 현상은 단순한 산업의 밀려남이 아닙니다. 이는 낡은 공장 지대가 새로운 부가가치를 창출하는 활력 있는 소비 거점으로 진화하는 <strong className="text-ink">‘긍정적 젠트리피케이션’</strong> 과정으로 해석될 수 있다.
             </div>
           </aside>
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose py-16 rule-top">
+      <FadeIn as="section" className="container-prose pb-16">
+        <div className="eyebrow mb-3 text-primary">대상지 제조업 중분류 상세 분석</div>
+        <h2 className="font-display text-2xl md:text-3xl mb-6">단일 산업을 넘어선 다변화된 제조 생태계</h2>
+        
+        <div className="bg-card border border-rule rounded-xl p-6 overflow-hidden flex flex-col items-center mb-6 shadow-sm">
+          <img 
+            src="/se.png"
+            alt="성수동 대상지 제조업 중분류 현황 그래프" 
+            className="w-full max-w-4xl h-auto"
+          />
+        </div>
+
+        <p className="text-lg text-ink-soft leading-relaxed break-keep mb-8 max-w-4xl">
+          우리의 연구는 성수동을 단순한 '수제화 및 인쇄 골목'으로 납작하게 정의하는 것을 넘어, 대상지 내 제조업을 중분류 단위로 해체하여 들여다보았다. 현재 성수이로 주변 핵심가로에서 실제로 가동 중인 제조 공장들이 구체적으로 어떤 품목을 다루며, 급격한 상업적 변화 속에서 어떻게 공존하고 있는지 추적했다.
+        </p>
+
+        <div className="bg-muted/30 border border-rule/50 rounded-2xl p-6 md:p-8 shadow-sm relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-1.5 h-full bg-violet"></div>
+          <h3 className="font-display text-xl text-ink mb-3">도심 적응형 하이브리드 생태계</h3>
+          <ul className="space-y-3 mt-4 text-sm md:text-base text-ink-soft leading-relaxed break-keep">
+            <li className="flex gap-3">
+              <span className="text-violet font-bold">·</span>
+              <span><strong>전통 경공업의 잔존:</strong> 가죽, 의복, 인쇄업이 여전히 성수동 제조업의 굳건한 기반 역할을 수행함</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-violet font-bold">·</span>
+              <span><strong>상업 연계형 제조 부상:</strong> 팝업스토어 및 F&B 상권에 맞춘 <strong>식료품(디저트·밀키트) 제조</strong> 비중 확대</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-violet font-bold">·</span>
+              <span><strong>스타트업 지원 제조:</strong> 지식산업센터를 중심으로 한 <strong>소형 전자·부품 조립업</strong>의 틈새 진입</span>
+            </li>
+            <li className="flex gap-3 mt-2 pt-3 border-t border-rule/50">
+              <span className="text-violet font-bold">➔</span>
+              <span className="text-ink">성수동의 제조업은 젠트리피케이션으로 소멸된 것이 아니라, 변화된 환경에 맞춰 <strong>'생존 가능한 품목으로 진화'</strong>하고 있다.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="mt-4 text-[12px] text-ink-soft opacity-70 text-right">
+          자료출처: 자체 현장 실측 및 2025-2026 성수동 일대 사업체 기초 데이터
+        </div>
+      </FadeIn>
+
+
+      <FadeIn as="section" className="container-prose py-16 ">
         <div className="eyebrow mb-3">성수동 건축물의 주요용도코드</div>
         <h2 className="font-display text-3xl md:text-4xl mb-2">무엇으로 활용되는가</h2>
         <div className="w-full"> 
           <div className="relative w-full h-[380px] md:h-[450px] rounded-xl overflow-hidden border border-rule/50 bg-card shadow-sm">
-                          <div className="absolute top-4 right-4 bg-ink/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-2 pointer-events-none z-10 shadow-lg animate-pulse opacity-100 group-hover:opacity-0 transition-opacity">
-                <MousePointerClick size={14} /> 지도를 마우스로 드래그하여 탐색해보세요
-              </div>
-              <iframe
+            <div className="absolute top-4 right-4 bg-ink/80 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full flex items-center gap-2 pointer-events-none z-10 shadow-lg animate-pulse opacity-100 group-hover:opacity-0 transition-opacity">
+              <MousePointerClick size={14} /> 지도를 마우스로 드래그하여 탐색해보세요
+            </div>
+            <iframe
               src="/seongsu-3d-viewer2.html"
               title="성수동 360도 뷰어"
               className="absolute inset-0 w-full h-full"
@@ -215,7 +260,7 @@ function Industries() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-16 rule-top"> <br/><br/>
+      <FadeIn as="section" className="container-prose pb-16 ">
         <div className="grid md:grid-cols-2 gap-6">
           {cards.map((c) => {
             const color = industryMeta[c.key].color;
@@ -249,7 +294,7 @@ function Industries() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose py-24 rule-top">
+      <FadeIn as="section" className="container-prose py-24 ">
         <div className="eyebrow mb-3 text-violet">Hybrid Industries</div>
         <h2 className="font-display text-3xl md:text-4xl mb-6">제조와 소비의 경계 붕괴</h2>
         
@@ -260,20 +305,20 @@ function Industries() {
         <HybridLoopDiagram />
 
         <div className="mt-6 text-right">
-          <p className="text-[11px] text-ink-soft/60 font-mono tracking-tight break-keep">
-            출처: 통계청 제11차 한국표준산업분류(KSIC) 매뉴얼, 산업연구원(KIET) 융복합 신산업 트렌드 분석 리포트
+          <p className="text-[12px] text-ink-soft/60 font-mono tracking-tight break-keep">
+            자료출처: 통계청 제11차 한국표준산업분류(KSIC) 매뉴얼, 산업연구원(KIET) 융복합 신산업 트렌드 분석 리포트
           </p>
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose py-24 rule-top">
+      <FadeIn as="section" className="container-prose py-24 ">
         <div className="eyebrow mb-3 text-primary">심층 분석: 패션 산업 트리맵</div>
         <h2 className="font-display text-3xl md:text-4xl mb-6">성수동 패션 산업의 공간적 체질 개선</h2>
         <p className="text-ink-soft max-w-3xl mb-12 text-lg leading-relaxed">
           과거의 '제조 중심 공장지대'에서 현재의 '고부가가치 리테일 상권'으로 어떻게 변화했는지 종사자 수 기준의 제조업 및 도소매업 트리맵을 통해 심층적으로 분석한다.
         </p>
 
-        <h3 className="font-serif text-2xl mb-6 text-ink mt-8">제조업: 전통 피혁 하락, 구두류 잔존</h3>
+        <h3 className="font-display text-2xl mb-6 text-ink mt-8">제조업: 전통 피혁 하락, 구두류 잔존</h3>
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div className="bg-card border border-rule/50 rounded-2xl p-4 shadow-sm">
             <div className="text-sm text-ink-soft font-mono mb-4 text-center">과거 제조업 (종사자 수 기준)</div>
@@ -303,7 +348,7 @@ function Industries() {
           </li>
         </ul>
 
-        <h3 className="font-serif text-2xl mb-6 text-ink">도소매업: 패션·액세서리의 폭발적 성장</h3>
+        <h3 className="font-display text-2xl mb-6 text-ink">도소매업: 패션·액세서리의 폭발적 성장</h3>
         <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div className="bg-card border border-rule/50 rounded-2xl p-4 shadow-sm">
             <div className="text-sm text-ink-soft font-mono mb-4 text-center">과거 도소매업 (종사자 수 기준)</div>

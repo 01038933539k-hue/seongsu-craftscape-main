@@ -189,10 +189,9 @@ function Floors() {
   return (
     <>
       <PageHeader index="04" eyebrow="Chapter 04 · Vertical Mix" title="수직적으로 혼합되는 도시" subtitle={<>성수동은 평면이 아니라 수직으로 읽어야 한다.<br />한 건물 안에서 제조 · 상업 · 업무 · 주거가 층을 나눠 서로 공존한다.</>} />
-
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose pb-12">
         <div className="eyebrow mb-3 text-primary">층별 단면 비디오 뷰</div>
-        <h2 className="font-serif text-3xl md:text-4xl mb-8 text-ink">성수동의 단면을 생생하게 탐험하다</h2>
+        <h2 className="font-sans text-3xl md:text-4xl mb-8 text-ink">성수동의 단면을 생생하게 탐험하다</h2>
         <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-rule/50 shadow-lg bg-black mb-8">
           <video 
             src="/seongsu-video.mp4" 
@@ -206,7 +205,39 @@ function Floors() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose py-16">
+        <div className="eyebrow mb-3">시대별 신규 준공 건물 수</div>
+        <h2 className="font-display text-3xl md:text-4xl mb-2">층마다 어떻게 분포하는가</h2>
+        <div className="w-full"> 
+          <div className="relative w-full h-[380px] md:h-[450px] rounded-xl overflow-hidden border border-rule/50 bg-card shadow-sm mb-6">
+            <iframe
+              src="/seongsu-3d-viewer3.html"
+              title="성수동 360도 뷰어"
+              className="absolute inset-0 w-full h-full"
+              loading="lazy"
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-[13px] font-medium bg-card border border-rule/50 rounded-xl p-4 shadow-sm">
+            {[
+              { label: "공장/제조", color: "#C800C8" },
+              { label: "주거", color: "#FFDE00" },
+              { label: "판매", color: "#FF0000" },
+              { label: "음식점", color: "#FF6600" },
+              { label: "사무/업무", color: "#0000FF" },
+              { label: "교육", color: "#00B4D8" },
+              { label: "창고", color: "#8B5A2B" },
+              { label: "기타/미지정", color: "#CCCCCC" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-2">
+                <span className="w-3.5 h-3.5 rounded-full shadow-sm border border-black/10" style={{ backgroundColor: item.color }}></span>
+                <span className="text-ink-soft">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn as="section" className="container-prose pb-12">
         <div className="grid md:grid-cols-4 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
           {[
             ["저층부", "상업", "var(--color-use-commercial)", "1F 도로면 — 카페·매장·쇼룸"],
@@ -223,7 +254,7 @@ function Floors() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose pb-2">
         <div className="eyebrow mb-3">층별 용도 구성비</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">층이 높아질수록 용도가 바뀐다</h2>
         <div className="h-96 bg-card border border-rule rounded-lg p-4">
@@ -240,27 +271,11 @@ function Floors() {
             </BarChart>
           </ResponsiveContainer>
         </div>
-        <div className="mt-2 text-[10px] text-ink-soft opacity-70 text-right">
-          정보출처: 국토교통부 건축물대장, 국토정보플랫폼
+        <div className="mt-2 text-[12px] text-ink-soft opacity-70 text-right">
+          자료출처: 국토교통부 건축물대장, 국토정보플랫폼
         </div>
       </FadeIn>
-
-      <FadeIn as="section" className="container-prose pb-16">
-        <div className="eyebrow mb-3">준공 시대별 업종 구성 변화</div>
-        <h2 className="font-display text-2xl md:text-3xl mb-6">시대의 흐름에 따른 층별 변화</h2>
-        <div className="bg-card border border-rule rounded-lg p-6 overflow-hidden flex flex-col items-center">
-          <img 
-            src={floorsHistoryImg} 
-            alt="성수동 건물 준공시대별 업종 구성 변화 (현재 용도 기준, 지상 1~5층)" 
-            className="w-full max-w-4xl h-auto"
-          />
-          <p className="mt-6 text-sm text-ink-soft text-center max-w-2xl">
-            1970년대 이전부터 2020년대에 이르기까지 준공된 건물들의 시대별 입종 비율 변화(꺾은선) 및 누적 영역 그래프입니다. 과거 제조업 중심에서 점차 상업 및 사무 공간으로 전환되는 입주 양상을 확인할 수 있습니다.
-          </p>
-        </div>
-      </FadeIn>
-
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose pb-12">
         <div className="eyebrow mb-3">대표 수직 혼합 사례 — 6개 표본 블록</div>
         <h2 className="font-display text-2xl md:text-3xl mb-8">한 건물, 네 개의 일</h2>
         
@@ -272,7 +287,7 @@ function Floors() {
             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" 
           />
           <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 pointer-events-none bg-card/95 px-5 py-4 rounded-xl backdrop-blur-md border border-rule/50 shadow-lg flex flex-col items-end max-w-sm text-right">
-            <h3 className="font-serif text-2xl text-ink font-bold">성수동2가 309-126</h3>
+            <h3 className="font-display text-2xl text-ink font-bold">성수동2가 309-126</h3>
             <p className="font-display text-primary mt-1 mb-2">노후 대로변 건물</p>
             <p className="text-[13px] text-ink-soft leading-relaxed break-keep">
               빈티지샵·카센터·수제화·주거의 비의도적 공생.<br />대로변 입지 + 노후 스펙이 동시에 작동.
@@ -287,7 +302,7 @@ function Floors() {
             className="w-full h-auto"
           />
           <p className="mt-6 text-sm text-ink-soft text-center max-w-2xl">
-            6개 표본 건물의 실제 층별 용도 분포 단면도입니다. 건물의 노후도와 위치(대로변, 이면도로 등)에 따라 제조업, 상업, 업무, 주거가 한 건물 내에서 어떻게 혼합되어 있는지 시각적으로 확인할 수 있습니다.
+            6개 표본 건물의 실제 층별 용도 분포 단면도입니다. 건물의 노후도와 위치(대로변, 이면도로 등)에 따라 제조업, 상업, 업무, 주거가 한 건물 내에서 어떻게 혼합되어 있는지 시각적으로 확인할 수 있다.
           </p>
         </div>
 
@@ -328,7 +343,7 @@ function Floors() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose pb-12">
         <div className="border-t border-rule/50 pt-16">
           <div className="eyebrow mb-3">건축물 층별 용도 및 수직적 혼재 특성</div>
           <h2 className="font-display text-2xl md:text-3xl mb-8">데이터와 현장 사이의 이야기</h2>
@@ -365,7 +380,7 @@ function Floors() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-24">
+      <FadeIn as="section" className="container-prose pb-12">
         <div className="border-t border-rule/50 pt-16">
           <div className="eyebrow mb-3 text-violet">Vertical Blind Spots</div>
           <h2 className="font-display text-2xl md:text-3xl mb-6">수직적 사각지대: 지하층과 노후 상층부의 무단 용도 전용 실태</h2>
@@ -376,14 +391,14 @@ function Floors() {
           <BuildingSectionDiagram />
 
           <div className="mt-6 text-right">
-            <p className="text-[11px] text-ink-soft/60 font-mono tracking-tight break-keep">
-              출처: 국토교통부 세움터 건축물대장 층별 변동 내역(2026), 건축도시공간연구소(AURI) 건축물 공간 유연성 연구 보고서 인용
+            <p className="text-[12px] text-ink-soft/60 font-mono tracking-tight break-keep">
+              자료출처: 국토교통부 세움터 건축물대장 층별 변동 내역(2026), 건축도시공간연구소(AURI) 건축물 공간 유연성 연구 보고서 인용
             </p>
           </div>
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-24">
+      <FadeIn as="section" className="container-prose pb-12">
         <div className="border-t border-rule/50 pt-16">
           <div className="eyebrow mb-3">왜 수직 혼합이 유지되는가</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">노후 대로변 건물의 비의도적 공생 구조</h2>

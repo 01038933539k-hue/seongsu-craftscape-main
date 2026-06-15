@@ -52,24 +52,31 @@ function MapPage() {
             </BarChart>
           </ResponsiveContainer>
         </div>
+        <div className="mt-2 text-[12px] text-ink-soft opacity-70 text-right">
+          자료출처: 한국산업단지공단, 지식산업센터 현황
+        </div>
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
           <p className="text-ink-soft leading-relaxed max-w-3xl">
             준공업지역 규제 완화 이후 지식산업센터의 <strong>공급은 폭발적으로 늘어났으나, 그에 비례하여 공실률이 함께 치솟는 기형적 구조</strong>가 나타나고 있다. 투기적 수요로 인해 분양가는 급등했지만 실제 입주할 기업들의 수요를 넘어서면서, 많은 호실이 비어있는 채로 방치되는 부작용을 낳았다.
           </p>
-          <div className="text-[10px] text-ink-soft opacity-70 text-right whitespace-nowrap bg-muted/50 p-2 rounded">
-            (자료 출처: 한국산업단지공단, 지식산업센터 현황)
-          </div>
         </div>
 
-        <div className="eyebrow mb-3 text-primary mt-16">핵심 건물 분석</div>
-        <h2 className="font-serif text-3xl md:text-4xl mb-8 text-ink">서울숲 한라 시그마밸리</h2>
-        
-        <div className="space-y-6 text-ink-soft leading-relaxed text-lg mb-8">
-          <p>
-            지식산업 센터(<strong className="text-primary font-medium">서울숲 한라 시그마밸리</strong>)는 가장 오른쪽·가장 위쪽·가장 큰 원으로 나타나서, 주변 건물보다 업종도 다양하고 규모도 크고 층수도 높은 핵심 건물이라는 것을 알 수 있다.
+        <div className="w-full bg-card border border-rule/50 shadow-sm rounded-2xl overflow-hidden mb-16 flex flex-col items-center p-6 md:p-8">
+          <h3 className="font-display text-2xl text-ink mb-6">성수동 대표 지식산업센터 위치</h3>
+          <img src="/core_buildings.png" alt="성수동 대표 지식산업센터 위치 지도" className="w-full max-w-4xl h-auto" />
+          <p className="mt-6 text-sm text-ink-soft text-center max-w-2xl">
+            지도에 표시된 I, II, III 영역은 성수동 준공업지역 내에서 대규모 산업 융합을 이끌고 있는 대표적인 핵심 지식산업센터들의 주요 입지를 나타냅니다.
           </p>
-          <p>
+        </div>
+
+        <div className="eyebrow mb-3 text-primary">핵심 건물 분석</div>
+        <h2 className="font-display text-2xl md:text-3xl mb-6">서울숲 한라 시그마밸리</h2>
+
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
+          <p className="text-ink-soft leading-relaxed max-w-3xl">
+            지식산업 센터(<strong className="text-primary font-medium">서울숲 한라 시그마밸리</strong>)는 가장 오른쪽·가장 위쪽·가장 큰 원으로 나타나서, 주변 건물보다 업종도 다양하고 규모도 크고 층수도 높은 핵심 건물이라는 것을 알 수 있다.
+            <br/>
             즉 지식산업 센터(서울숲 한라 시그마밸리)는 단순히 제조업만 모인 건물이 아니라, 제조업·업무/서비스·소비업종이 한 건물 안에 같이 들어간 <strong className="text-ink">복합형 지식산업센터</strong>로 해석할 수 있다.
           </p>
         </div>
@@ -190,21 +197,21 @@ function MapPage() {
             <div className="w-10 h-10 rounded-full bg-indigo/10 flex items-center justify-center text-indigo font-bold mb-4 group-hover:scale-110 transition-transform">01</div>
             <h3 className="font-display text-lg text-ink mb-3">공간적 분리와 현장 생산의 배제</h3>
             <p className="text-sm text-ink-soft leading-relaxed break-keep">
-              높은 분양가와 임대료는 영세 공방이 감당할 수 없는 수준입니다. 소음과 진동을 수반하는 물리적 가공 공정은 오피스형 환경과 상충되므로, '현장 노동 중심'의 기존 영세 수제화·인쇄 공장들은 지산으로 흡수되지 못하고 외곽으로 밀려났습니다.
+              높은 분양가와 임대료는 영세 공방이 감당할 수 없는 수준입니다. 소음과 진동을 수반하는 물리적 가공 공정은 오피스형 환경과 상충되므로, '현장 노동 중심'의 기존 영세 수제화·인쇄 공장들은 지산으로 흡수되지 못하고 외곽으로 밀려났다.
             </p>
           </div>
           <div className="bg-card border border-rule rounded-xl p-6 shadow-sm hover:shadow-md hover:border-violet/50 transition-all group">
             <div className="w-10 h-10 rounded-full bg-violet/10 flex items-center justify-center text-violet font-bold mb-4 group-hover:scale-110 transition-transform">02</div>
             <h3 className="font-display text-lg text-ink mb-3">본질이 바뀐 '무늬만 제조업'</h3>
             <p className="text-sm text-ink-soft leading-relaxed break-keep">
-              지산 내부에 여전히 의류·인쇄·식품 코드가 존재하지만 과거와 다릅니다. 하드웨어 R&D, 패션 브랜드 본사, 푸드테크 등 기획과 디자인, 시제품 제작(Prototyping)만 수행하는 고부가가치 '도심형 지식 융합 제조'로 본질이 완전히 교체되었습니다.
+              지산 내부에 여전히 의류·인쇄·식품 코드가 존재하지만 과거와 다릅니다. 하드웨어 R&D, 패션 브랜드 본사, 푸드테크 등 기획과 디자인, 시제품 제작(Prototyping)만 수행하는 고부가가치 '도심형 지식 융합 제조'로 본질이 완전히 교체되었다.
             </p>
           </div>
           <div className="bg-card border border-rule rounded-xl p-6 shadow-sm hover:shadow-md hover:border-ochre/50 transition-all group">
             <div className="w-10 h-10 rounded-full bg-ochre/10 flex items-center justify-center text-ochre font-bold mb-4 group-hover:scale-110 transition-transform">03</div>
             <h3 className="font-display text-lg text-ink mb-3">강남발 ICT 밸류체인의 흡수</h3>
             <p className="text-sm text-ink-soft leading-relaxed break-keep">
-              테헤란로의 살인적인 임대료를 피해 영동대교만 건너면 되는 성수동으로 넘어온 IT 벤처, 앱 개발사, 디자인 에이전시, 대형 엔터테인먼트 기업들이 대거 유입되었습니다. 서울시의 '성수 IT·문화콘텐츠 산업개발진흥지구' 정책에 따른 용적률 인센티브가 이를 가속화했습니다.
+              테헤란로의 살인적인 임대료를 피해 영동대교만 건너면 되는 성수동으로 넘어온 IT 벤처, 앱 개발사, 디자인 에이전시, 대형 엔터테인먼트 기업들이 대거 유입되었다. 서울시의 '성수 IT·문화콘텐츠 산업개발진흥지구' 정책에 따른 용적률 인센티브가 이를 가속화했다.
             </p>
           </div>
         </div>
@@ -248,7 +255,7 @@ function MapPage() {
 
         <div className="bg-gradient-to-r from-rule/20 to-transparent border-l-4 border-primary p-6 rounded-r-2xl mb-16 shadow-sm">
           <p className="text-ink text-base leading-relaxed break-keep font-medium">
-            결국 성수동 동측의 대형 지산 필지들은 전통 제조업을 보호하거나 흡수하는 그릇이 아니라, 성수동의 토지 이용 고도화를 이끈 <strong className="text-primary">'산업 교체(Industrial Displacement)'</strong>의 선봉장 역할을 하고 있습니다. 서측의 소필지 생태계와 대조를 이루는 가장 결정적인 공간 구조적 비대칭성입니다.
+            결국 성수동 동측의 대형 지산 필지들은 전통 제조업을 보호하거나 흡수하는 그릇이 아니라, 성수동의 토지 이용 고도화를 이끈 <strong className="text-primary">'산업 교체(Industrial Displacement)'</strong>의 선봉장 역할을 하고 있다. 서측의 소필지 생태계와 대조를 이루는 가장 결정적인 공간 구조적 비대칭성입니다.
           </p>
         </div>
 

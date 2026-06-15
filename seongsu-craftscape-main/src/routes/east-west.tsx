@@ -27,7 +27,7 @@ function EastWest() {
     <>
       <PageHeader index="02" eyebrow="Chapter 02 · East / West" title="같은 성수동, 다른 도시 구조" subtitle="성수이로를 가운데 두고 동측과 서측은 전혀 다른 도시 조직을 가지고 있다. 필지 크기 하나가 건물 형태, 업종, 보행 경험까지 결정한다." />
 
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose pb-24">
         <div className="grid md:grid-cols-2 gap-px bg-rule border border-rule rounded-lg overflow-hidden">
           <div className="bg-card p-8 md:p-12 flex flex-col h-full">
             <div className="flex flex-col flex-1">
@@ -78,7 +78,7 @@ function EastWest() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose pb-24">
         <div className="eyebrow mb-3">대조표</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">한 줄로 보는 차이</h2>
         <div className="border border-rule rounded-lg overflow-hidden bg-card">
@@ -97,9 +97,14 @@ function EastWest() {
         </div>
       </FadeIn>
 
-      <FadeIn as="section" className="container-prose pb-16">
+      <FadeIn as="section" className="container-prose pb-24">
         <div className="eyebrow mb-3">건축 연도별 시각화 범례</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">신축과 노후 건물의 극단적 대비</h2>
+        
+        <div className="w-full bg-white border border-rule/50 shadow-sm rounded-2xl overflow-hidden p-4 mb-8 flex justify-center">
+          <img src="/east_west_contrast.jpg" alt="신축과 노후 건물 분포도" className="w-full max-w-4xl h-auto" />
+        </div>
+
         <div className="grid md:grid-cols-2 gap-4 text-sm mb-12">
           <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-recent)" }}>
             <div className="font-display text-base flex items-center gap-2" style={{ color: "var(--color-recent)" }}>
@@ -107,7 +112,7 @@ function EastWest() {
               밝은 하늘색 (최신 신축 건물군)
             </div>
             <p className="mt-2 text-ink-soft leading-relaxed">
-              2020년대 이후 지어진 신축 건물들을 나타냅니다. 무신사와 같은 대형 업체의 단일 용도 건물이나 복합 용도로 활용되는 작은 필지의 신축 건물이 이에 해당합니다. 주거 기능은 거의 없으며, 주로 카페, 사무실 등 상업화된 시설이 밀집해 있습니다.
+              2020년대 이후 지어진 신축 건물들을 나타냅니다. 무신사와 같은 대형 업체의 단일 용도 건물이나 복합 용도로 활용되는 작은 필지의 신축 건물이 이에 해당한다. 주거 기능은 거의 없으며, 주로 카페, 사무실 등 상업화된 시설이 밀집해 있다.
             </p>
           </div>
           <div className="border border-rule rounded-lg bg-card p-5 border-t-4" style={{ borderTopColor: "var(--color-historic)" }}>
@@ -127,13 +132,13 @@ function EastWest() {
           <div className="border border-rule rounded-lg bg-card p-5">
             <div className="font-display text-base">EAST · 동쪽 지역 (대형 필지 및 지식산업센터 중심)</div>
             <p className="mt-2 text-ink-soft leading-relaxed">
-              과거에는 넓은 부지의 공장과 소필지가 공존했으나, 2000년대 이후 뚝섬 개발 압력과 성수 IT산업단지 지정의 영향으로 여러 필지가 하나로 합쳐지는 합필 개발이 대대적으로 이루어졌습니다. 현재는 거대한 지식산업센터가 들어서거나 단일 대기업이 통째로 사용하는 대형 부지 중심으로 탈바꿈했습니다. 격자형 가로망 설계와 단일 토지 소유자 구조 덕분에 이 같은 대규모 개발이 수월했습니다.
+              과거에는 넓은 부지의 공장과 소필지가 공존했으나, 2000년대 이후 뚝섬 개발 압력과 성수 IT산업단지 지정의 영향으로 여러 필지가 하나로 합쳐지는 합필 개발이 대대적으로 이루어졌다. 현재는 거대한 지식산업센터가 들어서거나 단일 대기업이 통째로 사용하는 대형 부지 중심으로 탈바꿈했다. 격자형 가로망 설계와 단일 토지 소유자 구조 덕분에 이 같은 대규모 개발이 수월했다.
             </p>
           </div>
           <div className="border border-rule rounded-lg bg-card p-5">
             <div className="font-display text-base">WEST · 서쪽 지역 (소필지 유지 및 골목길 상업화)</div>
             <p className="mt-2 text-ink-soft leading-relaxed">
-              1970년대부터 이어져 온 작은 필지 구조가 오늘날까지 그대로 유지되고 있습니다. 최근 새로 지어진 건물들도 기존의 작은 필지 틀을 깨지 않고 위로 층수만 높이는 방식으로 건축되었습니다. 이는 서쪽 특유의 좁은 골목망 구조가 필지를 합치는 개발(합필)을 어렵게 만들기 때문입니다. 이에 따라 제조업보다는 골목길의 보행 친화성을 무기로 삼은 사무실, 미용실, 음식점, 카페 등의 상업시설이 주를 이루게 되었습니다.
+              1970년대부터 이어져 온 작은 필지 구조가 오늘날까지 그대로 유지되고 있다. 최근 새로 지어진 건물들도 기존의 작은 필지 틀을 깨지 않고 위로 층수만 높이는 방식으로 건축되었다. 이는 서쪽 특유의 좁은 골목망 구조가 필지를 합치는 개발(합필)을 어렵게 만들기 때문이다. 이에 따라 제조업보다는 골목길의 보행 친화성을 무기로 삼은 사무실, 미용실, 음식점, 카페 등의 상업시설이 주를 이루게 되었다.
             </p>
           </div>
         </div>
@@ -142,15 +147,35 @@ function EastWest() {
       <FadeIn as="section" className="container-prose pb-24">
         <div className="eyebrow mb-3">필지 유형 분류 (제안 분석 프레임)</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">A · B · C 세 가지 진화 경로</h2>
-        <div className="grid md:grid-cols-3 gap-4 text-sm">
+        <div className="grid md:grid-cols-3 gap-6 text-sm">
           {[
-            ["A 전통 고수형", "2010년에도 수제화·인쇄 공장, 2026년 현재도 합병·분할 없이 그대로 공장으로 등록된 필지. 제조업이 생존할 수 있는 마지막 공간적 한계선."],
-            ["B 밀려난 합병형", "합병되어 지식산업센터 등 큰 건물로 발전한 경우. 작은 건물들을 합병하여 올린 대형 건물을 다시 더 작은 평수로 쪼개어 섹션 오피스나 상가로 분양·임대함으로써 평당 임대료가 가파르게 상승합니다."],
-            ["C 쪼개진 분할형", "과거보다 더 작게 분할된 경우. 높은 임대료를 감당할 수 있는 자본력을 가진 F&B 프랜차이즈, 세련된 카페, 디자인 팝업스토어, IT 스타트업 등 트렌디한 업종이 집중되며, 이 과정에서 영세 제조업이 외곽으로 밀려납니다."],
-          ].map(([h, d]) => (
-            <div key={h} className="border border-rule rounded-lg bg-card p-5">
-              <div className="font-display text-base">{h}</div>
-              <p className="mt-2 text-ink-soft leading-relaxed break-keep">{d}</p>
+            {
+              title: "A 전통 고수형",
+              desc: "2010년에도 수제화·인쇄 공장, 2026년 현재도 합병·분할 없이 그대로 공장으로 등록된 필지. 제조업이 생존할 수 있는 마지막 공간적 한계선.",
+              imgSrc: "/path_a_leather.jpg",
+              imgAlt: "가죽공방"
+            },
+            {
+              title: "B 밀려난 합병형",
+              desc: "합병되어 지식산업센터 등 큰 건물로 발전한 경우. 작은 건물들을 합병하여 올린 대형 건물을 다시 더 작은 평수로 쪼개어 섹션 오피스나 상가로 분양·임대함으로써 평당 임대료가 가파르게 상승합니다.",
+              imgSrc: "/path_b_jisan.jpg",
+              imgAlt: "지식산업센터"
+            },
+            {
+              title: "C 쪼개진 분할형",
+              desc: "과거보다 더 작게 분할된 경우. 높은 임대료를 감당할 수 있는 자본력을 가진 F&B 프랜차이즈, 세련된 카페, 디자인 팝업스토어, IT 스타트업 등 트렌디한 업종이 집중되며, 이 과정에서 영세 제조업이 외곽으로 밀려납니다.",
+              imgSrc: "/path_c_cafe.jpg",
+              imgAlt: "성수동 카페"
+            },
+          ].map((item) => (
+            <div key={item.title} className="border border-rule rounded-xl bg-card overflow-hidden shadow-sm hover:shadow-md hover:border-violet/50 transition-all group flex flex-col">
+              <div className="w-full h-48 bg-muted border-b border-rule flex items-center justify-center overflow-hidden">
+                <img src={item.imgSrc} alt={item.imgAlt} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="p-6 flex-1 flex flex-col">
+                <div className="font-display text-lg text-ink font-bold mb-3">{item.title}</div>
+                <p className="text-ink-soft leading-relaxed break-keep flex-1">{item.desc}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -171,7 +196,7 @@ function EastWest() {
             <div className="bg-card rounded-lg p-6 border border-rule">
               <div className="font-display text-lg text-ink mb-3">2. 상권 활성화와 지역 경제적 가치 상승</div>
               <p className="text-[14px] text-ink-soft leading-relaxed break-keep">
-                가치가 낮았던 부동산이 고도화되고 상권이 살아나면서 지역의 자산 가치가 상승합니다. 이렇게 확보된 공공 재원은 과거 성수동의 정체성이었던 '성수 수제화 거리'의 환경 개선, 전통 가죽·인쇄 산업의 지원, 특화 사업 체험공간 구축에 집중 재투자 될 수 있습니다.
+                가치가 낮았던 부동산이 고도화되고 상권이 살아나면서 지역의 자산 가치가 상승합니다. 이렇게 확보된 공공 재원은 과거 성수동의 정체성이었던 '성수 수제화 거리'의 환경 개선, 전통 가죽·인쇄 산업의 지원, 특화 사업 체험공간 구축에 집중 재투자 될 수 있다.
               </p>
             </div>
           </div>
@@ -272,7 +297,7 @@ function EastWest() {
                       <span className="shrink-0 text-ochre/70 font-bold mt-0.5">·</span>
                       <div>
                         <strong className="text-ink block mb-1">팝업스토어 전용률 급증</strong>
-                        연무장길 일대 '공장/창고' 용도 1층 공간의 약 68%가<br className="hidden xl:block" /> 2~3주 단위의 초단기 임대(팝업스토어)로 운영되고 있습니다.
+                        연무장길 일대 '공장/창고' 용도 1층 공간의 약 68%가<br className="hidden xl:block" /> 2~3주 단위의 초단기 임대(팝업스토어)로 운영되고 있다.
                       </div>
                     </li>
                     <li className="flex gap-2.5">
@@ -325,7 +350,7 @@ function EastWest() {
                       <span className="shrink-0 text-ochre/70 font-bold mt-0.5">·</span>
                       <div>
                         <strong className="text-ink block mb-1">산업집적법 우회</strong>
-                        지정 업종만 입주 가능하나, 일부 저층 호실(약 12%)이 무허가<br className="hidden xl:block" /> 물류 대행 창고 및 도소매업 촬영 스튜디오로 전용되고 있습니다.
+                        지정 업종만 입주 가능하나, 일부 저층 호실(약 12%)이 무허가<br className="hidden xl:block" /> 물류 대행 창고 및 도소매업 촬영 스튜디오로 전용되고 있다.
                       </div>
                     </li>
                     <li className="flex gap-2.5">
@@ -342,8 +367,8 @@ function EastWest() {
           </div>
 
           <div className="text-right">
-            <p className="text-[11px] text-ink-soft/50 font-mono tracking-tight">
-              출처: 국토교통부 건축물대장 표제부 데이터(2026), 서울연구원 준공업지역 공간구조 학술 리포트 기반 재구성
+            <p className="text-[12px] text-ink-soft/50 font-mono tracking-tight">
+              자료출처: 국토교통부 건축물대장 표제부 데이터(2026), 서울연구원 준공업지역 공간구조 학술 리포트 기반 재구성
             </p>
           </div>
         </div>

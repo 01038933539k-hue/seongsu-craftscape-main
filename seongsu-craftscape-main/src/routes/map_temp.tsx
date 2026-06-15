@@ -51,14 +51,14 @@ function MapPage() {
             </BarChart>
           </ResponsiveContainer>
         </div>
+        <div className="mt-2 text-[12px] text-ink-soft opacity-70 text-right">
+          자료출처: 한국산업단지공단, 지식산업센터 현황
+        </div>
         
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-12">
           <p className="text-ink-soft leading-relaxed max-w-3xl">
             준공업지역 규제 완화 이후 지식산업센터의 <strong>공급은 폭발적으로 늘어났으나, 그에 비례하여 공실률이 함께 치솟는 기형적 구조</strong>가 나타나고 있다. 투기적 수요로 인해 분양가는 급등했지만 실제 입주할 기업들의 수요를 넘어서면서, 많은 호실이 비어있는 채로 방치되는 부작용을 낳았다.
           </p>
-          <div className="text-[10px] text-ink-soft opacity-70 text-right whitespace-nowrap bg-muted/50 p-2 rounded">
-            (자료 출처: 한국산업단지공단, 지식산업센터 현황)
-          </div>
         </div>
 
         <div className="eyebrow mb-3 text-primary mt-16">핵심 건물 분석</div>
