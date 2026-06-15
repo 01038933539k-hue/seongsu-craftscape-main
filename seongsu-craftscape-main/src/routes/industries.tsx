@@ -49,6 +49,101 @@ const cards = [
   },
 ];
 
+function HybridLoopDiagram() {
+  return (
+    <div className="relative bg-card border border-rule rounded-2xl p-8 md:p-12 shadow-sm flex flex-col items-center overflow-hidden">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mb-12 relative z-10">
+        <div className="bg-muted/50 border border-rule rounded-xl p-5 text-center">
+          <div className="font-mono text-3xl font-bold text-violet mb-1">11.4<span className="text-lg">%</span></div>
+          <div className="text-[11px] font-bold text-ink mb-1">KSIC '기타' 분류 급증</div>
+          <p className="text-[10px] text-ink-soft">표준산업분류 포섭 불가능 복합 업종</p>
+        </div>
+        <div className="bg-muted/50 border border-rule rounded-xl p-5 text-center">
+          <div className="font-mono text-3xl font-bold text-ochre mb-1">2~4<span className="text-lg">주</span></div>
+          <div className="text-[11px] font-bold text-ink mb-1">초고속 밸류체인 순환</div>
+          <p className="text-[10px] text-ink-soft">기획~소비자 피드백까지의 1사이클</p>
+        </div>
+        <div className="bg-muted/50 border border-rule rounded-xl p-5 text-center">
+          <div className="font-mono text-3xl font-bold text-primary mb-1">82<span className="text-lg">%</span></div>
+          <div className="text-[11px] font-bold text-ink mb-1">다기능 결합 필지 비율</div>
+          <p className="text-[10px] text-ink-soft">사무·제조·판매가 단일 필지에 위치</p>
+        </div>
+        <div className="bg-muted/50 border border-rule rounded-xl p-5 text-center">
+          <div className="font-mono text-3xl font-bold text-indigo mb-1">100<span className="text-lg">m</span></div>
+          <div className="text-[11px] font-bold text-ink mb-1">외주 가공 근접성</div>
+          <p className="text-[10px] text-ink-soft">시제품 제작 협력업체 간 평균 거리</p>
+        </div>
+      </div>
+
+      <div className="relative w-full max-w-[600px] aspect-[4/3] flex items-center justify-center">
+        <svg viewBox="0 0 600 450" className="w-full h-full absolute inset-0 z-0 overflow-visible">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="var(--color-violet)" />
+              <stop offset="100%" stopColor="var(--color-ochre)" />
+            </linearGradient>
+            <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="var(--color-ochre)" />
+              <stop offset="100%" stopColor="var(--color-primary)" />
+            </linearGradient>
+            <linearGradient id="grad3" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="var(--color-primary)" />
+              <stop offset="100%" stopColor="var(--color-violet)" />
+            </linearGradient>
+            <style>
+              {`
+                .loop-path {
+                  stroke-dasharray: 10 20;
+                  animation: dash-flow 2s linear infinite;
+                }
+                @keyframes dash-flow {
+                  from { stroke-dashoffset: 60; }
+                  to { stroke-dashoffset: 0; }
+                }
+                .glow {
+                  filter: drop-shadow(0 0 6px rgba(124, 58, 237, 0.4));
+                }
+              `}
+            </style>
+          </defs>
+
+          {/* Paths connecting nodes */}
+          {/* Top to Bottom Right */}
+          <path d="M 300 80 Q 480 80 480 220" fill="none" stroke="url(#grad1)" strokeWidth="5" strokeLinecap="round" className="loop-path glow" />
+          {/* Bottom Right to Bottom Left */}
+          <path d="M 480 220 Q 480 380 300 380 Q 200 380 120 300" fill="none" stroke="url(#grad2)" strokeWidth="5" strokeLinecap="round" className="loop-path glow" />
+          {/* Bottom Left to Top */}
+          <path d="M 120 300 Q 120 80 300 80" fill="none" stroke="url(#grad3)" strokeWidth="5" strokeLinecap="round" className="loop-path glow" />
+        </svg>
+
+        {/* Nodes */}
+        <div className="absolute top-[5%] left-1/2 -translate-x-1/2 bg-card border-2 border-violet rounded-full px-8 py-5 shadow-xl text-center z-10 w-64 md:w-72 hover:scale-105 transition-transform cursor-default group">
+          <div className="text-violet font-mono text-[10px] uppercase font-bold tracking-widest mb-1.5 group-hover:text-ink transition-colors">Phase 01</div>
+          <div className="font-display text-xl text-ink">디자인 및 기획</div>
+          <div className="text-[12px] text-ink-soft mt-1.5 font-medium">트렌드 스캐닝 & 브랜드 기획</div>
+        </div>
+
+        <div className="absolute top-[65%] right-[0%] md:-right-[5%] bg-card border-2 border-ochre rounded-full px-8 py-5 shadow-xl text-center z-10 w-64 md:w-72 hover:scale-105 transition-transform cursor-default group">
+          <div className="text-ochre font-mono text-[10px] uppercase font-bold tracking-widest mb-1.5 group-hover:text-ink transition-colors">Phase 02</div>
+          <div className="font-display text-xl text-ink">즉각 시제품 제작</div>
+          <div className="text-[12px] text-ink-soft mt-1.5 font-medium">100m 내 소규모 제조 연계</div>
+        </div>
+
+        <div className="absolute top-[65%] left-[0%] md:-left-[5%] bg-card border-2 border-primary rounded-full px-8 py-5 shadow-xl text-center z-10 w-64 md:w-72 hover:scale-105 transition-transform cursor-default group">
+          <div className="text-primary font-mono text-[10px] uppercase font-bold tracking-widest mb-1.5 group-hover:text-ink transition-colors">Phase 03</div>
+          <div className="font-display text-xl text-ink">팝업/쇼룸 유통</div>
+          <div className="text-[12px] text-ink-soft mt-1.5 font-medium">소비자 직거래 및 반응 수집</div>
+        </div>
+
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] text-center pointer-events-none">
+          <div className="font-mono text-5xl font-bold text-ink opacity-5">LOOP</div>
+          <div className="text-[11px] font-bold text-ink-soft uppercase tracking-widest mt-2 opacity-50">Infinite Cycle</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Industries() {
   return (
     <>
@@ -155,113 +250,97 @@ function Industries() {
       </FadeIn>
 
       <FadeIn as="section" className="container-prose py-24 rule-top">
+        <div className="eyebrow mb-3 text-violet">Hybrid Industries</div>
+        <h2 className="font-display text-3xl md:text-4xl mb-6">제조와 소비의 경계 붕괴</h2>
+        
+        <p className="text-lg text-ink leading-relaxed break-keep font-medium mb-10 max-w-4xl border-l-4 border-violet pl-5">
+          제조와 판매를 엄격히 분리하는 기존 행정 분류로는 성수동을 설명할 수 없다. 기획·제조·유통이 단일 필지 내에 결합되며, 불과 2~4주 만에 <strong>[기획➔제작➔판매➔피드백]</strong>이 완결되는 초고속 하이브리드 생태계가 안착했다.
+        </p>
+
+        <HybridLoopDiagram />
+
+        <div className="mt-6 text-right">
+          <p className="text-[11px] text-ink-soft/60 font-mono tracking-tight break-keep">
+            출처: 통계청 제11차 한국표준산업분류(KSIC) 매뉴얼, 산업연구원(KIET) 융복합 신산업 트렌드 분석 리포트
+          </p>
+        </div>
+      </FadeIn>
+
+      <FadeIn as="section" className="container-prose py-24 rule-top">
         <div className="eyebrow mb-3 text-primary">심층 분석: 패션 산업 트리맵</div>
         <h2 className="font-display text-3xl md:text-4xl mb-6">성수동 패션 산업의 공간적 체질 개선</h2>
         <p className="text-ink-soft max-w-3xl mb-12 text-lg leading-relaxed">
           과거의 '제조 중심 공장지대'에서 현재의 '고부가가치 리테일 상권'으로 어떻게 변화했는지 종사자 수 기준의 제조업 및 도소매업 트리맵을 통해 심층적으로 분석한다.
         </p>
 
-        <h3 className="font-serif text-2xl mb-6 text-ink">제조업: 전통 피혁의 하락과 구두류의 잔존</h3>
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <h3 className="font-serif text-2xl mb-6 text-ink mt-8">제조업: 전통 피혁 하락, 구두류 잔존</h3>
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div className="bg-card border border-rule/50 rounded-2xl p-4 shadow-sm">
-            <div className="text-sm text-ink-soft font-mono mb-4 text-center">과거 제조업 분류 트리맵</div>
-            <img src="/graphs/past_mfg_treemap.png" alt="과거 제조업 분류 트리맵" className="w-full h-auto" />
+            <div className="text-sm text-ink-soft font-mono mb-4 text-center">과거 제조업 (종사자 수 기준)</div>
+            <img src="/graphs/past_mfg_treemap.png" alt="과거 제조업" className="w-full h-auto" />
           </div>
           <div className="bg-card border border-rule/50 rounded-2xl p-4 shadow-sm">
-            <div className="text-sm text-ink-soft font-mono mb-4 text-center">현재 제조업 분류 트리맵</div>
-            <img src="/graphs/current_mfg_treemap.png" alt="현재 제조업 분류 트리맵" className="w-full h-auto" />
+            <div className="text-sm text-ink-soft font-mono mb-4 text-center">현재 제조업 (종사자 수 기준)</div>
+            <img src="/graphs/current_mfg_treemap.png" alt="현재 제조업" className="w-full h-auto" />
           </div>
         </div>
-        <ul className="space-y-4 mb-16">
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">봉제의복 제조업의 기반 약화:</strong> 기존 임가공 중심의 봉제의복 제조업 비율이 감소했습니다.</p>
+        <ul className="grid md:grid-cols-2 gap-4 mb-16 text-sm">
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">봉제·세폭직물 약화</strong>
+            <span className="text-ink-soft">임가공 중심의 기초 부자재 및 의복 제조업 비율 급감.</span>
           </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">세폭직물 제조업의 쇠퇴:</strong> 부자재 성격이 강한 세폭직물 제조업이 눈에 띄게 사라졌습니다.</p>
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">가죽·가방 제조업 축소</strong>
+            <span className="text-ink-soft">전통 피혁 제품군의 전반적인 생산 규모 하락.</span>
           </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">핸드백 및 가방 제조업의 축소:</strong> 전통적인 피혁 제품군인 핸드백과 가방 제조업의 규모가 줄어들었습니다.</p>
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">구두류 독보적 비중</strong>
+            <span className="text-ink-soft">전체 침체 속에서도 제조업 내 최대 파이 유지.</span>
           </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">구두류 제조업의 독보적 비중 유지:</strong> 침체 속에서도 구두류 제조업은 현재 제조업 내에서 가장 큰 비중을 차지하고 있습니다.</p>
-          </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">의복 액세서리 제조업의 동반 성장:</strong> 소매업의 성장에 발맞추어 액세서리 관련 제조업도 함께 증가했습니다.</p>
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">의복 액세서리 동반 성장</strong>
+            <span className="text-ink-soft">리테일 상권 발달에 호응하는 액세서리 제조 수요 증가.</span>
           </li>
         </ul>
 
-        <h3 className="font-serif text-2xl mb-6 text-ink">도매업 및 소매업: 의복·액세서리의 폭발적 성장</h3>
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <h3 className="font-serif text-2xl mb-6 text-ink">도소매업: 패션·액세서리의 폭발적 성장</h3>
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
           <div className="bg-card border border-rule/50 rounded-2xl p-4 shadow-sm">
-            <div className="text-sm text-ink-soft font-mono mb-4 text-center">과거 도소매업 분류 트리맵</div>
-            <img src="/graphs/past_retail_treemap.png" alt="과거 도소매업 분류 트리맵" className="w-full h-auto" />
+            <div className="text-sm text-ink-soft font-mono mb-4 text-center">과거 도소매업 (종사자 수 기준)</div>
+            <img src="/graphs/past_retail_treemap.png" alt="과거 도소매업" className="w-full h-auto" />
           </div>
           <div className="bg-card border border-rule/50 rounded-2xl p-4 shadow-sm">
-            <div className="text-sm text-ink-soft font-mono mb-4 text-center">현재 도소매업 분류 트리맵</div>
-            <img src="/graphs/current_retail_treemap.png" alt="현재 도소매업 분류 트리맵" className="w-full h-auto" />
+            <div className="text-sm text-ink-soft font-mono mb-4 text-center">현재 도소매업 (종사자 수 기준)</div>
+            <img src="/graphs/current_retail_treemap.png" alt="현재 도소매업" className="w-full h-auto" />
           </div>
         </div>
-        <ul className="space-y-4 mb-16">
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">신발 소매업의 급격한 감소:</strong> 과거 가장 활발했던 신발 소매업의 비중이 현재는 크게 축소되었습니다.</p>
+        <ul className="grid md:grid-cols-2 gap-4 mb-16 text-sm">
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">신발·가죽 소매 급감</strong>
+            <span className="text-ink-soft">제조업 쇠퇴와 맞물려 전통 피혁 제품군의 소비 시장 축소.</span>
           </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">한복 소매업의 입지 위축:</strong> 전통 복식인 한복 소매업의 비율이 과거 대비 감소했습니다.</p>
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">의복 소매업 폭발적 팽창</strong>
+            <span className="text-ink-soft">글로벌 브랜드 및 대형 패션 매장 유입으로 압도적 성장.</span>
           </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">섬유 및 의복 소매업의 폭발적 성장:</strong> 대형 패션 브랜드와 대기업 매장의 대거 입점으로 인해 섬유 및 의복 소매업이 크게 성장했습니다.</p>
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">액세서리 소매업 확대</strong>
+            <span className="text-ink-soft">개인화된 패션 소비 트렌드를 반영한 디자이너 편집숍 증가.</span>
           </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">패션 액세서리 소매업의 비중 확대:</strong> 개성을 중시하는 소비 트렌드에 맞춰 액세서리 소매업의 비중이 늘어났습니다.</p>
-          </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">셔츠 및 블라우스 소매업의 성장:</strong> 단품 의류 카테고리 중 셔츠와 블라우스 중심의 소매업이 증가세를 보였습니다.</p>
-          </li>
-          <li className="flex gap-4">
-            <span className="text-primary font-bold shrink-0">·</span>
-            <p className="text-ink-soft leading-relaxed"><strong className="text-ink">가죽 및 모피 소매업의 수요 둔화:</strong> 전통적인 소재인 가죽과 모피 제품에 대한 소매 소비가 줄어들었습니다.</p>
+          <li className="bg-muted/30 border border-rule/50 p-4 rounded-lg">
+            <strong className="text-ink block mb-1">단품(셔츠/블라우스) 강세</strong>
+            <span className="text-ink-soft">가벼운 소비 성향에 맞춘 특정 의류 카테고리 수요 확대.</span>
           </li>
         </ul>
 
         <div className="bg-muted/30 border border-rule rounded-2xl p-8 shadow-sm">
-          <h3 className="font-display text-2xl text-ink mb-6 flex items-center gap-3">
+          <h3 className="font-display text-xl text-ink mb-4 flex items-center gap-3">
             <span className="w-6 h-px bg-ochre inline-block"></span>
-            패션 산업 비교 종합 결론
+            패션 트리맵 최종 시사점
           </h3>
-          <ul className="space-y-4 mb-10">
-            <li className="flex gap-4">
-              <span className="text-ochre font-bold shrink-0">01</span>
-              <p className="text-ink-soft leading-relaxed"><strong className="text-ink">전통 피혁 기반(신발·가죽·가방)의 동반 하락:</strong> 제조업과 도소매업 전반에서 신발, 가죽, 핸드백의 비중과 수요가 동시에 감소했습니다.</p>
-            </li>
-            <li className="flex gap-4">
-              <span className="text-ochre font-bold shrink-0">02</span>
-              <p className="text-ink-soft leading-relaxed"><strong className="text-ink">패션 액세서리 산업의 동반 성장:</strong> 트렌드 변화에 따라 두 산업군 모두에서 액세서리 사업이 크게 발전했습니다.</p>
-            </li>
-            <li className="flex gap-4">
-              <span className="text-ochre font-bold shrink-0">03</span>
-              <p className="text-ink-soft leading-relaxed"><strong className="text-ink">제조업 내 구두류의 높은 잔존 비중:</strong> 전체적인 하락세 속에서도 현재 성수동 제조업 내에서는 신발(구두)의 비중이 가장 높게 나타납니다.</p>
-            </li>
-          </ul>
-
-          <div className="bg-white border-l-4 border-primary p-6 rounded-r-xl shadow-sm">
-            <h4 className="font-serif text-xl mb-3 text-ink">패션 트리맵 최종 시사점</h4>
-            <p className="text-ink-soft leading-relaxed mb-4">
-              성수동 2가는 과거 '수제화 및 제조 중심의 공장지대'에서 현재 '대기업·글로벌 패션 브랜드 중심의 고부가가치 리테일 상권'으로 체질 개선이 이루어지고 있습니다.
-            </p>
-            <p className="text-ink-soft leading-relaxed">
-              제조업에서는 여전히 수제화(구두)의 상징성이 남아있으나, 도소매업에서는 대형 브랜드와 액세서리 편집숍 중심의 트렌디한 의류 소비가 주를 이룹니다. 결과적으로 성수동 2가는 전통적인 생산 기지의 역할에서 벗어나, 생산과 유통이 고도화된 소비 중심의 <strong>'패션 클러스터'</strong>로 진화하고 있음을 시사합니다.
-            </p>
-          </div>
+          <p className="text-ink-soft leading-relaxed break-keep">
+            성수동은 과거 '수제화 중심의 생산 기지'에서 현재 '대형 브랜드 및 트렌드 위주의 고부가가치 리테일 상권'으로 완벽히 체질을 개선했다. 제조업에는 구두의 상징성만이 일부 잔존할 뿐, 산업의 주도권은 <strong>'의복·액세서리 기반의 트렌디한 패션 소비(유통)'</strong>로 완전히 넘어갔다.
+          </p>
         </div>
       </FadeIn>
       <PageNavigation prev={{ to: "/floors", label: "04 층/건물 분석" }} next={{ to: "/map", label: "심화: 지식산업센터" }} />

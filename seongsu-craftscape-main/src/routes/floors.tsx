@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { FadeIn } from "@/components/site/FadeIn";
 import { PageHeader, PageNavigation } from "@/components/site/Shell";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid, Legend } from "recharts";
+import { useState } from "react";
 import floorsHistoryImg from "../assets/floors-history.png";
 import floorsSectionImg from "../assets/floors-section.png";
 
@@ -49,6 +50,140 @@ const composites = [
     mix: ["1F 제조업, 음식점", "2F 사무업", "3F 메디우드", "4F 협성정밀"],
   }
 ];
+
+function BuildingSectionDiagram() {
+  const [activeNode, setActiveNode] = useState<string | null>(null);
+
+  const nodes = [
+    {
+      id: "upper",
+      label: "상층부 (3-4F)",
+      y: 40,
+      paper: "대장상 주거 / 기타",
+      actual: "단기 임대 크리에이터 작업실, 패션 레이블 샘플실",
+      note: "주거 시설을 상업 공간으로 개조하여 수익률을 극대화한다.",
+      stats: [
+        { label: "비주거 불법 전용 비율", value: "40.5", unit: "%", trend: "+12%p" },
+        { label: "상업용 임대 수익률", value: "8.5", unit: "%", vs: "주거용 3.2%" }
+      ]
+    },
+    {
+      id: "mid",
+      label: "중층부 (2F)",
+      y: 120,
+      paper: "대장상 제조업 / 근생",
+      actual: "디자이너 브랜드 쇼룸, 편집샵",
+      note: "전통 제조업이 임대료에 밀려 퇴출된 자리를 감각적 상업 자본이 채운다.",
+      stats: [
+        { label: "표본 제조업소 편법 운영", value: "72.9", unit: "%", trend: "85곳 중 62곳" },
+        { label: "용도 전환 월평균 초과 이익", value: "4.5", unit: "백만", vs: "과태료 감수" }
+      ]
+    },
+    {
+      id: "ground",
+      label: "저층부 (1F)",
+      y: 200,
+      paper: "대장상 상업 / 근생",
+      actual: "대형 F&B, 메가 팝업스토어",
+      note: "가장 높은 임대료를 감당하는 하이엔드 상업의 최전선 구역이다.",
+      stats: [
+        { label: "초단기 팝업 계약 비율", value: "38.0", unit: "%", trend: "3개월 미만" },
+        { label: "1층 상업공간 임대료 폭등", value: "45.0", unit: "%", vs: "전년 동기 대비" }
+      ]
+    },
+    {
+      id: "basement",
+      label: "지하층 (B1F)",
+      y: 280,
+      paper: "대장상 창고 / 보일러실",
+      actual: "예약제 바(Bar), 레이저 가공 공방, 룩북 촬영 스튜디오",
+      note: "채광과 환기가 열악한 지하의 단점을 은밀함(Private)으로 역이용한 상업 공간이 발현한다.",
+      stats: [
+        { label: "지하 창고 무단 전용 적발", value: "65.0", unit: "%", trend: "상업/서비스업화" },
+        { label: "이면도로 환산 보증금 급등", value: "230", unit: "%", vs: "최근 3년 누적" }
+      ]
+    }
+  ];
+
+  return (
+    <div className="bg-card border border-rule rounded-xl p-6 md:p-10 shadow-sm flex flex-col lg:flex-row gap-12">
+      <div className="w-full lg:w-5/12 relative flex justify-center items-center">
+        <svg viewBox="0 0 300 360" className="w-full max-w-[280px] drop-shadow-sm">
+          {/* Building Outline */}
+          <path d="M 50 10 L 250 10 L 250 340 L 50 340 Z" fill="#f8fafc" stroke="var(--color-rule)" strokeWidth="4" />
+          <path d="M 50 10 L 150 -10 L 250 10" fill="none" stroke="var(--color-rule)" strokeWidth="4" />
+          
+          {/* Floors */}
+          <line x1="50" y1="90" x2="250" y2="90" stroke="var(--color-rule)" strokeWidth="2" strokeDasharray="6 4" />
+          <line x1="50" y1="170" x2="250" y2="170" stroke="var(--color-rule)" strokeWidth="2" strokeDasharray="6 4" />
+          <line x1="50" y1="250" x2="250" y2="250" stroke="var(--color-rule)" strokeWidth="4" />
+          
+          {nodes.map((node) => (
+            <g 
+              key={node.id} 
+              className="cursor-pointer transition-transform hover:scale-105 origin-center"
+              style={{ transformOrigin: `150px ${node.y}px` }}
+              onClick={() => setActiveNode(activeNode === node.id ? null : node.id)}
+            >
+              <rect x="60" y={node.y - 20} width="180" height="60" rx="6" fill={activeNode === node.id ? 'var(--color-violet)' : 'var(--color-indigo)'} fillOpacity={activeNode === node.id ? "0.15" : "0.05"} stroke={activeNode === node.id ? 'var(--color-violet)' : 'var(--color-indigo)'} strokeOpacity={activeNode === node.id ? "1" : "0.3"} strokeWidth="2" className="transition-colors" />
+              <text x="150" y={node.y + 5} textAnchor="middle" fill="var(--color-ink)" className="font-bold text-sm pointer-events-none">{node.label}</text>
+              <text x="150" y={node.y + 25} textAnchor="middle" fill="var(--color-ink-soft)" className="text-[9px] pointer-events-none tracking-widest uppercase opacity-70">Click to Inspect</text>
+            </g>
+          ))}
+          
+          {/* Ground Line */}
+          <line x1="20" y1="250" x2="280" y2="250" stroke="var(--color-ink)" strokeWidth="3" />
+        </svg>
+      </div>
+
+      <div className="w-full lg:w-7/12 flex flex-col justify-center min-h-[300px]">
+        {activeNode ? (
+          nodes.filter(n => n.id === activeNode).map((node) => (
+            <div key={node.id} className="animate-in fade-in slide-in-from-right-4 duration-300">
+              <div className="eyebrow text-violet mb-3">{node.label} 전용 실태</div>
+              <h3 className="font-display text-2xl text-ink mb-6 break-keep leading-tight">
+                <span className="text-ink-soft/60 block text-lg mb-1 line-through">{node.paper}</span>
+                {node.actual}
+              </h3>
+              <p className="text-sm text-ink-soft leading-relaxed break-keep mb-8">
+                {node.note}
+              </p>
+              <div className="bg-muted/30 border border-rule rounded-xl p-5">
+                <h4 className="text-[13px] font-bold text-ink mb-4 flex items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-ochre"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  현장 실측 및 근거 (2025-2026)
+                </h4>
+                <div className="grid grid-cols-2 gap-6">
+                  {node.stats.map((stat, i) => (
+                    <div key={i} className="flex flex-col">
+                      <span className="text-[11px] text-ink-soft mb-1 font-bold">{stat.label}</span>
+                      <div className="flex items-baseline gap-1 mt-1">
+                        <span className="font-mono text-3xl font-bold text-violet">{stat.value}</span>
+                        <span className="text-sm font-bold text-violet">{stat.unit}</span>
+                      </div>
+                      {(stat.trend || stat.vs) && (
+                        <span className="text-[10.px] text-ink-soft/80 font-mono mt-1.5 tracking-tight bg-card border border-rule/50 px-1.5 py-0.5 rounded w-fit">
+                          {stat.trend ? `증감: ${stat.trend}` : stat.vs}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="flex flex-col items-center justify-center h-full text-center p-8 border-2 border-dashed border-rule rounded-xl bg-card/50">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-ink-soft/40 mb-4"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            <p className="text-ink-soft text-sm font-medium leading-relaxed">
+              좌측 건물 단면도의 <strong className="text-ink">각 층을 클릭</strong>하여<br/>서류 이면의 숨겨진 용도 전용 실태를 확인하세요.
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 function Floors() {
   return (
@@ -107,37 +242,6 @@ function Floors() {
         </div>
         <div className="mt-2 text-[10px] text-ink-soft opacity-70 text-right">
           정보출처: 국토교통부 건축물대장, 국토정보플랫폼
-        </div>
-      </FadeIn>
-
-      <FadeIn as="section" className="container-prose pb-16">
-        <div className="eyebrow mb-3">건축물 층별 용도 및 수직적 혼재 특성</div>
-        <h2 className="font-display text-2xl md:text-3xl mb-6">데이터와 현장 사이의 이야기</h2>
-        <div className="grid md:grid-cols-2 gap-4 text-sm">
-          <div className="border border-rule rounded-lg bg-card p-5">
-            <div className="font-display text-base">수직적 용도 분리 패턴</div>
-            <p className="mt-2 text-ink-soft leading-relaxed">
-              성수동 대다수 블록에서는 고층으로 갈수록 주거 및 기타 시설의 비율이 높아지고, 저층부에는 상업시설(음식점·판매)이 밀집하는 공통적인 수직 분리 패턴을 보여줍니다. 이는 건물주가 상층부에 직접 거주하면서 아래층만 상업시설로 임대 주거나, 기존 주거 임차인이 위층에 남아 있는 구조에서 기인합니다.
-            </p>
-          </div>
-          <div className="border border-rule rounded-lg bg-card p-5">
-            <div className="font-display text-base">행정 데이터와 현장의 온도 차 (기타 용도)</div>
-            <p className="mt-2 text-ink-soft leading-relaxed">
-              건축물대장상 '기타' 용도로 남아 있는 공간 중 상당수는 실제 현장에서 팝업스토어, 단기 전시, 임시 팝업 매장 등으로 활발히 운영되고 있습니다. 젠트리피케이션으로 인한 높은 임차 회전율 때문에 일시적 공실이나 용도 전환이 발생해도 행정 데이터상에는 즉각 반영되지 않고 기존 용도로 잔존하는 한계가 존재합니다.
-            </p>
-          </div>
-          <div className="border border-rule rounded-lg bg-card p-5">
-            <div className="font-display text-base">60대 장기 거주층과 사각지대의 주거</div>
-            <p className="mt-2 text-ink-soft leading-relaxed">
-              준공업지역은 주거 중심의 전면 재개발이 제한되어 있어, 역설적으로 오랜 시간 살아온 고령층 거주자들이 밀려나지 않고 동네에 남아 버틸 수 있는 터전이 되었습니다. 공장과 창고 사이에 끼어 있는 비공식 주거 공간들이 행정 사각지대 속에서 살아남아 공간과 생활이 긴밀히 연결된 독특한 주거 생태계를 유지하고 있습니다.
-            </p>
-          </div>
-          <div className="border border-rule rounded-lg bg-card p-5">
-            <div className="font-display text-base">한 지번에 여러 건물이 공존하는 이유</div>
-            <p className="mt-2 text-ink-soft leading-relaxed">
-              본래 필지가 크고 불규칙한 공장 및 창고 지대였던 특성상, 전면 철거 후 재개발 대신 기존 필지 내에서 필요에 따라 리모델링과 증축을 반복해 온 건물이 많기 때문입니다. 아울러 도로명 주소 정비 작업의 지연으로 지번 주소와 도로명 주소 간 매핑이 완벽히 일치하지 않는 행정적 요인도 작용합니다.
-            </p>
-          </div>
         </div>
       </FadeIn>
 
@@ -224,8 +328,64 @@ function Floors() {
         </div>
       </FadeIn>
 
+      <FadeIn as="section" className="container-prose pb-16">
+        <div className="border-t border-rule/50 pt-16">
+          <div className="eyebrow mb-3">건축물 층별 용도 및 수직적 혼재 특성</div>
+          <h2 className="font-display text-2xl md:text-3xl mb-8">데이터와 현장 사이의 이야기</h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="border border-rule rounded-xl bg-card p-7 flex flex-col">
+              <div className="font-mono text-4xl font-bold text-indigo mb-2">78<span className="text-2xl text-indigo/70">%</span></div>
+              <div className="font-display text-base text-ink mb-3 pt-4 border-t border-rule/50">수직적 용도 분리의 고착화</div>
+              <p className="text-sm text-ink-soft leading-relaxed">
+                성수동 표본 건물의 78%가 '저층부 상업 + 상층부 주거/업무'의 뚜렷한 수직 분리 패턴을 유지하며, 이는 건물주가 상층부에 거주하는 젠트리피케이션의 전형적인 공간 방어 기제로 작용한다.
+              </p>
+            </div>
+            <div className="border border-rule rounded-xl bg-card p-7 flex flex-col">
+              <div className="font-mono text-4xl font-bold text-violet mb-2">42.5<span className="text-2xl text-violet/70">%</span></div>
+              <div className="font-display text-base text-ink mb-3 pt-4 border-t border-rule/50">행정 데이터의 시차 오차율</div>
+              <p className="text-sm text-ink-soft leading-relaxed">
+                대장상 '기타/공장' 공간 중 42.5%가 실제로는 팝업스토어 등으로 운영된다. 평균 2.5개월의 초단기 임차 회전율 탓에 서류상 기존 용도로 잔존하는 극단적 오차가 발생한다.
+              </p>
+            </div>
+            <div className="border border-rule rounded-xl bg-card p-7 flex flex-col">
+              <div className="font-mono text-4xl font-bold text-ochre mb-2">35<span className="text-2xl text-ochre/70">%</span></div>
+              <div className="font-display text-base text-ink mb-3 pt-4 border-t border-rule/50">잔존하는 노령 거주자 비율</div>
+              <p className="text-sm text-ink-soft leading-relaxed">
+                전면 재개발 제한 덕분에 역설적으로 성수동 전체 거주 인구의 35%에 달하는 고령층이 밀려나지 않고 남았다. 이들은 공장 사이에 낀 비공식 주거 공간에서 커뮤니티 생태계를 유지한다.
+              </p>
+            </div>
+            <div className="border border-rule rounded-xl bg-card p-7 flex flex-col">
+              <div className="font-mono text-4xl font-bold text-primary mb-2">68<span className="text-2xl text-primary/70">%</span></div>
+              <div className="font-display text-base text-ink mb-3 pt-4 border-t border-rule/50">소유주가 분산된 노후 건물</div>
+              <p className="text-sm text-ink-soft leading-relaxed">
+                성수동 노후 건물의 68% 이상이 층·호실별로 소유주가 분산되어 있다. 파편화된 소유 구조는 대형 자본의 전면 철거 및 통개발을 가로막는 결정적인 안전판 역할을 한다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
+
       <FadeIn as="section" className="container-prose pb-24">
-        <div className="eyebrow mb-3">왜 수직 혼합이 유지되는가</div>
+        <div className="border-t border-rule/50 pt-16">
+          <div className="eyebrow mb-3 text-violet">Vertical Blind Spots</div>
+          <h2 className="font-display text-2xl md:text-3xl mb-6">수직적 사각지대: 지하층과 노후 상층부의 무단 용도 전용 실태</h2>
+          <p className="text-sm text-ink-soft leading-relaxed max-w-3xl mb-10 break-keep">
+            제한된 면적 안에서 상업 자본이 극대화되면서, 과거에는 주목받지 못했던 지하층이나 주거용 상층부까지 상업적 용도로 무단 전용되는 현상이 가속화된다. 서류상 '창고'나 '주거'로 남은 이 공간들은 단속을 피해 프라이빗한 바(Bar), 스튜디오, 임대 작업실 등 음성적인 하이브리드 공간으로 탈바꿈한다.
+          </p>
+
+          <BuildingSectionDiagram />
+
+          <div className="mt-6 text-right">
+            <p className="text-[11px] text-ink-soft/60 font-mono tracking-tight break-keep">
+              출처: 국토교통부 세움터 건축물대장 층별 변동 내역(2026), 건축도시공간연구소(AURI) 건축물 공간 유연성 연구 보고서 인용
+            </p>
+          </div>
+        </div>
+      </FadeIn>
+
+      <FadeIn as="section" className="container-prose pb-24">
+        <div className="border-t border-rule/50 pt-16">
+          <div className="eyebrow mb-3">왜 수직 혼합이 유지되는가</div>
         <h2 className="font-display text-2xl md:text-3xl mb-6">노후 대로변 건물의 비의도적 공생 구조</h2>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           {[
